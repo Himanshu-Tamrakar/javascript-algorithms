@@ -1,0 +1,27 @@
+{
+  "name": "algorithms",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Javascript algoriths based on Algorithms 4.0 book Robert Sedwik and Kelvin Wyen",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Himanshu-Tamrakar/javascript-algorithms.git"
+  },
+  "keywords": [
+    "javscript",
+    "algorithms"
+  ],
+  "author": "Himanshu Tamrakar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Himanshu-Tamrakar/javascript-algorithms/issues"
+  },
+  "homepage": "https://github.com/Himanshu-Tamrakar/javascript-algorithms#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}

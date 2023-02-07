@@ -1,0 +1,25 @@
+Javascript does not have generics, but Javascript can use Flow syntax or use Typescrip for generics
+
+Read Flow
+https://www.testim.io/blog/what-is-flow-javascript/#:~:text=let's%20understand%20Flow.-,Flow%20is%20a%20static%20type%20checker%20that%20allows%20a%20developer,checking%20support%20to%20your%20code.
+
+
+Bag: 
+    Removal is not there
+    Processing order of item is not unspecified or immaterial to client
+
+FIFO Queue:
+    First Come First Serve
+    Item waited long, will servered First
+
+Pushdown Stack:
+    Last In First Out
+    Most Recent View, New Arriaval Email are on top like that
+    Browser back button
+    Function calls
+    Reverse order in  whicj they are added
+
+
+Excersizes:
+    1.3.19
+    1.3.31 (doubly link list)

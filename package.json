@@ -1,8 +1,8 @@
 {
   "name": "algorithms",
-  "type": "module",
   "version": "1.0.0",
   "description": "Javascript algoriths based on Algorithms 4.0 book Robert Sedwik and Kelvin Wyen",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Himanshu-Tamrakar/javascript-algorithms#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "fs": "0.0.1-security"
   }
 }

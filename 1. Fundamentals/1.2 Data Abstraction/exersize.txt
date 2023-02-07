@@ -1,0 +1,33 @@
+Collection Type:
+    Stack                    : pushdown stack
+    Queue                    : FIFO queue
+    Bag                      :  bag
+    MinPQ, MaxPQ             :   priority queue
+    IndexMinPQ, IndexMaxPQ   :   priority queue(Indexed)
+    ST                       :   symbol table
+    SET                      :   set
+    StringST                 :   symbol bable(string key)
+
+data-oriented graph
+    Graph                    :   graph
+    DiaGraph                 :   directed graph
+    Edge                     :   edge (weighted)
+    EdgeWeightedGraph        :   graph (weighted )
+    DirectedEdge             :   edge (directed, weighted )
+    EdgeWeightedDigraph      :   graph (directed, weighted )
+
+operations-oriented graph types    
+    UF                       :   dynamic connectivity
+    DepthFirstPaths          :   DFS path searcher
+    CC                       :   connected components
+    BreadthFirstPaths        :   BFS path search
+    DirectedDFS              :   DFS digraph path search
+    DirectedBFS              :   BFS digraph path search
+    TransitiveClosure        :   all paths
+    Topological              :   topological order
+    DepthFirstOrder          :   DFS order
+    DirectedCycle            :   cycle search
+    SCC                      :   strong components
+    MST                      :   minimum spanning tree
+    SP                       :   shortest paths
+    

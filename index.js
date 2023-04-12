@@ -17,6 +17,66 @@ import closestPair from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/
 import farTestPair from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
 import bitonicSearch from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
 
+import Selection from './2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
+import InsersionSortClient from './2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort-client.js';
+import ShellSortClient from './2. Sorting/2.1_Elementry_Sorts/shell-sort/shell-sort-client.js';
+import Certification from './2. Sorting/2.1_Elementry_Sorts/exercises/exercise_2_1_16.js';
+import Exercise24_InsertionSortWithSentinel from './2. Sorting/2.1_Elementry_Sorts/exercises/exercise2_1_24_InsertionSortWithSentinel.js';
+import Exercise25_InsertionSortWithoutExchanges from './2. Sorting/2.1_Elementry_Sorts/exercises/exercise25_InsertionSortWithoutExchanges.js';
+import MergeSortClient from './2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sprt_client.js';
+import MergeSort_Top_Down_Client from './2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
+import Example_2_2_9_Client from './2. Sorting/exersices/2.2.9.js';
+
+
+
+
+// 2. Sorting --- End
+
+(function main() {
+    // 1. Fundamentals--- Start
+    // evaluate();
+    // testStackWithLinkedList();
+    // bagTestClient();
+    // queueTestClient()
+    // paranthesesTestClient();
+
+    // execute_1_3_9_test_client();
+    // linkedListTestingClient();
+    // execute_1_3_30_Test_Client();
+    // stequeTestClient();
+    // dequeTestClient();
+
+    // josephusProblem(7, 2);
+    // copyAStackTestClient();
+
+    // moveToFrontTestClient();
+    // closestpairTestingClient();
+    // fartestPairTestingClient();
+
+    // const arr = [2, 6,3,1];
+    // console.log(arr);
+    // bitonicSearch(arr, 1);
+    // 1. Fundamentals--- End
+
+
+    // 2. Sorting--- Start
+    // selectionTest();
+    // InsersionSortClient.main();
+    // ShellSortClient.main();
+    // Certification.main();
+    // Exercise24_InsertionSortWithSentinel.main();
+    // Exercise25_InsertionSortWithoutExchanges.main();
+
+    // MergeSortClient.main();
+    // MergeSort_Top_Down_Client.main();
+    Example_2_2_9_Client.main();
+    // 2. Sorting--- End
+
+    
+})();
+
+
+
 // 1. Fundamentals--- Start
 function evaluate() {
     let res = -1;
@@ -276,35 +336,14 @@ function closestpairTestingClient() {
 }
 // 1. Fundamentals--- End
 
-(function main() {
-    // 1. Fundamentals--- Start
-    // evaluate();
-    // testStackWithLinkedList();
-    // bagTestClient();
-    // queueTestClient()
-    // paranthesesTestClient();
+// 2. Sorting --- Start
+function selectionTest() {
+    let a = [1,4,2,3,5,7,8,6];
 
-    // execute_1_3_9_test_client();
-    // linkedListTestingClient();
-    // execute_1_3_30_Test_Client();
-    // stequeTestClient();
-    // dequeTestClient();
+    Selection.sort(a);
 
-    // josephusProblem(7, 2);
-    // copyAStackTestClient();
-
-    // moveToFrontTestClient();
-    // closestpairTestingClient();
-    // fartestPairTestingClient();
-
-    // const arr = [2, 6,3,1];
-    // console.log(arr);
-    // bitonicSearch(arr, 1);
-    // 1. Fundamentals--- End
-
-    
-})();
-
+    console.log(a);
+}
 
 
 
@@ -315,3 +354,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(5000, () => console.log("Listening to the 5000 port"));
+
+
+

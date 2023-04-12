@@ -1,0 +1,2 @@
+1. Sorting comparision is done based on number of exchange operation, comparision performed and read and write access in an array.
+2. Sorting are two type One that do inplace sorting, uses some constant memory, callstack and other is uses a copy of an array to sort the array.

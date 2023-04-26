@@ -12,7 +12,6 @@ export default class MergeSort_Top_Down {
                 const hi = Math.min((lo + sz + sz - 1), arr.length-1);
                 const mid = lo + sz-1;
                 // const mid = lo + Math.ceil((hi-lo)/2); const mid = lo + Math.floor((hi-lo)/2); // Wont work
-                // console.log(mid, mid1);
                 this.merge(arr, lo, mid, hi);
             }
             
@@ -57,11 +56,11 @@ export default class MergeSort_Top_Down {
         return a < b ? -1 : 1;
     }
 
-    static isSorted(arr, comp) {
+    static isSorted(arr, comparator = this.defaultComparator) {
         for (let i = 1; i < arr.length; i++) {
-            if (this.less(arr[i], arr[i-1], comp)) {
+            if (this.less(arr[i], arr[i-1], comparator)) {
                 return false;
-            }
+            }   
         }
         return true;
     }

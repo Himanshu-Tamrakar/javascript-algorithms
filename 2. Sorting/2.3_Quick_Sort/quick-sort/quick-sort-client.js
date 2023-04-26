@@ -1,7 +1,7 @@
-import MergeSort from "./merge_sort.js";
-import { StdRandom } from "../../../libs/index.js";
+import {StdRandom} from "../../../libs/index.js";
+import { QuickSort } from "./quick-sort.js";
 
-export default class MergeSortClient {
+export class QuickSortTestClient {
     static main() {
         const max = StdRandom.uniform(10, 100);
         const arr = [6,8,3,2,5, 6,7,4,23];
@@ -9,7 +9,7 @@ export default class MergeSortClient {
             arr[i] = Math.trunc(Math.random() * 1000)
         }
         const comp = (a, b) => b-a;
-        MergeSort.sort(arr, comp);
-        console.log('Is sorted', MergeSort.isSorted(arr, comp));
+        QuickSort.sort(arr, comp);
+        console.log('Is Sorted', QuickSort.isSorted(arr, comp));
     }
 }

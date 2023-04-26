@@ -27,6 +27,8 @@ import MergeSortClient from './2. Sorting/2.2_Merge_Sort/merge_sort_top_down/mer
 import MergeSort_Top_Down_Client from './2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
 import Example_2_2_9_Client from './2. Sorting/exersices/2.2.9.js';
 
+import { QuickSortTestClient } from './2. Sorting/2.3_Quick_Sort/quick-sort/quick-sort-client.js';
+import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_test_client.js';
 
 
 
@@ -69,8 +71,11 @@ import Example_2_2_9_Client from './2. Sorting/exersices/2.2.9.js';
 
     // MergeSortClient.main();
     // MergeSort_Top_Down_Client.main();
-    Example_2_2_9_Client.main();
+    // Example_2_2_9_Client.main();
     // 2. Sorting--- End
+
+    // QuickSortTestClient.main();
+    Quick3WayTest.main();
 
     
 })();

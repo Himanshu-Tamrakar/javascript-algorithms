@@ -53,11 +53,11 @@ export default class MergeSort {
         [a[i], a[j]] = [a[j], a[i]];
     }
 
-    static isSorted(arr, comp) {
+    static isSorted(arr, comparator = this.defaultComparator) {
         for (let i = 1; i < arr.length; i++) {
-            if (this.less(arr[i], arr[i-1], comp)) {
+            if (this.less(arr[i], arr[i-1], comparator)) {
                 return false;
-            }
+            }  
         }
         return true;
     }

@@ -29,7 +29,9 @@ import Example_2_2_9_Client from './2. Sorting/exersices/2.2.9.js';
 
 import { QuickSortTestClient } from './2. Sorting/2.3_Quick_Sort/quick-sort/quick-sort-client.js';
 import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_test_client.js';
-
+import {MaxPQClient} from './2. Sorting/2.4_Priority_Queue/max-priority-queue/max-priority-queue-client.js';
+import {MinPQClient} from './2. Sorting/2.4_Priority_Queue/min-priority-queue/min-priority-queue-client.js';
+import { HearSortClient } from './2. Sorting/2.4_Priority_Queue/heap-sort/heap-sort-client.js';
 
 
 // 2. Sorting --- End
@@ -75,8 +77,13 @@ import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_tes
     // 2. Sorting--- End
 
     // QuickSortTestClient.main();
-    Quick3WayTest.main();
+    // Quick3WayTest.main();
 
+
+    // 3. Priority Queue--Start 
+    // MaxPQClient.main();
+    // MinPQClient.main();
+    HearSortClient.main();
     
 })();
 

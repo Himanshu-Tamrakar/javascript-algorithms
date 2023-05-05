@@ -1,6 +1,7 @@
-import { defaultComparator, compare } from "./comparator.js";
+import { defaultComparator, compare, equals } from "./comparator.js";
 
 export {
     defaultComparator,
-    compare
+    compare, 
+    equals
 }

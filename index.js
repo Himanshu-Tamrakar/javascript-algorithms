@@ -1,5 +1,6 @@
 import express from 'express';
 
+
 import Evaluate from './1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
 import Stack_Link_List from './1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
 import Bag from './1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js';
@@ -32,8 +33,8 @@ import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_tes
 import {MaxPQClient} from './2. Sorting/2.4_Priority_Queue/max-priority-queue/max-priority-queue-client.js';
 import {MinPQClient} from './2. Sorting/2.4_Priority_Queue/min-priority-queue/min-priority-queue-client.js';
 import { HearSortClient } from './2. Sorting/2.4_Priority_Queue/heap-sort/heap-sort-client.js';
-
-
+import { SequencialSTClient } from './3.Searching/3.1 Symbol Table/SequencialST/sequencial-st-client.js';
+import { In } from './libs/index.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -83,7 +84,13 @@ import { HearSortClient } from './2. Sorting/2.4_Priority_Queue/heap-sort/heap-s
     // 3. Priority Queue--Start 
     // MaxPQClient.main();
     // MinPQClient.main();
-    HearSortClient.main();
+    // HearSortClient.main();
+
+
+
+    // 2. Searching
+
+    // SequencialSTClient.main();
     
 })();
 

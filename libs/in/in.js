@@ -1,5 +1,8 @@
-const path = require('path')
-const fs = require('fs')
+// const path = require('path')
+// const fs = require('fs')
+
+import fs from 'fs';
+import path from 'path';
 
 /**
  * Parses a line to Integer.
@@ -57,4 +60,4 @@ class In {
   }
 }
 
-module.exports = In
+export {In}

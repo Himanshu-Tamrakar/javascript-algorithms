@@ -47,4 +47,17 @@ function compare(a, b) {
     return defaultComparator(a, b);
 }
 
-export { defaultComparator, compare };
+
+/**
+ * Default equals method
+ * @param {*} Comparable object a
+ * @param {*} Comparable object b
+ * @returns {boolean}
+ *  returns `true when a and b are equal to` 
+ *  returns `false when a and b are not equal`
+ */
+function equals(a, b) {
+    return compare(a, b) === 0;
+}
+
+export { defaultComparator, compare, equals };

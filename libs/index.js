@@ -8,9 +8,9 @@
 // }
 
 import { StdRandom } from './std-random/std-random.js';
-// import { In } from './in/in.js';
-// import { }
+import { In } from './in/in.js';
 
 export {
-  StdRandom
+  StdRandom,
+  In
 }

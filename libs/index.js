@@ -9,8 +9,11 @@
 
 import { StdRandom } from './std-random/std-random.js';
 import { In } from './in/in.js';
-
+import { StdIn } from './std-in/std-in.js';
+import { StdOut } from './std-out/std-out.js';
 export {
   StdRandom,
-  In
+  In,
+  StdIn,
+  StdOut
 }

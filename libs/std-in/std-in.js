@@ -1,5 +1,7 @@
-const assert = require('assert')
-const readline = require('readline')
+// const assert = require('assert')
+// const readline = require('readline')
+import assert from 'assert';
+import readline from 'readline';
 
 let reader = null
 
@@ -35,4 +37,5 @@ class StdIn {
   }
 }
 
-module.exports = StdIn
+export {StdIn}
+// module.exports = StdIn

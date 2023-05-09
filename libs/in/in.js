@@ -34,6 +34,22 @@ class In {
   }
 
   /**
+   * Parse the file's content and array of strings separated bt new lines and whitespaces
+   * @returns{array} array of string
+   */
+  readAllString() {
+    let words;
+    if (!this._isArrayOfStrings) {
+      words = this.content.split(/[\n\r\s]/)
+      this._isArrayOfStrings = true
+    }
+
+    if (this.isEmpty()) throw new ReferenceError(`stream ${this.fileName} is empty`)
+
+    return words;
+  }
+
+  /**
    * Parses the file's content to and
    * array of strings separated by new lines and whitespace,
    * then, it returns the first element of the array.

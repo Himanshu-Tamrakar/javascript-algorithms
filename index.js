@@ -33,8 +33,14 @@ import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_tes
 import {MaxPQClient} from './2. Sorting/2.4_Priority_Queue/max-priority-queue/max-priority-queue-client.js';
 import {MinPQClient} from './2. Sorting/2.4_Priority_Queue/min-priority-queue/min-priority-queue-client.js';
 import { HearSortClient } from './2. Sorting/2.4_Priority_Queue/heap-sort/heap-sort-client.js';
-import { SequencialSTClient } from './3.Searching/3.1 Symbol Table/SequencialST/sequencial-st-client.js';
+import { SequencialSTClient } from './3.Searching/3.1_Symbol Table/SequencialST/sequencial-st-client.js';
 import { In } from './libs/index.js';
+import { StdIn } from './libs/index.js';
+
+import { pad } from './utils/index.js'
+import { StdOut } from './libs/index.js';
+
+import { BinarySeachStClient } from './3.Searching/3.1_Symbol Table/BinarySearchST/binary-search-st-client.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -91,6 +97,19 @@ import { In } from './libs/index.js';
     // 2. Searching
 
     // SequencialSTClient.main();
+    BinarySeachStClient.main();    
+
+    // StdIn.read()
+    //   .on('line', line => {
+    //     const lineSplit = line.split(/\s+/) // by at least 1 whitespace
+    //     const name = lineSplit[0]
+    //     const n1 = parseInt(lineSplit[1], 10)
+    //     const n2 = parseInt(lineSplit[2], 10)
+    //     const n3 = n1 / n2
+
+    //     // NOTE: JAVA format "%-10s %5d %5d %-5s %3.3f\n" (whitespace may vary)
+    //     StdOut.printf('%s %s %s %s\n', pad(name, -10), pad(n1, 2), pad(n2, 5), pad(n3.toFixed(3), 8))
+    //   })
     
 })();
 

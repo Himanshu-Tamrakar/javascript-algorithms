@@ -1,4 +1,5 @@
-const format = require('util').format
+
+import { format } from 'util'
 
 /**
  * StdOut
@@ -24,4 +25,4 @@ class StdOut {
   }
 }
 
-module.exports = StdOut
+export {StdOut}

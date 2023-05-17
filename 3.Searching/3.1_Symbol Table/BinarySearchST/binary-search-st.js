@@ -39,6 +39,12 @@ BinarySeachSt.prototype.rank_recursive = function (key, lo, hi) {
 }
 
 BinarySeachSt.prototype.put = function (key, val) {
+    if (key == null) {
+        throw new TypeError('argument to get() can not be null');
+    }
+    if (val == null) {
+        this.delete(key);
+    }
     let pos = this.rank(key, 0, this.keys1.length - 1);
 
     if (equals(this.keys1[pos], key)) {
@@ -81,23 +87,6 @@ BinarySeachSt.prototype.contains = function (key) {
     }
 
     return this.get(key) != null;
-}
-
-BinarySeachSt.prototype.keys = function () {
-    let i = 0;
-    let N = this.N;
-    let keys = this.keys1;
-    return {
-            [Symbol.iterator]() {return this},
-            next() {
-                if (i < N) return {value: keys[i++], done: false};
-                else return {value: null, done: true};
-            },
-            return(v) {
-                return {value: v, done: true};
-            }
-    
-        }
 }
 
 BinarySeachSt.prototype.min = function() {
@@ -211,6 +200,23 @@ BinarySeachSt.prototype.delMax = function() {
     }
 
     this.delete(this.max());
+}
+
+BinarySeachSt.prototype.keys = function () {
+    let i = 0;
+    let N = this.N;
+    let keys = this.keys1;
+    return {
+            [Symbol.iterator]() {return this},
+            next() {
+                if (i < N) return {value: keys[i++], done: false};
+                else return {value: null, done: true};
+            },
+            return(v) {
+                return {value: v, done: true};
+            }
+    
+        }
 }
 
 BinarySeachSt.prototype[Symbol.iterator] = function() {

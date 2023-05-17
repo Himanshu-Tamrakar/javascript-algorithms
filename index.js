@@ -41,6 +41,7 @@ import { pad } from './utils/index.js'
 import { StdOut } from './libs/index.js';
 
 import { BinarySeachStClient } from './3.Searching/3.1_Symbol Table/BinarySearchST/binary-search-st-client.js';
+import {BSTClient} from './3.Searching/3.2 Binary Seach Trees/BST_client.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -97,7 +98,8 @@ import { BinarySeachStClient } from './3.Searching/3.1_Symbol Table/BinarySearch
     // 2. Searching
 
     // SequencialSTClient.main();
-    BinarySeachStClient.main();    
+    // BinarySeachStClient.main(); 
+    BSTClient.main();
 
     // StdIn.read()
     //   .on('line', line => {

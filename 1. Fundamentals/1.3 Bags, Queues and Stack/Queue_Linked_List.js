@@ -1,3 +1,4 @@
+// IMprovements: this.last key is pointing to last item after last item deletion
 function Node() {
     this.item;
     this.next;

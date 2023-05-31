@@ -1,4 +1,5 @@
 import { equals } from "../../../common/index.js";
+import Queue_Linked_List from '../../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
 
 class Node {
     constructor(key, value, next) {
@@ -120,36 +121,55 @@ export class SequencialST {
         return max;
     }
 
-    floor(key) {}
+    floor(key) {
+        throw new Error('floor not implemented. User Ordered Sysmbol Table instead');
+    }
 
-    ceiling(key) {}
+    ceiling(key) {
+        throw new Error('floor not implemented. User Ordered Sysmbol Table instead');
+    }
 
-    rank(key) {}
+    rank(key) {
+        throw new Error('floor not implemented. User Ordered Sysmbol Table instead');
+    }
 
-    select(k) {}
+    select(k) {
+        throw new Error('floor not implemented. User Ordered Sysmbol Table instead');
+    }
 
-    deleteMin() {}
+    deleteMin() {
+        throw new Error('floor not implemented. User Ordered Sysmbol Table instead');
+    }
 
-    deleteMax() {}
+    deleteMax() {
+        throw new Error('floor not implemented. User Ordered Sysmbol Table instead');
+    }
 
     // size(lo, hi) {}
 
     keys() {
         let node = this.first;
-        return {
-            [Symbol.iterator]() {return this;},
-            next() {
-                if (!node) {
-                    return {value: null, done: true};
-                }
-                let item = {value: node.key, done: false};
-                node = node.next;
-                return item;
-            },
-            return(v) {
-                return {value: v, done: true};
-            }
+        const queue = new Queue_Linked_List()
+
+        while(node) {
+            queue.enqueue(node.key);
+            node = node.next;
         }
+        return queue;
+        // return {
+        //     [Symbol.iterator]() {return this;},
+        //     next() {
+        //         if (!node) {
+        //             return {value: null, done: true};
+        //         }
+        //         let item = {value: node.key, done: false};
+        //         node = node.next;
+        //         return item;
+        //     },
+        //     return(v) {
+        //         return {value: v, done: true};
+        //     }
+        // }
     }
 
     [Symbol.iterator]() {

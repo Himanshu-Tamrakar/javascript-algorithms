@@ -8,6 +8,25 @@ function Bag() {
     this.first = null;
 }
 
+/**
+ * Returns true if this bag is empty.
+ *
+ * @return {@code true} if this bag is empty;
+ *         {@code false} otherwise
+ */
+Bag.prototype.isEmpty = function() {
+    return this.N === 0;
+}
+/**
+ * Returns the number of items in this bag.
+ *
+ * @return the number of items in this bag
+ */
+Bag.prototype.size = function() {
+    return this.N;
+}
+
+
 Bag.prototype.add = function(item) {
     let oldenode = this.first;
     this.first = new Node();

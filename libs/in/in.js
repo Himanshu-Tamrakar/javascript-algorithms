@@ -49,6 +49,8 @@ class In {
     return words;
   }
 
+
+
   /**
    * Parses the file's content to and
    * array of strings separated by new lines and whitespace,
@@ -65,6 +67,14 @@ class In {
     const string = this.content.shift()
 
     return string
+  }
+
+  /**
+   * 
+   * @returns Returns the raw content of a file
+   */
+  readRawString() {
+    return this.content;
   }
 
   /**

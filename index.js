@@ -42,6 +42,11 @@ import { StdOut } from './libs/index.js';
 
 import { BinarySeachStClient } from './3.Searching/3.1_Symbol Table/BinarySearchST/binary-search-st-client.js';
 import {BSTClient} from './3.Searching/3.2 Binary Seach Trees/BST_client.js';
+import { SeparateChaningHashSTClient } from './3.Searching/3.4 Hash Table/separate-chaning-hash-table/SeparateChaningHashSTClient.js';
+import { LinearProbingHashSTClient } from './3.Searching/3.4 Hash Table/linear-probing-hash-table/LinearProbingHashSTClient.js';
+import { QuickFindUFClient } from './1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
+import {QuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
+import {WeightedQuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -68,6 +73,11 @@ import {BSTClient} from './3.Searching/3.2 Binary Seach Trees/BST_client.js';
     // const arr = [2, 6,3,1];
     // console.log(arr);
     // bitonicSearch(arr, 1);
+    // QuickFindUFClient.main();
+    // QuickUnionUFClient.main();
+    WeightedQuickUnionUFClient.main();
+
+
     // 1. Fundamentals--- End
 
 
@@ -99,7 +109,12 @@ import {BSTClient} from './3.Searching/3.2 Binary Seach Trees/BST_client.js';
 
     // SequencialSTClient.main();
     // BinarySeachStClient.main(); 
-    BSTClient.main();
+    // BSTClient.main();
+
+    // SeparateChaningHashSTClient.main();
+    // LinearProbingHashSTClient.main();
+
+
 
     // StdIn.read()
     //   .on('line', line => {

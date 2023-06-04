@@ -42,4 +42,22 @@ Queue_Linked_List.prototype.isEmpty = function() {
     return this.N === 0 ? true : false;
 }
 
+Queue_Linked_List.prototype[Symbol.iterator] = function() {
+    let first = this.first;
+    return {
+        next: () => {
+            if (first != null) {
+                const item = first.item;
+                first = first.next;
+                return { value: item, done: false };
+            } else {
+                return {value: null, done: true};
+            }
+        },
+        return: (v) => {
+            return {value: v, done: true};
+        }
+    }
+}
+
 export default Queue_Linked_List;

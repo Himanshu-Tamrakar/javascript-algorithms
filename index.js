@@ -47,6 +47,13 @@ import { LinearProbingHashSTClient } from './3.Searching/3.4 Hash Table/linear-p
 import { QuickFindUFClient } from './1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
 import {QuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
 import {WeightedQuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
+import {GraphClient} from './4. Graphs/4.1 Undirected Graphs/graph-client.js';
+import { DepthFirstSearch } from './4. Graphs/4.1 Undirected Graphs/depth-first-search.js';
+import {DepthFirstPaths} from './4. Graphs/4.1 Undirected Graphs/depth-first-paths.js';
+import {BreadthFirstPaths} from './4. Graphs/4.1 Undirected Graphs/breadth-first-paths.js';
+import { CC } from './4. Graphs/4.1 Undirected Graphs/CC.js';
+import {Cycle} from './4. Graphs/4.1 Undirected Graphs/cycle.js';
+import {SymbolGraph} from './4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -75,7 +82,7 @@ import {WeightedQuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/weigh
     // bitonicSearch(arr, 1);
     // QuickFindUFClient.main();
     // QuickUnionUFClient.main();
-    WeightedQuickUnionUFClient.main();
+    // WeightedQuickUnionUFClient.main();
 
 
     // 1. Fundamentals--- End
@@ -115,6 +122,17 @@ import {WeightedQuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/weigh
     // LinearProbingHashSTClient.main();
 
 
+
+    // GraphClient.main();
+    // DepthFirstSearch.main();
+    // DepthFirstPaths.main();
+    // console.log('------------------')
+    // BreadthFirstPaths.main();
+
+    // CC.main();
+
+    // Cycle.main();
+    SymbolGraph.main();
 
     // StdIn.read()
     //   .on('line', line => {

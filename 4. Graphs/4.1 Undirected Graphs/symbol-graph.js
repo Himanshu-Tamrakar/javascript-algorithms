@@ -14,12 +14,11 @@ export class SymbolGraph {
         
         // Smbol table initialization
         rows.forEach(row => {
-            const a = row.split(delimeter);
-            for (let i = 0; i < a.length; i++) {
-                if (!this.st.contains(a[i])) {
-                    this.st.put(a[i],  this.st.size());
-                }
-            }
+            const cols = row.split(delimeter);
+            cols.forEach(key => {
+                if (!this.st.contains(key))
+                    this.st.put(key, this.st.size());
+            })
         });
 
         // Keys initialization
@@ -31,9 +30,14 @@ export class SymbolGraph {
         // Graph initialization
         const G = new Graph(this.st.size());
         rows.forEach(row => {
-            const [v, w] = row.split(delimeter);
-            G.addEdge(this.st.get(v), this.st.get(w));
+            const cols = row.split(delimeter);
+            const v = cols.shift();
+
+            for (const w of cols) {
+                G.addEdge(this.st.get(v), this.st.get(w));
+            }
         });
+        
         this._graph = G;
     }
 
@@ -51,7 +55,6 @@ export class SymbolGraph {
      * @param s the name of a vertex
      * @return the integer (between 0 and <em>V</em> - 1) associated with the vertex named {@code s}
      * @deprecated Replaced by {@link #indexOf(String)}.
-     * @Deprecated
      */
     index(s) {
         return this.st.get(s);
@@ -72,7 +75,6 @@ export class SymbolGraph {
      * @return the name of the vertex associated with the integer {@code v}
      * @throws ReferenceError unless {@code 0 <= v < V}
      * @deprecated Replaced by {@link #nameOf(int)}.
-     * @Deprecated
      */
     name(v) {
         this.validateVertex(v);
@@ -95,7 +97,6 @@ export class SymbolGraph {
      * not to mutate the graph.
      * @return the graph associated with the symbol graph
      * @deprecated Replaced by {@link #graph()}.
-     * @Deprecated
      */
     G() {
         return this._graph;

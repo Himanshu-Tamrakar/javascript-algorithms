@@ -54,6 +54,19 @@ import {BreadthFirstPaths} from './4. Graphs/4.1 Undirected Graphs/breadth-first
 import { CC } from './4. Graphs/4.1 Undirected Graphs/CC.js';
 import {Cycle} from './4. Graphs/4.1 Undirected Graphs/cycle.js';
 import {SymbolGraph} from './4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
+import { Digraph } from './4. Graphs/4.2Directed Graphs/Digraph.js';
+import { DirectedDFS } from './4. Graphs/4.2Directed Graphs/DirectedDFS.js';
+import { DepthFirstDirectedPaths } from './4. Graphs/4.2Directed Graphs/depth-first-directed-paths.js';
+import { BreadthFirstDirectedPaths } from './4. Graphs/4.2Directed Graphs/breadth-first-directed-paths.js';
+import { DirectedCycle } from './4. Graphs/4.2Directed Graphs/directed-cycle.js';
+import { SysmbolDigraph } from './4. Graphs/4.2Directed Graphs/SymbolDigraph.js';
+import { Topological } from './4. Graphs/4.2Directed Graphs/topological.js';
+import { KosarajuSharirSCC } from './4. Graphs/4.2Directed Graphs/KosarajuSharirSCC.js';
+import { TransitiveClosure } from './4. Graphs/4.2Directed Graphs/TransitiveClosure.js';
+import { Edge } from './4. Graphs/4.3 Minimum Spanning Tree/Edge.js';
+import { EdgeWeightedGraph } from './4. Graphs/4.3 Minimum Spanning Tree/EdgeWeightedGraph.js';
+import { LazyPrimMST } from './4. Graphs/4.3 Minimum Spanning Tree/LazyPrimSMT.js';
+import { KrushkalMST } from './4. Graphs/4.3 Minimum Spanning Tree/KrushkalMST.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -128,11 +141,24 @@ import {SymbolGraph} from './4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
     // DepthFirstPaths.main();
     // console.log('------------------')
     // BreadthFirstPaths.main();
-
     // CC.main();
-
     // Cycle.main();
-    SymbolGraph.main();
+    // SymbolGraph.main();
+    // Topological.main();
+    // KosarajuSharirSCC.main();
+    // TransitiveClosure.main();
+
+    // Edge.main();
+    // EdgeWeightedGraph.main();
+    LazyPrimMST.main();
+    // KrushkalMST.main();
+
+    // Digraph.main();
+    // DirectedDFS.main();
+    // DepthFirstDirectedPaths.main();
+    // BreadthFirstDirectedPaths.main();
+    // DirectedCycle.main()
+    // SysmbolDigraph.main();
 
     // StdIn.read()
     //   .on('line', line => {

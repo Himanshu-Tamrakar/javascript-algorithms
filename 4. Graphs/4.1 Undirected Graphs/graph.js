@@ -20,9 +20,9 @@ export class Graph {
         if (typeof input === 'object') {
             const rows = input.readRawString().split('\n');
             this._V = parseInt(rows.shift());
-            if (this._V < 0) throw new IllegalArgumentException("number of vertices in a Graph must be non-negative");
+            if (this._V < 0) throw new TypeError("number of vertices in a Graph must be non-negative");
             this._E = parseInt(rows.shift());
-            if (this._E < 0) throw new IllegalArgumentException("number of edges in a Graph must be non-negative");
+            if (this._E < 0) throw new TypeError("number of edges in a Graph must be non-negative");
             // this._adj = Array(this._V).fill(new Bag());
             this._adj = new Array(this._V);
             for (let i = 0; i < this._V; i++) {

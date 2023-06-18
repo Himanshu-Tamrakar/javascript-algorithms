@@ -1,6 +1,6 @@
-import Queue_Linked_List from "../../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
-import { compare, hashCode,equals } from "../../../common/index.js";
-
+import Queue_Linked_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { compare, hashCode,equals } from "../../common/index.js";
+import { In, StdOut } from "../../libs/index.js";
 // NOTE:
 // Atleast m/8 should be filled after delete
 // Atleast m/2 should be empty after insersion
@@ -198,4 +198,25 @@ export class LinearProbingHashST {
         }
         return queue;
     }
+
+    static main() {
+        let file = new In('assets/tinyTale.txt');
+        const words = file.readAllString();
+        const st = new LinearProbingHashST();
+  
+        words.forEach(word => {
+           let init_val = 1;
+           if(st.contains(word)) {
+              init_val = st.get(word) + 1;
+           }
+  
+           st.put(word, init_val);
+        });
+  
+        const queue = st.keys();
+        while(!queue.isEmpty()) {
+           const key = queue.dequeue();
+           StdOut.printf('Key: %s, value: %d \n', key, st.get(key));
+        }
+     }  
 }

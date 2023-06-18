@@ -1,5 +1,6 @@
 import Queue_Linked_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
 import { compare } from "../../common/index.js";
+import { StdIn, StdOut, In, StdRandom } from "../../libs/index.js";
 class Node {
     constructor(key, value, left, right, size) {
         this.key = key;
@@ -270,7 +271,7 @@ export class BST {
 
     keys() {
         const queue = new Queue_Linked_List();
-        this._keys(this.root, queue, this._min(this.root).key, this._max(this.root).key);
+        this._keys(this.root, queue, this.min(), this.max());
         return queue;
     }
     _keys(node, queue, lo, hi) {
@@ -295,5 +296,68 @@ export class BST {
                 return {value: v, done: true}
             }
         }
+    }
+
+
+    static main() {
+        console.log('Enter size of word');
+        StdIn.read()
+            .on('line', line => {
+                const lineSplit = line.split(/\s+/);
+                const len = parseInt(lineSplit[0]);
+                let file = new In('assets/tinyTale.txt');
+                const st = new BST();
+                const words = file.readAllString();
+
+
+                for (let i = 0; i < words.length; i++) {
+                    const word = words[i];
+
+                    if (word.length < len) continue;
+
+                    if (!st.contains(word)) st.put(word, 1);
+                    else st.put(word, st.get(word) + 1);
+                }
+
+              
+
+                console.log('Printing all the keys');
+                let res = '';
+                for (const key of st) {
+                    res += key + ', ';
+                }
+                console.log(res);
+
+                console.log('Minimum is: %s', st.min());
+                console.log('Maximum is: %s', st.max());
+                console.log('Deleting Minimum, maximum');
+                try {
+                    st.delMin();
+                    st.delMax();
+
+                } catch(err) {
+                    console.log(err.message);
+                };
+                console.log('Minimum is: %s', st.min());
+                console.log('Maximum is: %s', st.max());
+
+                console.log('Printing all keys');
+                res = '';
+                for (const key of st) {
+                    res += key + ', ';
+                }
+                console.log(res);
+
+
+                let max = '';
+                st.put(max, 0);
+                const queue = st.keys();
+                while(!queue.isEmpty()) {
+                    const word = queue.dequeue();
+                    if (st.get(word) > st.get(max)) max = word;
+                }
+
+                StdOut.printf('Maximum count word is: %s and frequency is: %d', max, st.get(max));
+            });
     }
 }

@@ -1,4 +1,5 @@
-import {compare, equals} from "../../../common/index.js";
+import {compare, equals} from "../../common/index.js";
+import {In, StdIn, StdOut, StdRandom} from "../../libs/index.js";
 
 export function BinarySeachSt() {
     this.keys1 = [];
@@ -91,17 +92,15 @@ BinarySeachSt.prototype.contains = function (key) {
 
 BinarySeachSt.prototype.min = function() {
     if (this.isEmpty()) {
-        throw new ReferenceError('symbol table underflow error');
+        return null;
     }
-
     return this.keys1[0];
 }
 
 BinarySeachSt.prototype.max = function() {
     if (this.isEmpty()) {
-        throw new ReferenceError('symbol table underflow error');
+        return null;
     }
-
     return this.keys1[this.N-1];
 }
 
@@ -233,4 +232,66 @@ BinarySeachSt.prototype[Symbol.iterator] = function() {
             }
     
         }
+}
+
+BinarySeachSt.main = function() {
+    console.log('Enter word length: ');
+    StdIn.read()
+        .on('line', line => {
+            const lineSplit = line.split(/\s+/);
+            const len = parseInt(lineSplit[0]);
+            let file = new In('assets/tinyTale.txt');
+            const st = new BinarySeachSt();
+            const words = file.readAllString();
+
+
+            for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+
+                if (word.length < len) continue;
+
+                if (!st.contains(word)) st.put(word, 1);
+                else st.put(word, st.get(word) + 1);
+            }
+
+          
+
+            console.log('Printing all the keys');
+            let res = '';
+            for (const key of st) {
+                res += key + ', ';``
+            }
+            console.log(res);
+
+            console.log('Minimum is: %s', st.min());
+            console.log('Maximum is: %s', st.max());
+            console.log('Deleting Minimum, maximum');
+            try {
+                st.delMin();
+                st.delMax();
+            } catch(err) {
+                console.log(err.message);
+            }
+            console.log('Minimum is: %s', st.min());
+            console.log('Maximum is: %s', st.max());
+
+            console.log('Printing all keys');
+            res = '';
+            for (const key of st) {
+                res += key + ', ';
+            }
+            console.log(res);
+
+
+            let max = '';
+            st.put(max, 0);
+            for (const word of st.keys()) {
+                if (st.get(word) > st.get(max)) max = word;
+            }
+            StdOut.printf('Maximum count word is: %s and frequency is: %d', max, st.get(max));
+        })
+
+
+
+
 }

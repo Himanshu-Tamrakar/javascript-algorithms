@@ -1,18 +1,17 @@
-import { SeparateChaningHashST } from "../../3.Searching/3.4 Hash Table/SeparteChaningHashST.js";
-import { Graph } from "./graph.js";
+import {SeparateChaningHashST} from "../../3.Searching/3.4 Hash Table/SeparteChaningHashST.js";
+import { Digraph } from "./Digraph.js";
 import { In, StdOut } from "../../libs/index.js";
 
-export class SymbolGraph {
-    st; // String -> int
-    keys; // int -> string
-    _graph;
+export class SysmbolDigraph {
+    st; // Keys to index
+    keys; // Index to key
+    _digraph;
 
-    constructor(filename,  delimeter) {
+    constructor(filename, delimeter) {
         this.st = new SeparateChaningHashST();
         const _in = new In(filename);
         const rows = _in.readRawString().split('\n');
-        
-        // Smbol table initialization
+
         rows.forEach(row => {
             const cols = row.split(delimeter);
             cols.forEach(key => {
@@ -21,28 +20,26 @@ export class SymbolGraph {
             })
         });
 
-        // Keys initialization
         this.keys = new Array(this.st.size());
         for (const key of this.st.keys()) {
-            this.keys[this.st.get(key)] = key;
+            this.keys[this.st.get(key)] = key;   
         }
 
-        // Graph initialization
-        const G = new Graph(this.st.size());
+        const  G = new Digraph(this.st.size());
         rows.forEach(row => {
             const cols = row.split(delimeter);
-            const v = cols.shift();
+            const v = this.st.get(cols.shift());
 
             for (const w of cols) {
-                G.addEdge(this.st.get(v), this.st.get(w));
+                G.addEdge(v, this.st.get(w));
             }
-        });
-        
-        this._graph = G;
+        })
+
+        this._digraph = G;
     }
 
     /**
-     * Does the graph contain the vertex named {@code s}?
+     * Does the digraph contain the vertex named {@code s}?
      * @param s the name of a vertex
      * @return {@code true} if {@code s} is the name of a vertex, and {@code false} otherwise
      */
@@ -99,7 +96,7 @@ export class SymbolGraph {
      * @deprecated Replaced by {@link #graph()}.
      */
     G() {
-        return this._graph;
+        return this._digraph;
     }
 
     /**
@@ -108,32 +105,32 @@ export class SymbolGraph {
      * @return the graph associated with the symbol graph
      */
     graph() {
-        return this._graph;
+        return this._digraph;
     }
 
     // throw an ReferenceError unless {@code 0 <= v < V}
     validateVertex(v) {
-        const V = this._graph.V();
+        const V = this._digraph.V();
         if (v < 0 || v >= V)
             throw new ReferenceError("vertex " + v + " is not between 0 and " + (V-1));
     }
 
     static main() {
-        const filepath = 'assets/routes.txt';
-        const delimeter = ' '; 
-        const sg = new SymbolGraph(filepath, delimeter);
-        const graph = sg.graph();
+        const filepath = 'assets/jobs.txt';
+        const delimeter = '/'; 
+        const sdg = new SysmbolDigraph(filepath, delimeter);
+        const graph = sdg.graph();
 
         const V = graph.V();
         
         for (let i = 0; i < V; i++) {
-            const key = sg.nameOf(i);
-            const v = sg.indexOf(key);
+            const key = sdg.nameOf(i);
+            const v = sdg.indexOf(key);
 
             StdOut.println(key + ":");
 
             for (const w of graph.adj(v)) {
-                StdOut.println("    %s", sg.nameOf(w));
+                StdOut.println("    %s", sdg.nameOf(w));
             }
 
             StdOut.println();
@@ -141,24 +138,6 @@ export class SymbolGraph {
         }
 
     }
+
+
 }
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 

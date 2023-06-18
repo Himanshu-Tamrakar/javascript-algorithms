@@ -1,6 +1,7 @@
-import { SequencialST } from "../../3.1_Symbol Table/SequencialST/sequencial-st.js";
-import { hashCode } from "../../../common/hash.js";
-import Queue_Linked_List from '../../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { SequencialST } from "../3.1_Symbol Table/sequencial-st.js";
+import { hashCode } from "../../common/hash.js";
+import Queue_Linked_List from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { In, StdOut } from "../../libs/index.js";
 
 export class SeparateChaningHashST {
     static INIT_CAPACITY = 4;
@@ -172,4 +173,25 @@ export class SeparateChaningHashST {
         });
         return queue;
     }
+
+    static main() {
+        let file = new In('assets/tinyTale.txt');
+        const words = file.readAllString();
+        const st = new SeparateChaningHashST();
+  
+        words.forEach(word => {
+           let init_val = 1;
+           if(st.contains(word)) {
+              init_val = st.get(word) + 1;
+           }
+  
+           st.put(word, init_val);
+        });
+  
+        const queue = st.keys();
+        while(!queue.isEmpty()) {
+           const key = queue.dequeue();
+           StdOut.printf('Key: %s, value: %d \n', key, st.get(key));
+        }
+     }   
 }

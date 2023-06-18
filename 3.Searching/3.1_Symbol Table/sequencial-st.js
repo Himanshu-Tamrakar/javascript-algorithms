@@ -1,5 +1,6 @@
-import { equals } from "../../../common/index.js";
-import Queue_Linked_List from '../../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { equals } from "../../common/index.js";
+import Queue_Linked_List from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { StdRandom } from "../../libs/index.js";
 
 class Node {
     constructor(key, value, next) {
@@ -186,6 +187,22 @@ export class SequencialST {
             return(v) {
                 return {value: v, done: true}
             }
+        }
+    }
+
+    static main() {
+        const n = StdRandom.uniform(10, 50);
+        const keys = 'QWERTYUIOPLKJHGFDSAZXCVBNM'.split('');
+
+        const st = new SequencialST();
+
+        for (let i = 0; i < keys.length; i++) {
+            st.put(keys[i], i);
+            
+        }
+
+        for (const key of st) {
+            console.log(key, ' : ', st.get(key));
         }
     }
 

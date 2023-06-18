@@ -30,30 +30,31 @@ import Example_2_2_9_Client from './2. Sorting/exersices/2.2.9.js';
 
 import { QuickSortTestClient } from './2. Sorting/2.3_Quick_Sort/quick-sort/quick-sort-client.js';
 import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_test_client.js';
-import {MaxPQClient} from './2. Sorting/2.4_Priority_Queue/max-priority-queue/max-priority-queue-client.js';
-import {MinPQClient} from './2. Sorting/2.4_Priority_Queue/min-priority-queue/min-priority-queue-client.js';
+import { MaxPQClient } from './2. Sorting/2.4_Priority_Queue/max-priority-queue/max-priority-queue-client.js';
+import { MinPQClient } from './2. Sorting/2.4_Priority_Queue/min-priority-queue/min-priority-queue-client.js';
 import { HearSortClient } from './2. Sorting/2.4_Priority_Queue/heap-sort/heap-sort-client.js';
-import { SequencialSTClient } from './3.Searching/3.1_Symbol Table/SequencialST/sequencial-st-client.js';
+import { SequencialST } from './3.Searching/3.1_Symbol Table/sequencial-st.js';
 import { In } from './libs/index.js';
 import { StdIn } from './libs/index.js';
 
 import { pad } from './utils/index.js'
 import { StdOut } from './libs/index.js';
 
-import { BinarySeachStClient } from './3.Searching/3.1_Symbol Table/BinarySearchST/binary-search-st-client.js';
-import {BSTClient} from './3.Searching/3.2 Binary Seach Trees/BST_client.js';
-import { SeparateChaningHashSTClient } from './3.Searching/3.4 Hash Table/separate-chaning-hash-table/SeparateChaningHashSTClient.js';
-import { LinearProbingHashSTClient } from './3.Searching/3.4 Hash Table/linear-probing-hash-table/LinearProbingHashSTClient.js';
+
+import { BinarySeachSt } from './3.Searching/3.1_Symbol Table/binary-search-st.js';
+import { BST } from './3.Searching/3.2 Binary Seach Trees/BST.js';
+import { LinearProbingHashST } from './3.Searching/3.4 Hash Table/LinearProbingHashST.js';
+import { SeparateChaningHashST } from './3.Searching/3.4 Hash Table/SeparteChaningHashST.js';
 import { QuickFindUFClient } from './1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
-import {QuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
-import {WeightedQuickUnionUFClient} from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
-import {GraphClient} from './4. Graphs/4.1 Undirected Graphs/graph-client.js';
+import { QuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
+import { WeightedQuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
+import { GraphClient } from './4. Graphs/4.1 Undirected Graphs/graph-client.js';
 import { DepthFirstSearch } from './4. Graphs/4.1 Undirected Graphs/depth-first-search.js';
-import {DepthFirstPaths} from './4. Graphs/4.1 Undirected Graphs/depth-first-paths.js';
-import {BreadthFirstPaths} from './4. Graphs/4.1 Undirected Graphs/breadth-first-paths.js';
+import { DepthFirstPaths } from './4. Graphs/4.1 Undirected Graphs/depth-first-paths.js';
+import { BreadthFirstPaths } from './4. Graphs/4.1 Undirected Graphs/breadth-first-paths.js';
 import { CC } from './4. Graphs/4.1 Undirected Graphs/CC.js';
-import {Cycle} from './4. Graphs/4.1 Undirected Graphs/cycle.js';
-import {SymbolGraph} from './4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
+import { Cycle } from './4. Graphs/4.1 Undirected Graphs/cycle.js';
+import { SymbolGraph } from './4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
 import { Digraph } from './4. Graphs/4.2Directed Graphs/Digraph.js';
 import { DirectedDFS } from './4. Graphs/4.2Directed Graphs/DirectedDFS.js';
 import { DepthFirstDirectedPaths } from './4. Graphs/4.2Directed Graphs/depth-first-directed-paths.js';
@@ -67,6 +68,8 @@ import { Edge } from './4. Graphs/4.3 Minimum Spanning Tree/Edge.js';
 import { EdgeWeightedGraph } from './4. Graphs/4.3 Minimum Spanning Tree/EdgeWeightedGraph.js';
 import { LazyPrimMST } from './4. Graphs/4.3 Minimum Spanning Tree/LazyPrimSMT.js';
 import { KrushkalMST } from './4. Graphs/4.3 Minimum Spanning Tree/KrushkalMST.js';
+import { DirectedEdge } from './4. Graphs/4.4 Shortest Paths/DirectedEdge.js';
+import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeightedDigraph.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -128,13 +131,13 @@ import { KrushkalMST } from './4. Graphs/4.3 Minimum Spanning Tree/KrushkalMST.j
     // 2. Searching
 
     // SequencialSTClient.main();
-    // BinarySeachStClient.main(); 
-    // BSTClient.main();
+    // console.log('------');
+    // SequencialST.main();
+    BinarySeachSt.main(); 
+    // BST.main();
 
-    // SeparateChaningHashSTClient.main();
-    // LinearProbingHashSTClient.main();
-
-
+    // LinearProbingHashST.main();
+    // SeparateChaningHashST.main()
 
     // GraphClient.main();
     // DepthFirstSearch.main();
@@ -148,17 +151,24 @@ import { KrushkalMST } from './4. Graphs/4.3 Minimum Spanning Tree/KrushkalMST.j
     // KosarajuSharirSCC.main();
     // TransitiveClosure.main();
 
-    // Edge.main();
-    // EdgeWeightedGraph.main();
-    LazyPrimMST.main();
-    // KrushkalMST.main();
-
+   
     // Digraph.main();
     // DirectedDFS.main();
     // DepthFirstDirectedPaths.main();
     // BreadthFirstDirectedPaths.main();
     // DirectedCycle.main()
     // SysmbolDigraph.main();
+
+
+     // Edge.main();
+    // EdgeWeightedGraph.main();
+    // LazyPrimMST.main();
+    // KrushkalMST.main();
+
+    // DirectedEdge.main();
+
+
+    // EdgeWeightedDigraph.main();
 
     // StdIn.read()
     //   .on('line', line => {

@@ -48,7 +48,7 @@ import { SeparateChaningHashST } from './3.Searching/3.4 Hash Table/SeparteChani
 import { QuickFindUFClient } from './1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
 import { QuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
 import { WeightedQuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
-import { GraphClient } from './4. Graphs/4.1 Undirected Graphs/graph-client.js';
+import { Graph } from './4. Graphs/4.1 Undirected Graphs/graph.js';
 import { DepthFirstSearch } from './4. Graphs/4.1 Undirected Graphs/depth-first-search.js';
 import { DepthFirstPaths } from './4. Graphs/4.1 Undirected Graphs/depth-first-paths.js';
 import { BreadthFirstPaths } from './4. Graphs/4.1 Undirected Graphs/breadth-first-paths.js';
@@ -111,46 +111,32 @@ import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeighted
     // Certification.main();
     // Exercise24_InsertionSortWithSentinel.main();
     // Exercise25_InsertionSortWithoutExchanges.main();
-
     // MergeSortClient.main();
     // MergeSort_Top_Down_Client.main();
     // Example_2_2_9_Client.main();
     // 2. Sorting--- End
-
     // QuickSortTestClient.main();
     // Quick3WayTest.main();
-
 
     // 3. Priority Queue--Start 
     // MaxPQClient.main();
     // MinPQClient.main();
     // HearSortClient.main();
 
-
-
     // 2. Searching
-
-    // SequencialSTClient.main();
-    // console.log('------');
     // SequencialST.main();
-    BinarySeachSt.main(); 
+    // BinarySeachSt.main(); 
     // BST.main();
-
     // LinearProbingHashST.main();
     // SeparateChaningHashST.main()
 
-    // GraphClient.main();
+    // Graph.main();
     // DepthFirstSearch.main();
     // DepthFirstPaths.main();
-    // console.log('------------------')
     // BreadthFirstPaths.main();
     // CC.main();
     // Cycle.main();
-    // SymbolGraph.main();
-    // Topological.main();
-    // KosarajuSharirSCC.main();
-    // TransitiveClosure.main();
-
+    // SymbolGraph.main();  
    
     // Digraph.main();
     // DirectedDFS.main();
@@ -158,17 +144,17 @@ import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeighted
     // BreadthFirstDirectedPaths.main();
     // DirectedCycle.main()
     // SysmbolDigraph.main();
+    // Topological.main();
+    // KosarajuSharirSCC.main();
+    // TransitiveClosure.main();
 
-
-     // Edge.main();
+    // Edge.main();
     // EdgeWeightedGraph.main();
     // LazyPrimMST.main();
     // KrushkalMST.main();
 
-    // DirectedEdge.main();
-
-
-    // EdgeWeightedDigraph.main();
+    DirectedEdge.main();
+    EdgeWeightedDigraph.main();
 
     // StdIn.read()
     //   .on('line', line => {

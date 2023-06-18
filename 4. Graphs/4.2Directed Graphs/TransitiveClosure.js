@@ -49,7 +49,7 @@ export class TransitiveClosure {
         // print header
         StdOut.println("     ");
         for (let v = 0; v < G.V(); v++)
-            StdOut.printf("%3d", v);
+            StdOut.printf("%d ", v);
 
         StdOut.println();
         StdOut.println("--------------------------------------------");

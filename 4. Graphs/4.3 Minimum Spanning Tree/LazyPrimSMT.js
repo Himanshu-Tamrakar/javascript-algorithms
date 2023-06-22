@@ -1,4 +1,4 @@
-import { MinPQ } from '../../2. Sorting/2.4_Priority_Queue/min-priority-queue/min-priority-queue.js';
+import { MinPQ } from '../../2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
 import Queue_Linked_List from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
 import {In, StdOut} from '../../libs/index.js';
 import { EdgeWeightedGraph }from './EdgeWeightedGraph.js'
@@ -18,7 +18,7 @@ export class LazyPrimMST {
 
 
         while(!this.minPQ.isEmpty()) {
-            const e = this.minPQ.delmin();
+            const e = this.minPQ.delMin();
             const v = e.either();
             const w = e.other(v);
             const weight = e.weight();

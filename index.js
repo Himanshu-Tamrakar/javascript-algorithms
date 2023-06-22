@@ -1,5 +1,10 @@
 import express from 'express';
 
+import { In } from './libs/index.js';
+import { StdIn } from './libs/index.js';
+import { pad } from './utils/index.js'
+import { StdOut } from './libs/index.js';
+
 
 import Evaluate from './1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
 import Stack_Link_List from './1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
@@ -18,6 +23,11 @@ import closestPair from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/
 import farTestPair from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
 import bitonicSearch from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
 
+import { QuickFindUFClient } from './1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
+import { QuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
+import { WeightedQuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
+
+
 import Selection from './2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
 import InsersionSortClient from './2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort-client.js';
 import ShellSortClient from './2. Sorting/2.1_Elementry_Sorts/shell-sort/shell-sort-client.js';
@@ -30,24 +40,22 @@ import Example_2_2_9_Client from './2. Sorting/exersices/2.2.9.js';
 
 import { QuickSortTestClient } from './2. Sorting/2.3_Quick_Sort/quick-sort/quick-sort-client.js';
 import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_test_client.js';
-import { MaxPQClient } from './2. Sorting/2.4_Priority_Queue/max-priority-queue/max-priority-queue-client.js';
-import { MinPQClient } from './2. Sorting/2.4_Priority_Queue/min-priority-queue/min-priority-queue-client.js';
-import { HearSortClient } from './2. Sorting/2.4_Priority_Queue/heap-sort/heap-sort-client.js';
+
+import { MaxPQ } from './2. Sorting/2.4_Priority_Queue/max-priority-queue.js';
+import { MinPQ } from './2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
+import { HearSort } from './2. Sorting/2.4_Priority_Queue/heap-sort.js';
+import { IndexMinPQ } from './2. Sorting/2.4_Priority_Queue/IndexMinPQ.js';
+import { IndexMaxPQ } from './2. Sorting/2.4_Priority_Queue/IndexMaxPQ.js';
+
 import { SequencialST } from './3.Searching/3.1_Symbol Table/sequencial-st.js';
-import { In } from './libs/index.js';
-import { StdIn } from './libs/index.js';
-
-import { pad } from './utils/index.js'
-import { StdOut } from './libs/index.js';
-
-
 import { BinarySeachSt } from './3.Searching/3.1_Symbol Table/binary-search-st.js';
+
 import { BST } from './3.Searching/3.2 Binary Seach Trees/BST.js';
+
 import { LinearProbingHashST } from './3.Searching/3.4 Hash Table/LinearProbingHashST.js';
 import { SeparateChaningHashST } from './3.Searching/3.4 Hash Table/SeparteChaningHashST.js';
-import { QuickFindUFClient } from './1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
-import { QuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
-import { WeightedQuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
+
+
 import { Graph } from './4. Graphs/4.1 Undirected Graphs/graph.js';
 import { DepthFirstSearch } from './4. Graphs/4.1 Undirected Graphs/depth-first-search.js';
 import { DepthFirstPaths } from './4. Graphs/4.1 Undirected Graphs/depth-first-paths.js';
@@ -68,6 +76,8 @@ import { Edge } from './4. Graphs/4.3 Minimum Spanning Tree/Edge.js';
 import { EdgeWeightedGraph } from './4. Graphs/4.3 Minimum Spanning Tree/EdgeWeightedGraph.js';
 import { LazyPrimMST } from './4. Graphs/4.3 Minimum Spanning Tree/LazyPrimSMT.js';
 import { KrushkalMST } from './4. Graphs/4.3 Minimum Spanning Tree/KrushkalMST.js';
+import { PrimMST } from './4. Graphs/4.3 Minimum Spanning Tree/PrimMST.js';
+
 import { DirectedEdge } from './4. Graphs/4.4 Shortest Paths/DirectedEdge.js';
 import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeightedDigraph.js';
 // 2. Sorting --- End
@@ -115,13 +125,16 @@ import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeighted
     // MergeSort_Top_Down_Client.main();
     // Example_2_2_9_Client.main();
     // 2. Sorting--- End
+    
     // QuickSortTestClient.main();
     // Quick3WayTest.main();
 
     // 3. Priority Queue--Start 
-    // MaxPQClient.main();
-    // MinPQClient.main();
-    // HearSortClient.main();
+    // MinPQ.main()
+    // MaxPQ.main();
+    // HearSort.main();
+    // IndexMinPQ.main();
+    // IndexMaxPQ.main();
 
     // 2. Searching
     // SequencialST.main();
@@ -151,10 +164,12 @@ import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeighted
     // Edge.main();
     // EdgeWeightedGraph.main();
     // LazyPrimMST.main();
+    PrimMST.main();
     // KrushkalMST.main();
 
-    DirectedEdge.main();
-    EdgeWeightedDigraph.main();
+    // DirectedEdge.main();
+    // EdgeWeightedDigraph.main();
+
 
     // StdIn.read()
     //   .on('line', line => {

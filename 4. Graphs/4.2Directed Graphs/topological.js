@@ -1,20 +1,31 @@
-import {StdOut} from "../../libs/index.js";
-import {SysmbolDigraph} from "./SymbolDigraph.js";
+import { StdOut } from "../../libs/index.js";
+import { Graph } from "../4.1 Undirected Graphs/graph.js";
+import { SymbolGraph } from "../4.1 Undirected Graphs/symbol-graph.js";
+import { EdgeWeightedGraph } from "../4.3 Minimum Spanning Tree/EdgeWeightedGraph.js";
+import { EdgeWeightedDigraph } from "../4.4 Shortest Paths/EdgeWeightedDigraph.js";
+import { Digraph } from "./Digraph.js";
+import { SymbolDigraph } from "./SymbolDigraph.js";
 import { DepthFirstOrder } from "./depth-first-order.js";
-import {DirectedCycle} from "./directed-cycle.js";
+import { DirectedCycle } from "./directed-cycle.js";
+import { EdgeWeightedDirectedCycle } from '../4.4 Shortest Paths/EdgeWeightedDirectedCycle.js'
+
 export class Topological {
     _order;
     _rank;
     constructor(G) {
-        const finder = new DirectedCycle(G);
-        if (!finder.hasCycle()) {
-            const dfs = new DepthFirstOrder(G);
-            this._order = dfs.reversePost();
-            this._rank = new Array(G.V());
-            let i = 0;
-            for (const v of this._order) {
-                this._rank[v] = i++;
+        if (G instanceof Digraph) {
+            const finder = new DirectedCycle(G);
+            if (!finder.hasCycle()) {
+                const dfs = new DepthFirstOrder(G);
+                this._order = dfs.reversePost();
+                this._rank = new Array(G.V());
+                let i = 0;
+                for (const v of this._order) {
+                    this._rank[v] = i++;
+                }
             }
+        } else if (G instanceof EdgeWeightedDigraph) {
+            this._constructor(G);
         }
     }
 
@@ -24,11 +35,16 @@ export class Topological {
     * @param G the edge-weighted digraph
     */
     _constructor(G) {
-        // const finder = new EdgeWeightedDirectedCycle(G);
-        // if (!finder.hasCycle()) {
-        //     const dfs = new DepthFirstOrder(G);
-        //     order = dfs.reversePost();
-        // }
+        const finder = new EdgeWeightedDirectedCycle(G);
+        if (!finder.hasCycle()) {
+            const dfs = new DepthFirstOrder(G);
+            this._order = dfs.reversePost();
+            this._rank = new Array(G.V());
+            let i = 0;
+            for (const v of this._order) {
+                this._rank[v] = i++;
+            }
+        }
     }
 
 
@@ -75,7 +91,7 @@ export class Topological {
     }
 
     static main() {
-        const sdg = new SysmbolDigraph('assets/jobs.txt', '/');
+        const sdg = new SymbolDigraph('assets/jobs.txt', '/');
         const G = sdg.graph();
         const topological = new Topological(G);
         for (const v of topological.order()) {

@@ -68,7 +68,7 @@ import { DirectedDFS } from './4. Graphs/4.2Directed Graphs/DirectedDFS.js';
 import { DepthFirstDirectedPaths } from './4. Graphs/4.2Directed Graphs/depth-first-directed-paths.js';
 import { BreadthFirstDirectedPaths } from './4. Graphs/4.2Directed Graphs/breadth-first-directed-paths.js';
 import { DirectedCycle } from './4. Graphs/4.2Directed Graphs/directed-cycle.js';
-import { SysmbolDigraph } from './4. Graphs/4.2Directed Graphs/SymbolDigraph.js';
+import { SymbolDigraph } from './4. Graphs/4.2Directed Graphs/SymbolDigraph.js';
 import { Topological } from './4. Graphs/4.2Directed Graphs/topological.js';
 import { KosarajuSharirSCC } from './4. Graphs/4.2Directed Graphs/KosarajuSharirSCC.js';
 import { TransitiveClosure } from './4. Graphs/4.2Directed Graphs/TransitiveClosure.js';
@@ -80,6 +80,9 @@ import { PrimMST } from './4. Graphs/4.3 Minimum Spanning Tree/PrimMST.js';
 
 import { DirectedEdge } from './4. Graphs/4.4 Shortest Paths/DirectedEdge.js';
 import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeightedDigraph.js';
+import { DijkstraSP } from './4. Graphs/4.4 Shortest Paths/DijkstraSP.js';
+import { AcyclicSP } from './4. Graphs/4.4 Shortest Paths/AcyclicSP.js';
+import { AcyclicLP } from './4. Graphs/4.4 Shortest Paths/AcyclicLP.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -156,7 +159,7 @@ import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeighted
     // DepthFirstDirectedPaths.main();
     // BreadthFirstDirectedPaths.main();
     // DirectedCycle.main()
-    // SysmbolDigraph.main();
+    // SymbolDigraph.main();
     // Topological.main();
     // KosarajuSharirSCC.main();
     // TransitiveClosure.main();
@@ -164,12 +167,14 @@ import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeighted
     // Edge.main();
     // EdgeWeightedGraph.main();
     // LazyPrimMST.main();
-    PrimMST.main();
+    // PrimMST.main();
     // KrushkalMST.main();
 
     // DirectedEdge.main();
     // EdgeWeightedDigraph.main();
-
+    // DijkstraSP.main();
+    // AcyclicSP.main();
+    // AcyclicLP.main();
 
     // StdIn.read()
     //   .on('line', line => {

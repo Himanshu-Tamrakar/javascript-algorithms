@@ -54,7 +54,7 @@ export class KosarajuSharirSCC {
     }
 
     static main() {
-        const _in = new In("assets/mediumDG.txt");
+        const _in = new In("assets/tinyDG.txt");
         const G = new Digraph(_in);
 
         const ssc = new KosarajuSharirSCC(G);

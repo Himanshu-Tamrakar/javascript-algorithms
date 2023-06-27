@@ -2,7 +2,7 @@ import {SeparateChaningHashST} from "../../3.Searching/3.4 Hash Table/SeparteCha
 import { Digraph } from "./Digraph.js";
 import { In, StdOut } from "../../libs/index.js";
 
-export class SysmbolDigraph {
+export class SymbolDigraph {
     st; // Keys to index
     keys; // Index to key
     _digraph;
@@ -118,7 +118,7 @@ export class SysmbolDigraph {
     static main() {
         const filepath = 'assets/jobs.txt';
         const delimeter = '/'; 
-        const sdg = new SysmbolDigraph(filepath, delimeter);
+        const sdg = new SymbolDigraph(filepath, delimeter);
         const graph = sdg.graph();
 
         const V = graph.V();

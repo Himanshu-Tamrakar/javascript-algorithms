@@ -74,7 +74,7 @@ export class EdgeWeightedDigraph {
         this.validateVertex(w);
         this._adj[v].add(e);
         this._indegree[w]++;
-        this.E++;
+        this._E++;
     }
 
      /**

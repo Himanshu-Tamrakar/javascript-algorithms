@@ -1,4 +1,3 @@
-import InsersionSort from "../../2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort.js";
 import {In} from "../../libs/index.js";
 
 export class MSD {

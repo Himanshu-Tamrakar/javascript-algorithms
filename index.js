@@ -1,94 +1,95 @@
 import express from 'express';
 
-import { In } from './libs/index.js';
-import { StdIn } from './libs/index.js';
-import { pad } from './utils/index.js'
-import { StdOut } from './libs/index.js';
+import { In } from './src/libs/index.js';
+import { StdIn } from './src/libs/index.js';
+import { pad } from './src/utils/index.js'
+import { StdOut } from './src/libs/index.js';
 
 
-import Evaluate from './1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
-import Stack_Link_List from './1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
-import Bag from './1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js';
-import Queue_Linked_List from './1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
-import parantheses from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_4.js';
-import execute_1_3_9 from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_9.js';
-import LinkedList from './1. Fundamentals/1.3 Bags, Queues and Stack/LinkedList.js';
-import { execute_1_3_30, execute_1_3_30_recursive } from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_30.js';
-import Steque from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_32.js';
-import Deque from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_33.js';
-import josephusProblem from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1.3.37.js';
-import copyAStack from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/copyAStack.js';
-import MoveToFront from './1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_40_Move_To_Front.js';
-import closestPair from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_16_closest_pair.js';
-import farTestPair from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
-import bitonicSearch from './1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
+import Evaluate from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
+import Stack_Link_List from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
+import Bag from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js';
+import Queue_Linked_List from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import parantheses from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_4.js';
+import execute_1_3_9 from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_9.js';
+import LinkedList from './src/1. Fundamentals/1.3 Bags, Queues and Stack/LinkedList.js';
+import { execute_1_3_30, execute_1_3_30_recursive } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_30.js';
+import Steque from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_32.js';
+import Deque from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_33.js';
+import josephusProblem from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1.3.37.js';
+import copyAStack from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/copyAStack.js';
+import MoveToFront from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_40_Move_To_Front.js';
+import closestPair from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_16_closest_pair.js';
+import farTestPair from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
+import bitonicSearch from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
 
-import { QuickFindUFClient } from './1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
-import { QuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
-import { WeightedQuickUnionUFClient } from './1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
-
-
-import Selection from './2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
-import InsersionSortClient from './2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort-client.js';
-import ShellSortClient from './2. Sorting/2.1_Elementry_Sorts/shell-sort/shell-sort-client.js';
-import Certification from './2. Sorting/2.1_Elementry_Sorts/exercises/exercise_2_1_16.js';
-import Exercise24_InsertionSortWithSentinel from './2. Sorting/2.1_Elementry_Sorts/exercises/exercise2_1_24_InsertionSortWithSentinel.js';
-import Exercise25_InsertionSortWithoutExchanges from './2. Sorting/2.1_Elementry_Sorts/exercises/exercise25_InsertionSortWithoutExchanges.js';
-import MergeSortClient from './2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sprt_client.js';
-import MergeSort_Top_Down_Client from './2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
-import Example_2_2_9_Client from './2. Sorting/exersices/2.2.9.js';
-
-import { QuickSortTestClient } from './2. Sorting/2.3_Quick_Sort/quick-sort/quick-sort-client.js';
-import Quick3WayTest from './2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_test_client.js';
-
-import { MaxPQ } from './2. Sorting/2.4_Priority_Queue/max-priority-queue.js';
-import { MinPQ } from './2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
-import { HearSort } from './2. Sorting/2.4_Priority_Queue/heap-sort.js';
-import { IndexMinPQ } from './2. Sorting/2.4_Priority_Queue/IndexMinPQ.js';
-import { IndexMaxPQ } from './2. Sorting/2.4_Priority_Queue/IndexMaxPQ.js';
-
-import { SequencialST } from './3.Searching/3.1_Symbol Table/sequencial-st.js';
-import { BinarySeachSt } from './3.Searching/3.1_Symbol Table/binary-search-st.js';
-
-import { BST } from './3.Searching/3.2 Binary Seach Trees/BST.js';
-
-import { LinearProbingHashST } from './3.Searching/3.4 Hash Table/LinearProbingHashST.js';
-import { SeparateChaningHashST } from './3.Searching/3.4 Hash Table/SeparteChaningHashST.js';
+import { QuickFindUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
+import { QuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
+import { WeightedQuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
 
 
-import { Graph } from './4. Graphs/4.1 Undirected Graphs/graph.js';
-import { DepthFirstSearch } from './4. Graphs/4.1 Undirected Graphs/depth-first-search.js';
-import { DepthFirstPaths } from './4. Graphs/4.1 Undirected Graphs/depth-first-paths.js';
-import { BreadthFirstPaths } from './4. Graphs/4.1 Undirected Graphs/breadth-first-paths.js';
-import { CC } from './4. Graphs/4.1 Undirected Graphs/CC.js';
-import { Cycle } from './4. Graphs/4.1 Undirected Graphs/cycle.js';
-import { SymbolGraph } from './4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
-import { Digraph } from './4. Graphs/4.2Directed Graphs/Digraph.js';
-import { DirectedDFS } from './4. Graphs/4.2Directed Graphs/DirectedDFS.js';
-import { DepthFirstDirectedPaths } from './4. Graphs/4.2Directed Graphs/depth-first-directed-paths.js';
-import { BreadthFirstDirectedPaths } from './4. Graphs/4.2Directed Graphs/breadth-first-directed-paths.js';
-import { DirectedCycle } from './4. Graphs/4.2Directed Graphs/directed-cycle.js';
-import { SymbolDigraph } from './4. Graphs/4.2Directed Graphs/SymbolDigraph.js';
-import { Topological } from './4. Graphs/4.2Directed Graphs/topological.js';
-import { KosarajuSharirSCC } from './4. Graphs/4.2Directed Graphs/KosarajuSharirSCC.js';
-import { TransitiveClosure } from './4. Graphs/4.2Directed Graphs/TransitiveClosure.js';
-import { Edge } from './4. Graphs/4.3 Minimum Spanning Tree/Edge.js';
-import { EdgeWeightedGraph } from './4. Graphs/4.3 Minimum Spanning Tree/EdgeWeightedGraph.js';
-import { LazyPrimMST } from './4. Graphs/4.3 Minimum Spanning Tree/LazyPrimSMT.js';
-import { KrushkalMST } from './4. Graphs/4.3 Minimum Spanning Tree/KrushkalMST.js';
-import { PrimMST } from './4. Graphs/4.3 Minimum Spanning Tree/PrimMST.js';
+import Selection from './src/2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
+import InsersionSortClient from './src/2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort-client.js';
+import ShellSortClient from './src/2. Sorting/2.1_Elementry_Sorts/shell-sort/shell-sort-client.js';
+import Certification from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise_2_1_16.js';
+import Exercise24_InsertionSortWithSentinel from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise2_1_24_InsertionSortWithSentinel.js';
+import Exercise25_InsertionSortWithoutExchanges from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise25_InsertionSortWithoutExchanges.js';
+import MergeSortClient from './src/2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sprt_client.js';
+import MergeSort_Top_Down_Client from './src/2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
+import Example_2_2_9_Client from './src/2. Sorting/exersices/2.2.9.js';
 
-import { DirectedEdge } from './4. Graphs/4.4 Shortest Paths/DirectedEdge.js';
-import { EdgeWeightedDigraph } from './4. Graphs/4.4 Shortest Paths/EdgeWeightedDigraph.js';
-import { DijkstraSP } from './4. Graphs/4.4 Shortest Paths/DijkstraSP.js';
-import { AcyclicSP } from './4. Graphs/4.4 Shortest Paths/AcyclicSP.js';
-import { AcyclicLP } from './4. Graphs/4.4 Shortest Paths/AcyclicLP.js';
+import { QuickSortTestClient } from './src/2. Sorting/2.3_Quick_Sort/quick-sort/quick-sort-client.js';
+import Quick3WayTest from './src/2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_test_client.js';
 
-import { Alphabet } from './5. String/5.1 String Sort/Alphabet.js';
-import { Count } from './5. String/5.1 String Sort/Count.js';
-import { LSD } from './5. String/5.1 String Sort/LSD.js';
-import { MSD } from './5. String/5.1 String Sort/MSD.js';
-import { Quick3string } from './5. String/5.1 String Sort/Quick3string.js';
+import { MaxPQ } from './src/2. Sorting/2.4_Priority_Queue/max-priority-queue.js';
+import { MinPQ } from './src/2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
+import { HearSort } from './src/2. Sorting/2.4_Priority_Queue/heap-sort.js';
+import { IndexMinPQ } from './src/2. Sorting/2.4_Priority_Queue/IndexMinPQ.js';
+import { IndexMaxPQ } from './src/2. Sorting/2.4_Priority_Queue/IndexMaxPQ.js';
+
+import { SequencialST } from './src/3.Searching/3.1_Symbol Table/sequencial-st.js';
+import { BinarySeachSt } from './src/3.Searching/3.1_Symbol Table/binary-search-st.js';
+
+import { BST } from './src/3.Searching/3.2 Binary Seach Trees/BST.js';
+
+import { LinearProbingHashST } from './src/3.Searching/3.4 Hash Table/LinearProbingHashST.js';
+import { SeparateChaningHashST } from './src/3.Searching/3.4 Hash Table/SeparteChaningHashST.js';
+
+
+import { Graph } from './src/4. Graphs/4.1 Undirected Graphs/graph.js';
+
+import { DepthFirstSearch } from './src/4. Graphs/4.1 Undirected Graphs/depth-first-search.js';
+import { DepthFirstPaths } from './src/4. Graphs/4.1 Undirected Graphs/depth-first-paths.js';
+import { BreadthFirstPaths } from './src/4. Graphs/4.1 Undirected Graphs/breadth-first-paths.js';
+import { CC } from './src/4. Graphs/4.1 Undirected Graphs/CC.js';
+import { Cycle } from './src/4. Graphs/4.1 Undirected Graphs/cycle.js';
+import { SymbolGraph } from './src/4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
+import { Digraph } from './src/4. Graphs/4.2Directed Graphs/Digraph.js';
+import { DirectedDFS } from './src/4. Graphs/4.2Directed Graphs/DirectedDFS.js';
+import { DepthFirstDirectedPaths } from './src/4. Graphs/4.2Directed Graphs/depth-first-directed-paths.js';
+import { BreadthFirstDirectedPaths } from './src/4. Graphs/4.2Directed Graphs/breadth-first-directed-paths.js';
+import { DirectedCycle } from './src/4. Graphs/4.2Directed Graphs/directed-cycle.js';
+import { SymbolDigraph } from './src/4. Graphs/4.2Directed Graphs/SymbolDigraph.js';
+import { Topological } from './src/4. Graphs/4.2Directed Graphs/topological.js';
+import { KosarajuSharirSCC } from './src/4. Graphs/4.2Directed Graphs/KosarajuSharirSCC.js';
+import { TransitiveClosure } from './src/4. Graphs/4.2Directed Graphs/TransitiveClosure.js';
+import { Edge } from './src/4. Graphs/4.3 Minimum Spanning Tree/Edge.js';
+import { EdgeWeightedGraph } from './src/4. Graphs/4.3 Minimum Spanning Tree/EdgeWeightedGraph.js';
+import { LazyPrimMST } from './src/4. Graphs/4.3 Minimum Spanning Tree/LazyPrimSMT.js';
+import { KrushkalMST } from './src/4. Graphs/4.3 Minimum Spanning Tree/KrushkalMST.js';
+import { PrimMST } from './src/4. Graphs/4.3 Minimum Spanning Tree/PrimMST.js';
+
+import { DirectedEdge } from './src/4. Graphs/4.4 Shortest Paths/DirectedEdge.js';
+import { EdgeWeightedDigraph } from './src/4. Graphs/4.4 Shortest Paths/EdgeWeightedDigraph.js';
+import { DijkstraSP } from './src/4. Graphs/4.4 Shortest Paths/DijkstraSP.js';
+import { AcyclicSP } from './src/4. Graphs/4.4 Shortest Paths/AcyclicSP.js';
+import { AcyclicLP } from './src/4. Graphs/4.4 Shortest Paths/AcyclicLP.js';
+
+import { Alphabet } from './src/5. String/5.1 String Sort/Alphabet.js';
+import { Count } from './src/5. String/5.1 String Sort/Count.js';
+import { LSD } from './src/5. String/5.1 String Sort/LSD.js';
+import { MSD } from './src/5. String/5.1 String Sort/MSD.js';
+import { Quick3string } from './src/5. String/5.1 String Sort/Quick3string.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -480,7 +481,7 @@ app.get('/', (req, res) => {
     res.send('Hello World');
 });
 
-app.listen(5000, () => console.log("Listening to the 5000 port"));
+app.listen(5001, () => console.log("Listening to the 5000 port"));
 
 
 

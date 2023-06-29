@@ -283,7 +283,6 @@ export class IndexMinPQ {
      * @param args the command-line arguments
      */
     static main() {
-        debugger
         // insert a bunch of strings
         let strings = [ "it", "was", "the", "best", "of", "times", "it", "was", "the", "worst"]
 

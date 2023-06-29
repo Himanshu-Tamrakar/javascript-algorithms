@@ -1,5 +1,5 @@
 import { In, StdOut } from "../../libs/index.js";
-import {Alphabet} from "./Alphabet.js";
+import { Alphabet } from "./Alphabet.js";
 
 export class Count {
     static main() {

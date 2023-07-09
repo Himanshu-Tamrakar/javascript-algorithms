@@ -90,6 +90,15 @@ import { Count } from './src/5. String/5.1 String Sort/Count.js';
 import { LSD } from './src/5. String/5.1 String Sort/LSD.js';
 import { MSD } from './src/5. String/5.1 String Sort/MSD.js';
 import { Quick3string } from './src/5. String/5.1 String Sort/Quick3string.js';
+
+import {TriST} from './src/5. String/5.2 Tries/TriST.js';
+import { TST } from './src/5. String/5.2 Tries/TST.js';
+
+import { KMP } from './src/5. String/5.3 SubString Search/KMP.js';
+import { BoyerMoore } from './src/5. String/5.3 SubString Search/BoyerMoore.js';
+import { RabinKarp } from './src/5. String/5.3 SubString Search/RabinKarp.js';
+
+import { NFA } from './src/5. String/5.4 Regular Expression/NFA.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -187,7 +196,14 @@ import { Quick3string } from './src/5. String/5.1 String Sort/Quick3string.js';
     // Count.main();
     // LSD.main();
     // MSD.main()
-    Quick3string.main();
+    // Quick3string.main();
+    // TriST.main();
+    // TST.main();
+
+    // KMP.main();
+    // BoyerMoore.main();
+    // RabinKarp.main();
+    NFA.main();
 
     // StdIn.read()
     //   .on('line', line => {

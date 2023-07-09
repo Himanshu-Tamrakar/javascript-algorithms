@@ -1,5 +1,6 @@
 import { In, StdOut } from "../../libs/index.js";;
 import { Digraph } from "./Digraph.js";
+import { isIterable } from "../../utils/index.js";
 
 export class DirectedDFS {
     _count;
@@ -10,7 +11,7 @@ export class DirectedDFS {
             this._marked = new Array(G.V()).fill(false);
             this.validate(s);
             this.dfs(G, s);
-        } else if (Array.isArray(s)) {
+        } else if (Array.isArray(s) || isIterable(s)) {
             this._constructor(G, s);
         }
     }
@@ -22,9 +23,9 @@ export class DirectedDFS {
      * @param sources the source vertices
      */
     _constructor(G, sources) {
-        this.validateVertices(sources);
         this._count = 0;
         this._marked = new Array(G.V()).fill(false);
+        this.validateVertices(sources);
 
         for (const w of sources) {
             if (!this._marked[w]) this.dfs(G, w);

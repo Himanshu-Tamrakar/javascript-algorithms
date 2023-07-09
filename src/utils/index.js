@@ -8,10 +8,13 @@ import {
 
 import { pad } from './string.utils.js'
 
+import { isIterable } from './object.utils.js'
+
 export {
   arrayToString, isMatrix,
   isVector,
   newArrayOf,
   numbersByAscendingOrder,
-  pad
+  pad,
+  isIterable
 }

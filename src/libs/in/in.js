@@ -92,6 +92,14 @@ class In {
   readAllWords() {
     return this.content.split(/[\n\r\s]/);
   }
+
+  /**
+   * Parses the file's contents to \n and spaces and return array of words
+   * @returns {[string]} The array of parsed wrods.
+   */
+  readLines() {
+    return this.content.split(/[\n]/);
+  }
 }
 
 export {In}

@@ -99,6 +99,7 @@ import { BoyerMoore } from './src/5. String/5.3 SubString Search/BoyerMoore.js';
 import { RabinKarp } from './src/5. String/5.3 SubString Search/RabinKarp.js';
 
 import { NFA } from './src/5. String/5.4 Regular Expression/NFA.js';
+import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -203,7 +204,8 @@ import { NFA } from './src/5. String/5.4 Regular Expression/NFA.js';
     // KMP.main();
     // BoyerMoore.main();
     // RabinKarp.main();
-    NFA.main();
+    // NFA.main();
+    GREP.main(["(A*B|AC)D"]);
 
     // StdIn.read()
     //   .on('line', line => {
@@ -218,7 +220,6 @@ import { NFA } from './src/5. String/5.4 Regular Expression/NFA.js';
     //   })
     
 })();
-
 
 
 // 1. Fundamentals--- Start

@@ -9,7 +9,7 @@ function Node() {
     this.prev;
 }
 
-export default function Deque() {
+export function Deque() {
     this.head;
     this.tail;
     this.N = 0;

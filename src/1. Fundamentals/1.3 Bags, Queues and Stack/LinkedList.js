@@ -38,4 +38,4 @@ LinkedList.prototype.appendLast = function(item) {
     this.N++;
 }
 
-export default LinkedList;
+export { LinkedList };

@@ -1,9 +1,9 @@
 // 1.3.32 Steque. A stack-ended queue or steque is a data type that supports push, pop, and
 // enqueue. Articulate an API for this ADT. Develop a linked-list-based implementation.
 
-import Node from './LinklistNode.js';
+import { Node } from './LinklistNode.js';
 
-export default function Steque() {
+export function Steque() {
     this.head;
     this.tail;
     this.N = 0;

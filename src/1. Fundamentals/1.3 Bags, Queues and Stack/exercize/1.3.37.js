@@ -1,6 +1,6 @@
 import { Queue_Linked_List } from "../Queue_Linked_List.js";
 
-export default function josephusProblem(n, m) {
+export function josephusProblem(n, m) {
 
     const queue = new Queue_Linked_List();
 

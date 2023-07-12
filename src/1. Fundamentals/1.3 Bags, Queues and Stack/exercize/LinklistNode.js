@@ -1,4 +1,4 @@
-export default function Node() {
+export function Node() {
     this.item;
     this.next;
 }

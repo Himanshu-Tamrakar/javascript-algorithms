@@ -12,18 +12,18 @@ import { Evaluate, EvaluateClient } from './src/1. Fundamentals/1.3 Bags, Queues
 import { Stack_Link_List } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
 import { Bag } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js';
 import { Queue_Linked_List } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
-import parantheses from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_4.js';
-import execute_1_3_9 from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_9.js';
-import LinkedList from './src/1. Fundamentals/1.3 Bags, Queues and Stack/LinkedList.js';
+import { parantheses } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_4.js';
+import { execute_1_3_9 } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_9.js';
+import { LinkedList } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/LinkedList.js';
 import { execute_1_3_30, execute_1_3_30_recursive } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_30.js';
-import Steque from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_32.js';
-import Deque from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_33.js';
-import josephusProblem from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1.3.37.js';
-import copyAStack from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/copyAStack.js';
-import MoveToFront from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_40_Move_To_Front.js';
-import closestPair from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_16_closest_pair.js';
-import farTestPair from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
-import bitonicSearch from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
+import { Steque } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_32.js';
+import { Deque } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_33.js';
+import { josephusProblem } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1.3.37.js';
+import { copyAStack } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/copyAStack.js';
+import { MoveToFront } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_40_Move_To_Front.js';
+import { closestPair } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_16_closest_pair.js';
+import { farTestPair } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
+import { bitonicSearch } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
 import { QuickFindUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
 import { QuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
 import { WeightedQuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
@@ -402,11 +402,7 @@ function copyAStackTestClient() {
     s.push(2);
     s.push(3);
     s.push(4);
-
-    
-
     copyAStack(s);
-    
 }
 
 function moveToFrontTestClient() {

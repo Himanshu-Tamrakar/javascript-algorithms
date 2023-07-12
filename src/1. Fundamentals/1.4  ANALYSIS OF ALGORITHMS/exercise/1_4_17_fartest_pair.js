@@ -1,4 +1,4 @@
-export default function farTestPair(arr) {
+export function farTestPair(arr) {
 
     let minVal = Number.MAX_SAFE_INTEGER;
     let maxVal = Number.MIN_SAFE_INTEGER;

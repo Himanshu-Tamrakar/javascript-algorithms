@@ -1,6 +1,6 @@
 import { Stack_Link_List } from "../Stack_Linked_List.js";
 
-export default function copyAStack(s) {
+export function copyAStack(s) {
 
 
     const ns = new Stack_Link_List(s);

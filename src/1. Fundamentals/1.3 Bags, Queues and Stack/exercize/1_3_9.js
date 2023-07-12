@@ -9,7 +9,7 @@
     ( ( 1 + 2 ) * ( ( 3 - 4 ) * ( 5 - 6 ) )
 * */ 
 
-export default function execute_1_3_9(input) {
+export function execute_1_3_9(input) {
     if (!Array.isArray(input)) {
         throw new Error('Invalid input');
     }

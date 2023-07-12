@@ -83,7 +83,7 @@ function desBitonicBinarySeach(arr, item, lo, hi) {
 
 
 
-export default function bitonicSearch(arr, item) {
+export function bitonicSearch(arr, item) {
     const tip = getTippingPoint(arr, 0, arr.length-1);
     if (tip !== -1) {
 

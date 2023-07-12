@@ -3,7 +3,7 @@ function Node(item = null, next = null) {
     this.next = next;
 }
 
-export default function MoveToFront() {
+export function MoveToFront() {
     this.first;
 }
 

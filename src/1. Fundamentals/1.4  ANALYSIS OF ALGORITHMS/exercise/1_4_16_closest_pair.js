@@ -1,4 +1,4 @@
-export default function closestPair(arr) {
+export function closestPair(arr) {
     arr = Array.prototype.sort.call(arr, (a, b) => a-b);
 
     let minimumValue = Number.MAX_SAFE_INTEGER;

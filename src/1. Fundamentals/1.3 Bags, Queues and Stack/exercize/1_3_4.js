@@ -1,6 +1,6 @@
 import { Stack } from "../Stack.js";
 
-export default function parantheses(input) {
+export function parantheses(input) {
     if (!Array.isArray(input)) {
         throw new Error('Input is incorrect');
     } 

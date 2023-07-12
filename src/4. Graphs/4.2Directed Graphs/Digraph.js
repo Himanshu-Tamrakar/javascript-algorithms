@@ -1,4 +1,4 @@
-import Bag from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
+import { Bag } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
 import { In } from '../../libs/index.js'
 export class Digraph {
     _adj;

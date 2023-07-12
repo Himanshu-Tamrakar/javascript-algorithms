@@ -1,7 +1,7 @@
 import { Digraph } from "./Digraph.js";
 import { In, StdOut } from "../../libs/index.js";
-import Queue_Linked_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
-import Stack_Link_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
 
 export class BreadthFirstDirectedPaths {
     _marked;

@@ -1,7 +1,8 @@
-import Stack_Link_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
 import { EdgeWeightedDigraph } from './EdgeWeightedDigraph.js';
 import { In, StdOut } from "../../libs/index.js";
 import { Topological } from "../4.2Directed Graphs/topological.js";
+
 export class AcyclicLP {
     _distTo; // distTo[v] = distance of logest s->v path
     _edgeTo; // edgeTo[v] = last edge on longest s->v path

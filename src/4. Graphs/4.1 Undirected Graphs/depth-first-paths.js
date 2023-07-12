@@ -1,4 +1,4 @@
-import  Stack_Link_List  from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
+import  { Stack_Link_List }  from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
 import { In, StdOut } from '../../libs/index.js';
 import {Graph} from './graph.js';
 

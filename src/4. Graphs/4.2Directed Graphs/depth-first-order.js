@@ -1,5 +1,5 @@
-import Queue_Linked_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
-import Stack_Link_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
 import {EdgeWeightedDigraph} from "../4.4 Shortest Paths/EdgeWeightedDigraph.js";
 import {Digraph} from "./Digraph.js";
 

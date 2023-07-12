@@ -1,4 +1,4 @@
-function Fabonacci() {};
+export function Fabonacci() {};
 
 var cache = [0, 1];
 
@@ -15,5 +15,3 @@ Fabonacci.main = function() {
         console.log(`${this.prototype.F(i)}`);
     }
 }
-
-Fabonacci.main();

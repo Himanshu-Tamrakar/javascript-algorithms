@@ -1,4 +1,4 @@
-import Queue_Linked_List from "../Queue_Linked_List.js";
+import { Queue_Linked_List } from "../Queue_Linked_List.js";
 
 export default function josephusProblem(n, m) {
 

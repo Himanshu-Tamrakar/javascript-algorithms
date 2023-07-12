@@ -1,4 +1,4 @@
-function Solution_1_1_20() {}
+export function Solution_1_1_20() {}
 
 // This simple solution won't work as calculation !n for large n will exceed the number limit
 Solution_1_1_20.prototype.Worst_F = function(N) {
@@ -23,5 +23,3 @@ Solution_1_1_20.main = function() {
         console.log(`Log of !${i} is `, this.prototype.F(i), this.prototype.Worst_F(i));
     }
 }
-
-Solution_1_1_20.main();

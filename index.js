@@ -5,11 +5,13 @@ import { StdIn } from './src/libs/index.js';
 import { pad } from './src/utils/index.js'
 import { StdOut } from './src/libs/index.js';
 
-
-import Evaluate from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
-import Stack_Link_List from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
-import Bag from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js';
-import Queue_Linked_List from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { BinarySearch } from './src/1. Fundamentals/1.1 Basic Programming Modal/binary_search.js';
+import { BinarySearch_Recursive } from './src/1. Fundamentals/1.1 Basic Programming Modal/BinarySearch_Recursive.js';
+import { SuffleTest } from './src/1. Fundamentals/1.1 Basic Programming Modal/exercize/1_1_36.js';
+import { Evaluate, EvaluateClient } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
+import { Stack_Link_List } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
+import { Bag } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js';
+import { Queue_Linked_List } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
 import parantheses from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_4.js';
 import execute_1_3_9 from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_9.js';
 import LinkedList from './src/1. Fundamentals/1.3 Bags, Queues and Stack/LinkedList.js';
@@ -102,10 +104,14 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
 // 2. Sorting --- End
 
 (function main() {
+    // BinarySearch.main();
+    // BinarySearch_Recursive.main();
+    // SuffleTest(10, 6);
     // 1. Fundamentals--- Start
-    // evaluate();
-    // testStackWithLinkedList();
-    // bagTestClient();
+    // EvaluateClient();
+    
+    testStackWithLinkedList();
+    // Bag.main()
     // queueTestClient()
     // paranthesesTestClient();
 
@@ -221,19 +227,7 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
 
 
 // 1. Fundamentals--- Start
-function evaluate() {
-    let res = -1;
 
-    let input = '( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )';
-    input = input.split(" ");
-    res = Evaluate(input);
-    console.log(res);
-    
-    const input1 = ['(', '10', '+', 'sqrt', '(', '4', ')', ')']
-    res = Evaluate(input1);
-    console.log(res);
-
-}
 
 function testStackWithLinkedList() {
     const stack = new Stack_Link_List();
@@ -279,17 +273,6 @@ function testStackWithLinkedList() {
 
 }
 
-function bagTestClient() {
-    const bag = new Bag();
-
-    bag.add(10);
-    bag.add(20);
-
-    for (const iterator of bag) {
-        console.log(iterator);
-    }
-
-}
 
 function queueTestClient() {
     const  queue = new Queue_Linked_List();

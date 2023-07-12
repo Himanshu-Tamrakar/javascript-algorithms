@@ -1,4 +1,4 @@
-import Stack from "../Stack.js";
+import { Stack } from "../Stack.js";
 
 export default function parantheses(input) {
     if (!Array.isArray(input)) {

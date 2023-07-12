@@ -1,5 +1,5 @@
 import { MinPQ } from '../../2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
-import Queue_Linked_List from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { Queue_Linked_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
 import {In, StdOut} from '../../libs/index.js';
 import { EdgeWeightedGraph }from './EdgeWeightedGraph.js'
 

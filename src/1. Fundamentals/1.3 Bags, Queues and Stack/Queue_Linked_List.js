@@ -60,4 +60,4 @@ Queue_Linked_List.prototype[Symbol.iterator] = function() {
     }
 }
 
-export default Queue_Linked_List;
+export { Queue_Linked_List };

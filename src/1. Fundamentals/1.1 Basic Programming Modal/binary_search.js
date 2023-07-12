@@ -1,6 +1,5 @@
-var fs = require('fs');
 
-function BinarySearch() {}
+export function BinarySearch() {}
 
 BinarySearch.prototype.rank = function(key, arr) {
     let lo = 0;
@@ -21,9 +20,6 @@ BinarySearch.prototype.rank = function(key, arr) {
 
  
  BinarySearch.main = function(args = []) {
-
-    fs.readFile('../te')
-
     for (let index = 0; index < 10; index++) {
         args.push(Math.floor(Math.random() * 100));
     }
@@ -38,7 +34,6 @@ BinarySearch.prototype.rank = function(key, arr) {
     }
  }
 
- BinarySearch.main();
 
 
 

@@ -1,6 +1,6 @@
 // Dijkastra's two stack aritimatic expression evalution
 
-import Stack  from "./Stack.js";
+import { Stack }  from "./Stack.js";
 
 function Evaluate(input) {
     const ops = new Stack();
@@ -51,7 +51,20 @@ function Evaluate(input) {
     return !vals.isEmpty() ? vals.pop() : null;
 }
 
-export default Evaluate;
+function EvaluateClient() {
+    let res = -1;
+
+    let input = '( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )';
+    input = input.split(" ");
+    res = Evaluate(input);
+    console.log(res);
+    
+    const input1 = ['(', '10', '+', 'sqrt', '(', '4', ')', ')']
+    res = Evaluate(input1);
+    console.log(res);
+}
+
+export { Evaluate, EvaluateClient };
 
 // let input = '( 1 + ( ( 2 + 3 ) * ( 4 * 5 ) ) )';
 // input = input.split(" ");

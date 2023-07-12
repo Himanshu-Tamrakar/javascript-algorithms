@@ -22,5 +22,3 @@ Counter.main = function() {
     console.log(counter.tally());
     console.log(counter);
 }
-
-Counter.main();

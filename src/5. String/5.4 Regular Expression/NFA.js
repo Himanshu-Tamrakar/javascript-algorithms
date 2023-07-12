@@ -1,8 +1,8 @@
 
-import Bag from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
-import Stack_Link_List from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
-import {Digraph} from "../../4. Graphs/4.2Directed Graphs/Digraph.js";
-import {DirectedDFS} from "../../4. Graphs/4.2Directed Graphs/DirectedDFS.js";
+import { Bag } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
+import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Digraph } from "../../4. Graphs/4.2Directed Graphs/Digraph.js";
+import { DirectedDFS } from "../../4. Graphs/4.2Directed Graphs/DirectedDFS.js";
 import { StdOut } from "../../libs/index.js";
 
 /**

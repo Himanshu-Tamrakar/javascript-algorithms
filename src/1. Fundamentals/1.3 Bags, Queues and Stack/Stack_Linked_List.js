@@ -103,4 +103,4 @@ Stack_Link_List.prototype[Symbol.iterator] = function() {
 
 
 
-export default Stack_Link_List;
+export { Stack_Link_List };

@@ -1,6 +1,6 @@
 import { Graph } from "./graph.js";
 import { In, StdOut } from "../../libs/index.js";
-import Bag from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
+import { Bag } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
  export class CC {
 
     _id;

@@ -1,12 +1,12 @@
-function BinarySearch() {}
+export function BinarySearch_Recursive() {}
 
-BinarySearch.prototype.rank = function(arr, key) {
+BinarySearch_Recursive.prototype.rank = function(arr, key) {
     let lo = 0;
     let hi = arr.length - 1;      
-    return this.getRank(arr, key, lo, hi);
+    return this._rank(arr, key, lo, hi);
 }
 
-BinarySearch.prototype.getRank = function(arr, key, lo, hi) {
+BinarySearch_Recursive.prototype._rank = function(arr, key, lo, hi) {
    if (lo > hi) {
        return -1;
    }
@@ -15,13 +15,13 @@ BinarySearch.prototype.getRank = function(arr, key, lo, hi) {
    if (key === arr[mid]) {
        return mid;
    } else if (arr[mid] > key) {
-       return this.getRank(arr, key, lo, mid - 1);
+       return this._rank(arr, key, lo, mid - 1);
    } else {
-       return this.getRank(arr, key, mid + 1, hi);
+       return this._rank(arr, key, mid + 1, hi);
    }
 }
 
-BinarySearch.main = function(args = []) {
+BinarySearch_Recursive.main = function(args = []) {
    for (let index = 0; index < 10; index++) {
        args.push(Math.floor(Math.random() * 100));
    }
@@ -39,8 +39,5 @@ BinarySearch.main = function(args = []) {
         const key = Math.floor(Math.random() * 100);
         console.log('Input as ', key, ' and search result is ', this.prototype.rank(args, key));
     }
-
-
 }
 
-BinarySearch.main();

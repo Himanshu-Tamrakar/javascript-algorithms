@@ -1,5 +1,5 @@
 import { equals } from "../../common/index.js";
-import Queue_Linked_List from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { Queue_Linked_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
 import { StdRandom } from "../../libs/index.js";
 
 class Node {

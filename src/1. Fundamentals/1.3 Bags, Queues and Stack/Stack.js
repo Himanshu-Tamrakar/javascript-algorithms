@@ -49,7 +49,7 @@ Stack.prototype[Symbol.iterator] = function() {
     }
 }
 
-export default Stack;
+export { Stack };
 
 
 

@@ -1,6 +1,6 @@
 import { SequencialST } from "../3.1_Symbol Table/sequencial-st.js";
 import { hashCode } from "../../common/hash.js";
-import Queue_Linked_List from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { Queue_Linked_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
 import { In, StdOut } from "../../libs/index.js";
 
 export class SeparateChaningHashST {

@@ -51,4 +51,15 @@ Bag.prototype[Symbol.iterator] = function() {
     }
 }
 
-export default Bag;
+Bag.main = function() {
+    const bag = new Bag();
+
+    bag.add(10);
+    bag.add(20);
+
+    for (const iterator of bag) {
+        console.log(iterator);
+    }
+}
+
+export { Bag };

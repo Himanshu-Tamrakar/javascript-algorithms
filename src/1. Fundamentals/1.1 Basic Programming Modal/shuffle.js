@@ -21,5 +21,3 @@ Suffle.main = function(args = []) {
     console.log('Suffled arr: ', args);
 
 } 
-
-// Suffle.main();

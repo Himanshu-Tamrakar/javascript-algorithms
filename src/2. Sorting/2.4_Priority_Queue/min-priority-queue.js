@@ -1,6 +1,6 @@
 import { defaultComparator, compare } from "../../common/index.js";
 import { Transaction } from "../../adts/index.js";
-import Stack from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 
 export class MinPQ {
 

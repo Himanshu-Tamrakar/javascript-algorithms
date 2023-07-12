@@ -1,4 +1,4 @@
-class Selection {
+export class Selection {
     static sort (array, comparator) {
 
         comparator = comparator || this.defaultComparator;
@@ -41,7 +41,12 @@ class Selection {
 
         return a < b ? -1 : 1
     }
+
+    static main() {
+      let a = [1,4,2,3,5,7,8,6];
+
+      Selection.sort(a);
+
+      console.log(a);
+    }
 }
-
-
-export default Selection;

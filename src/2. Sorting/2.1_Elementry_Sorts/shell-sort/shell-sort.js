@@ -1,4 +1,4 @@
-export default class ShellSort {
+export class ShellSort {
 
     static sort(arr, comparator) {
         const N = arr.length;
@@ -35,5 +35,14 @@ export default class ShellSort {
     static defaultComparator(a, b) {
         if (a === b) return 0;
         return a < b ? -1 : 1;
+    }
+
+    static main() {
+        let arr = 'qwertyuioplmknjbhgvfcdxsza';
+        arr = arr.split('');
+        ShellSort.sort(arr);
+        console.log('Is array sorted?');
+        console.log('Answer: ', ShellSort.isSorted(arr));
+        console.log(arr);
     }
 }

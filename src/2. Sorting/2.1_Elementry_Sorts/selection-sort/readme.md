@@ -1,6 +1,3 @@
-
-
-
 Selection Sort Properties:
     1. It do N exchanges(Minimum exchanges)
     2. Comparision is ~(N^2) / 2

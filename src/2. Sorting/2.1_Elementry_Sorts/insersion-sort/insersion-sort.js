@@ -35,4 +35,12 @@ InsersionSort.isSorted = function(arr, comp = this.defaultComparator) {
     return true;
 }
 
-export default InsersionSort;
+InsersionSort.main = function() {
+    const arr = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
+
+    InsersionSort.sort(arr);
+
+    console.log(arr);
+}
+
+export { InsersionSort }

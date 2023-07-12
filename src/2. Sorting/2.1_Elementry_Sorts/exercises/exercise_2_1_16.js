@@ -7,7 +7,7 @@ move data only with exch(). You may use Arrays.sort() and assume that it is corr
 
 
 
-export default function Certification() {}
+function Certification() {}
 
 Certification.check = function(arr) {
 
@@ -75,4 +75,9 @@ Certification.main = function() {
     console.log(result);
     
 }
+
+export {
+    Certification
+}
+
 

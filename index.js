@@ -28,12 +28,12 @@ import { QuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-u
 import { WeightedQuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
 
 
-import Selection from './src/2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
-import InsersionSortClient from './src/2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort-client.js';
-import ShellSortClient from './src/2. Sorting/2.1_Elementry_Sorts/shell-sort/shell-sort-client.js';
-import Certification from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise_2_1_16.js';
-import Exercise24_InsertionSortWithSentinel from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise2_1_24_InsertionSortWithSentinel.js';
-import Exercise25_InsertionSortWithoutExchanges from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise25_InsertionSortWithoutExchanges.js';
+import { Selection } from './src/2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
+import { InsersionSort } from './src/2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort.js';
+import { ShellSort } from './src/2. Sorting/2.1_Elementry_Sorts/shell-sort/shell-sort.js';
+import { Certification } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise_2_1_16.js';
+import { Exercise24_InsertionSortWithSentinel } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise2_1_24_InsertionSortWithSentinel.js';
+import { Exercise25_InsertionSortWithoutExchanges } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise25_InsertionSortWithoutExchanges.js';
 import MergeSortClient from './src/2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sprt_client.js';
 import MergeSort_Top_Down_Client from './src/2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
 import Example_2_2_9_Client from './src/2. Sorting/exersices/2.2.9.js';
@@ -135,12 +135,12 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
 
 
     // 2. Sorting--- Start
-    // selectionTest();
-    // InsersionSortClient.main();
-    // ShellSortClient.main();
+    // Selection.main()
+    // InsersionSort.main();
+    // ShellSort.main()
     // Certification.main();
     // Exercise24_InsertionSortWithSentinel.main();
-    // Exercise25_InsertionSortWithoutExchanges.main();
+    Exercise25_InsertionSortWithoutExchanges.main();
     // MergeSortClient.main();
     // MergeSort_Top_Down_Client.main();
     // Example_2_2_9_Client.main();
@@ -205,7 +205,7 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
     // BoyerMoore.main();
     // RabinKarp.main();
     // NFA.main();
-    GREP.main(["(A*B|AC)D"]);
+    // GREP.main(["(A*B|AC)D"]);
 
     // StdIn.read()
     //   .on('line', line => {
@@ -480,16 +480,6 @@ function closestpairTestingClient() {
     console.log("Closest pair: " + closestPair3[0] + " " + closestPair3[1] + " Expected: 0.0 2.0");
 }
 // 1. Fundamentals--- End
-
-// 2. Sorting --- Start
-function selectionTest() {
-    let a = [1,4,2,3,5,7,8,6];
-
-    Selection.sort(a);
-
-    console.log(a);
-}
-
 
 
 const app = express();

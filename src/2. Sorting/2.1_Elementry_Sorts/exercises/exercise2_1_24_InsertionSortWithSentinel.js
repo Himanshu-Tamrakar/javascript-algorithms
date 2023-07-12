@@ -1,8 +1,7 @@
 import { Stopwatch } from '../../../adts/stop-watch/stop-watch.js';
+import { StdOut, StdRandom } from '../../../libs/index.js';
 
-import { StdRandom } from '../../../libs/index.js';
-
-export default function Exercise24_InsertionSortWithSentinel() {}
+function Exercise24_InsertionSortWithSentinel() {}
 
 Exercise24_InsertionSortWithSentinel.insersionSort = function(arr, comporator) {
 
@@ -76,20 +75,23 @@ Exercise24_InsertionSortWithSentinel.timeRandomInput = function(insertionSortTyp
 
 Exercise24_InsertionSortWithSentinel.sortCompare = function() {
 
-    const arrayLength = 200000;
+    const arrayLength = 2000;
     const numberOfExperiments = 10;
    
     let timeInsertionSortDefault = this.timeRandomInput('DEFAULT', arrayLength, numberOfExperiments);
     let timeInsertionSortSentinel = this.timeRandomInput('SENTINAL_INSERSION', arrayLength, numberOfExperiments);
 
-    console.log("For %d random doubles\n Insertion Sort default is", arrayLength);
-    console.log(" %.1f times faster than Insertion Sort with a sentinel", timeInsertionSortSentinel / timeInsertionSortDefault);
-
+    StdOut.println("For %d random doubles\nInsertion Sort default is", arrayLength)
+    StdOut.println("%f times faster than Insertion Sort with a sentinel.", timeInsertionSortSentinel / timeInsertionSortDefault)
 }
 
 
 Exercise24_InsertionSortWithSentinel.main = function() {
     this.sortCompare();
+}
+
+export {
+    Exercise24_InsertionSortWithSentinel
 }
 
 

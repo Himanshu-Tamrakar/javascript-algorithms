@@ -1,8 +1,8 @@
 import { Stopwatch } from '../../../adts/stop-watch/stop-watch.js';
 
-import { StdRandom } from '../../../libs/index.js';
+import { StdOut, StdRandom } from '../../../libs/index.js';
 
-export default function Exercise25_InsertionSortWithoutExchanges() {}
+function Exercise25_InsertionSortWithoutExchanges() {}
 
 Exercise25_InsertionSortWithoutExchanges.insersionSort = function(arr, comporator) {
 
@@ -68,19 +68,23 @@ Exercise25_InsertionSortWithoutExchanges.timeRandomInput = function(insertionSor
 }
 
 Exercise25_InsertionSortWithoutExchanges.sortCompare = function() {
-    const arrayLength = 20000;
+    const arrayLength = 2000;
     const numberOfExperiments = 10;
    
     let timeInsertionSortDefault = this.timeRandomInput('DEFAULT', arrayLength, numberOfExperiments);
     let timeInsertionSortwithoutExchange = this.timeRandomInput('SENTINAL_INSERSION', arrayLength, numberOfExperiments);
 
-    console.log("For %d random doubles\n Insertion Sort default is", arrayLength);
-    console.log(" %.1f times faster than Insertion Sort with a sentinel", timeInsertionSortwithoutExchange / timeInsertionSortDefault);
+    StdOut.println("For %d random doubles\nInsertion Sort default is", arrayLength)
+    StdOut.println("%f times faster than Insertion Sort with a sentinel", timeInsertionSortwithoutExchange / timeInsertionSortDefault)
 }
 
 
 Exercise25_InsertionSortWithoutExchanges.main = function() {
     this.sortCompare();
+}
+
+export {
+    Exercise25_InsertionSortWithoutExchanges
 }
 
 

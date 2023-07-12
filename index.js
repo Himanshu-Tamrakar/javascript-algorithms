@@ -22,7 +22,6 @@ import MoveToFront from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exerci
 import closestPair from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_16_closest_pair.js';
 import farTestPair from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
 import bitonicSearch from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
-
 import { QuickFindUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
 import { QuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
 import { WeightedQuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
@@ -34,12 +33,12 @@ import { ShellSort } from './src/2. Sorting/2.1_Elementry_Sorts/shell-sort/shell
 import { Certification } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise_2_1_16.js';
 import { Exercise24_InsertionSortWithSentinel } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise2_1_24_InsertionSortWithSentinel.js';
 import { Exercise25_InsertionSortWithoutExchanges } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise25_InsertionSortWithoutExchanges.js';
-import MergeSortClient from './src/2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sprt_client.js';
-import MergeSort_Top_Down_Client from './src/2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
-import Example_2_2_9_Client from './src/2. Sorting/exersices/2.2.9.js';
 
-import { QuickSortTestClient } from './src/2. Sorting/2.3_Quick_Sort/quick-sort/quick-sort-client.js';
-import Quick3WayTest from './src/2. Sorting/2.3_Quick_Sort/quick-3-way/quick3way_test_client.js';
+import { MergeSortClient } from './src/2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sort_client.js';
+import { MergeSort_Top_Down_Client } from './src/2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
+import { Example_2_2_9 } from './src/2. Sorting/exersices/2.2.9.js';
+import { QuickSort } from './src/2. Sorting/2.3_Quick_Sort/quick-sort.js';
+import { Quick3Way } from './src/2. Sorting/2.3_Quick_Sort/quick3way.js';
 
 import { MaxPQ } from './src/2. Sorting/2.4_Priority_Queue/max-priority-queue.js';
 import { MinPQ } from './src/2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
@@ -140,14 +139,13 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
     // ShellSort.main()
     // Certification.main();
     // Exercise24_InsertionSortWithSentinel.main();
-    Exercise25_InsertionSortWithoutExchanges.main();
+    // Exercise25_InsertionSortWithoutExchanges.main();
     // MergeSortClient.main();
     // MergeSort_Top_Down_Client.main();
-    // Example_2_2_9_Client.main();
+    // Example_2_2_9.main();
     // 2. Sorting--- End
-    
-    // QuickSortTestClient.main();
-    // Quick3WayTest.main();
+    // QuickSort.main();
+    // Quick3Way.main();
 
     // 3. Priority Queue--Start 
     // MinPQ.main()

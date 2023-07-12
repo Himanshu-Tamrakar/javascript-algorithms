@@ -1,4 +1,4 @@
-export default class MergeSort {
+export class MergeSort {
     static _aux = [];
 
     static sort(arr, comp) {

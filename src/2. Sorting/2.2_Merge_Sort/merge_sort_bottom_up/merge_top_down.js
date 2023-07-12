@@ -1,4 +1,4 @@
-export default class MergeSort_Top_Down {
+export class MergeSort_Top_Down {
     static _aux = [];
 
     static sort(arr, comparator) {

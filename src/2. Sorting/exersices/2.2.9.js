@@ -4,7 +4,7 @@
 // Hint : Pass the auxiliary array as an argument to the recursive sort()
 
 
-class Example_2_2_9 {
+export class Example_2_2_9 {
     
     static sort(arr, comparator) {
         const _aux = new Array(arr.length);
@@ -69,10 +69,7 @@ class Example_2_2_9 {
         }
         return true;
     }
-}
 
-
-export default class Example_2_2_9_Client {
     static main() {
         const arr = [];
         const len = Math.trunc(Math.random() * 100);
@@ -92,6 +89,4 @@ export default class Example_2_2_9_Client {
         console.log(arr);
         console.log('Is sorted', Example_2_2_9.isSorted(arr, comparator));
     }
-
-    
 }

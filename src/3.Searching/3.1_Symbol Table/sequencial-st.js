@@ -1,5 +1,5 @@
 import { equals } from "../../common/index.js";
-import { Queue_Linked_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { StdRandom } from "../../libs/index.js";
 
 class Node {
@@ -150,7 +150,7 @@ export class SequencialST {
 
     keys() {
         let node = this.first;
-        const queue = new Queue_Linked_List()
+        const queue = new Queue()
 
         while(node) {
             queue.enqueue(node.key);

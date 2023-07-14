@@ -1,4 +1,4 @@
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 import { EdgeWeightedDigraph } from './EdgeWeightedDigraph.js';
 import { In, StdOut } from "../../libs/index.js";
 import { Topological } from "../4.2Directed Graphs/topological.js";
@@ -74,7 +74,7 @@ export class AcyclicSP {
      pathTo(v) {
         this.validateVertex(v);
         if (!this.hasPathTo(v)) return null;
-        const path = new Stack_Link_List();
+        const path = new Stack();
         for (let e = this._edgeTo[v]; e != null; e = this._edgeTo[e.from()]) {
             path.push(e);
         }

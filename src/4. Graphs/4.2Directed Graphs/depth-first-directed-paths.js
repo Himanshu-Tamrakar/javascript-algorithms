@@ -1,4 +1,4 @@
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 import { In, StdOut } from "../../libs/index.js";
 import { Digraph } from "./Digraph.js";
 export class DepthFirstDirectedPaths {
@@ -29,7 +29,7 @@ export class DepthFirstDirectedPaths {
     pathTo(v) {
         if (!this.hasPathTo(v)) return null;
 
-        const stack = new Stack_Link_List();
+        const stack = new Stack();
         while (this._edgeTo[v] !== v) {
             stack.push(v);
             v = this._edgeTo[v];
@@ -66,7 +66,7 @@ export class DepthFirstDirectedPaths {
                 }
                 StdOut.println();
             } else {
-                StdOut.println("% and %d not connected", s, v)
+                StdOut.println("%d and %d not connected", s, v)
             }
         }
     

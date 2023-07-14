@@ -1,5 +1,5 @@
-import { Queue_Linked_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
-import { Stack_Link_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
+import { Queue } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js';
+import { Stack } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js';
 import { In, StdOut } from '../../libs/index.js';
 import { Graph } from './graph.js';
 
@@ -18,7 +18,7 @@ export class BreadthFirstPaths {
     }
 
     bfs(G, s) {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         this.marked[s] = true;
         queue.enqueue(s);
 
@@ -42,7 +42,7 @@ export class BreadthFirstPaths {
     pathTo(v) {
         if (!this.hasPathTo(v)) return null;
 
-        const stack = new Stack_Link_List();
+        const stack = new Stack();
         while (this.edgeTo[v] != v) {
             stack.push(v);
             v = this.edgeTo[v];

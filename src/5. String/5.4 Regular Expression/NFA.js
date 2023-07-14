@@ -1,6 +1,6 @@
 
 import { Bag } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 import { Digraph } from "../../4. Graphs/4.2Directed Graphs/Digraph.js";
 import { DirectedDFS } from "../../4. Graphs/4.2Directed Graphs/DirectedDFS.js";
 import { StdOut } from "../../libs/index.js";
@@ -20,7 +20,7 @@ export class NFA {
     constructor(regexp) {
         this.regexp = regexp;
         this.m = regexp.length;
-        const ops = new Stack_Link_List();
+        const ops = new Stack();
         this.G = new Digraph(this.m+1);
 
         for (let i = 0; i < this.m; i++) {

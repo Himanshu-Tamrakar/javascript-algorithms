@@ -1,4 +1,4 @@
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { compare, hashCode,equals } from "../../common/index.js";
 import { In, StdOut } from "../../libs/index.js";
 // NOTE:
@@ -190,7 +190,7 @@ export class LinearProbingHashST {
     * ORdered operation
     **************************************************************************/
     keys() {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
 
         const i = 0;
         for (let i = 0; i < this.m; i++) {

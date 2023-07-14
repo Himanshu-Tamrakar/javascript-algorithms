@@ -1,4 +1,4 @@
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import {In, StdOut} from "../../libs/index.js";
 
 const R = 256;
@@ -109,7 +109,7 @@ export class TriST {
      *     as an iterable
      */
     keysWithPrefix(prefix) {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         const x = this._get(this.root, prefix, 0);
         this.collect(x, prefix, queue);
         return queue;
@@ -131,7 +131,7 @@ export class TriST {
      *     as an iterable, where . is treated as a wildcard character.
      */
     keysThatMatch(pattern) {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         this.collect1(this.root, '', pattern, queue);
         return queue;
     }

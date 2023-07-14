@@ -5,13 +5,18 @@ import { StdIn } from './src/libs/index.js';
 import { pad } from './src/utils/index.js'
 import { StdOut } from './src/libs/index.js';
 
-import { BinarySearch } from './src/1. Fundamentals/1.1 Basic Programming Modal/binary_search.js';
+import { gcd, gcd_test } from './src/1. Fundamentals/1.1 Basic Programming Modal/GreatestCommonDivisor.js';
+import { lcm, lcm_test } from './src/1. Fundamentals/1.1 Basic Programming Modal/LeastCommonMultiplier.js';
+import { BinarySearch } from './src/1. Fundamentals/1.1 Basic Programming Modal/BinarySearch.js';
 import { BinarySearch_Recursive } from './src/1. Fundamentals/1.1 Basic Programming Modal/BinarySearch_Recursive.js';
 import { SuffleTest } from './src/1. Fundamentals/1.1 Basic Programming Modal/exercize/1_1_36.js';
-import { Evaluate, EvaluateClient } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
-import { Stack_Link_List } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js';
+import { FixedCapacityStack } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/FixedCapacityStack.js';
+import { ResizingArrayStack } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/ResizingArrayStack.js';
+import { ResizingArrayQueue } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/ResizingArrayQueue.js';
 import { Bag } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js';
-import { Queue_Linked_List } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { Stack } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js';
+import { Queue } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js';
+import { Evaluate, EvaluateClient } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/Evaluate.js';
 import { parantheses } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_4.js';
 import { execute_1_3_9 } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/exercize/1_3_9.js';
 import { LinkedList } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/LinkedList.js';
@@ -104,13 +109,20 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
 // 2. Sorting --- End
 
 (function main() {
+    // gcd_test();
+    // lcm_test();
     // BinarySearch.main();
     // BinarySearch_Recursive.main();
     // SuffleTest(10, 6);
     // 1. Fundamentals--- Start
     // EvaluateClient();
+    // FixedCapacityStack.main();
+    // ResizingArrayStack.main();
+    // ResizingArrayQueue.main();
+    // Stack.main(); 
+    // Queue.main();
     
-    testStackWithLinkedList();
+    // testStackWithLinkedList();
     // Bag.main()
     // queueTestClient()
     // paranthesesTestClient();
@@ -230,7 +242,7 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
 
 
 function testStackWithLinkedList() {
-    const stack = new Stack_Link_List();
+    const stack = new Stack();
     console.log('Stack is empty ', stack.isEmpty());
     stack.push(10);
     console.log('Stack is empty ', stack.isEmpty());
@@ -258,7 +270,7 @@ function testStackWithLinkedList() {
 
 
 
-    const stack1 = new Stack_Link_List();
+    const stack1 = new Stack();
     stack1.push(190);
     stack1.push(200);
 
@@ -397,7 +409,7 @@ function dequeTestClient() {
 }
 
 function copyAStackTestClient() {
-    const s = new Stack_Link_List();
+    const s = new Stack();
     s.push(1);
     s.push(2);
     s.push(3);

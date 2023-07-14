@@ -1,4 +1,4 @@
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 import {In, StdOut} from "../../libs/index.js";
 import {Graph} from "./graph.js";
 
@@ -12,7 +12,7 @@ export class Cycle {
     constructor(G) {
         this.marked = Array(G.V()).fill(false);
         this.edgeTo = new Array(G.V());
-        this._cycle = new Stack_Link_List();
+        this._cycle = new Stack();
         for (let v = 0; v < G.V(); v++) {
             if (!this.marked[v] && !this.isCycle) this.dfs(G, v, v);
             

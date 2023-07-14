@@ -1,4 +1,4 @@
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import {In, StdOut} from "../../libs/index.js";
 import {Digraph} from "./Digraph.js";
 import { DepthFirstOrder } from "./depth-first-order.js";
@@ -63,7 +63,7 @@ export class KosarajuSharirSCC {
 
         const components = new Array(m);
         for (let i = 0; i < m; i++) {
-            components[i] = new Queue_Linked_List();
+            components[i] = new Queue();
         }
 
         for (let v = 0; v < G.V(); v++) {

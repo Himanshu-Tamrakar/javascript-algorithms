@@ -1,6 +1,6 @@
 import {EdgeWeightedDigraph} from "./EdgeWeightedDigraph.js";
 import { IndexMinPQ } from "../../2. Sorting/2.4_Priority_Queue/IndexMinPQ.js";
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 import { In, StdOut } from "../../libs/index.js";
 
 /**
@@ -78,7 +78,7 @@ export class DijkstraSP {
     pathTo(v) {
         this.validateVertex(v);
         if (!this.hasPathTo(v)) return null;
-        const path = new Stack_Link_List();
+        const path = new Stack();
         let x = this._edgeTo[v];
         while(x !== null) {
             path.push(x);

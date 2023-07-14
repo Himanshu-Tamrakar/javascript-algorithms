@@ -1,7 +1,7 @@
 import { Digraph } from "./Digraph.js";
 import { In, StdOut } from "../../libs/index.js";
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 
 export class BreadthFirstDirectedPaths {
     _marked;
@@ -16,7 +16,7 @@ export class BreadthFirstDirectedPaths {
     }
 
     bfs(G, s) {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         this._marked[s] = true;
         queue.enqueue(s);
         while(!queue.isEmpty()) {
@@ -39,7 +39,7 @@ export class BreadthFirstDirectedPaths {
     pathTo(v) {
         this.validate(v);
 
-        const stack = new Stack_Link_List();
+        const stack = new Stack();
         while(this._edgeTo[v] != v) {
             stack.push(v);
             v = this._edgeTo[v];

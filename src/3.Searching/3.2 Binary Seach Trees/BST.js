@@ -1,4 +1,4 @@
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { compare } from "../../common/index.js";
 import { StdIn, StdOut, In, StdRandom } from "../../libs/index.js";
 class Node {
@@ -270,7 +270,7 @@ export class BST {
     }
 
     keys() {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         this._keys(this.root, queue, this.min(), this.max());
         return queue;
     }

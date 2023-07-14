@@ -1,4 +1,4 @@
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { StdOut, In } from "../../libs/index.js";
 
 class Node {
@@ -134,7 +134,7 @@ export class TST {
      * @return all keys in the symbol table as an {@code Iterable}
      */
     keys() {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         this.collect(this.root, '', queue);
         return queue;
     }
@@ -150,7 +150,7 @@ export class TST {
         if (prefix == null) {
             throw new TypeError("calls keysWithPrefix() with null argument");
         }
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         let x = this._get(this.root, prefix, 0);
         if (x == null) return queue;
         if (x.val != null) queue.enqueue(prefix);
@@ -174,7 +174,7 @@ export class TST {
      *     as an iterable, where . is treated as a wildcard character.
      */
     keysThatMatch(pattern) {
-        const queue = new Queue_Linked_List();
+        const queue = new Queue();
         this.collect1(this.root, '', 0, pattern, queue);
         return queue;
     }

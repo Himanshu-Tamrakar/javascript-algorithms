@@ -1,5 +1,5 @@
 import { IndexMinPQ } from "../../2. Sorting/2.4_Priority_Queue/IndexMinPQ.js";
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { In, StdOut } from "../../libs/index.js";
 import { EdgeWeightedGraph } from './EdgeWeightedGraph.js';
 
@@ -44,7 +44,7 @@ export class PrimMST {
      * @return the edges in a minimum spanning tree (or forest) as an iterable of edges
      */
      edges() {
-        const mst = new Queue_Linked_List();
+        const mst = new Queue();
         for (let v = 0; v < this.edgeTo.length; v++) {
             const e = this.edgeTo[v];
             if (e != null) {

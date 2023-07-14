@@ -1,5 +1,5 @@
 import { WeightedQuichUnionUF } from "../../1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf.js";
-import { Queue_Linked_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { StdOut, In } from "../../libs/index.js";
 import { EdgeWeightedGraph } from "./EdgeWeightedGraph.js";
 export class KrushkalMST {
@@ -8,7 +8,7 @@ export class KrushkalMST {
     _weight;
     constructor(G) {
         this.uf = new WeightedQuichUnionUF(G.V());
-        this.mst = new Queue_Linked_List();
+        this.mst = new Queue();
         this._weight = 0;
         let edges = new Array(G.E());
         let i = 0;

@@ -1,5 +1,5 @@
 import { MinPQ } from '../../2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
-import { Queue_Linked_List } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js';
+import { Queue } from '../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js';
 import {In, StdOut} from '../../libs/index.js';
 import { EdgeWeightedGraph }from './EdgeWeightedGraph.js'
 
@@ -11,7 +11,7 @@ export class LazyPrimMST {
     constructor(G) {
         this._weight = 0;
         this.marked = new Array(G.V()).fill(false);
-        this.mst = new Queue_Linked_List();
+        this.mst = new Queue();
         this.minPQ = new MinPQ(G.V());
 
         this.visit(G, 0);

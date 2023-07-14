@@ -1,4 +1,4 @@
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 import { EdgeWeightedDigraph } from "./EdgeWeightedDigraph.js";
 import { In, StdOut } from "../../libs/index.js";
 
@@ -19,7 +19,7 @@ export class EdgeWeightedDirectedCycle {
         this.marked = new Array(G.V()).fill(false);
         this.edgeTo = new Array(G.V());
         this.isCycle = false;
-        this._cycle = new Stack_Link_List();
+        this._cycle = new Stack();
         
         for (let v = 0; v < G.V(); v++) {
             if (!this.marked[v]) this.dfs(G, v);
@@ -45,7 +45,7 @@ export class EdgeWeightedDirectedCycle {
 
             // trace back directed cycle
             else if (this.onStack[w]) {
-                this._cycle = new Stack_Link_List();
+                this._cycle = new Stack();
 
                 const f = e;
                 while (f.from() != w) {

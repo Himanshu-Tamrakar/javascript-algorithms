@@ -1,5 +1,5 @@
-import { Queue_Linked_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue_Linked_List.js";
-import { Stack_Link_List } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack_Linked_List.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
+import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 import {EdgeWeightedDigraph} from "../4.4 Shortest Paths/EdgeWeightedDigraph.js";
 import {Digraph} from "./Digraph.js";
 
@@ -10,9 +10,9 @@ export class DepthFirstOrder {
     _marked;
 
     constructor(G) {
-        this._pre  = new Queue_Linked_List();
-        this._post = new Queue_Linked_List();
-        this._reversePost = new Stack_Link_List();
+        this._pre  = new Queue();
+        this._post = new Queue();
+        this._reversePost = new Stack();
         this._marked = new Array(G.V()).fill(false);
 
         if (G instanceof Digraph) {

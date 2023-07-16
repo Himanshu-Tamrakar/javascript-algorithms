@@ -1,3 +1,6 @@
+import { In } from '../../libs/index.js';
+
+
 function InsersionSort() {}
 
 InsersionSort.sort = function(arr, comp = this.defaultComparator) {
@@ -36,11 +39,17 @@ InsersionSort.isSorted = function(arr, comp = this.defaultComparator) {
 }
 
 InsersionSort.main = function() {
-    const arr = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
+    
 
-    InsersionSort.sort(arr);
+    // const words = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
+    
+    // const _in = new In('assets/tiny.txt');
+    // const words = _in.readAllWords();
 
-    console.log(arr);
+    const _in = new In('assets/words3.txt');
+    const words = _in.readAllWords();
+    InsersionSort.sort(words);
+    console.log(words);
 }
 
 export { InsersionSort }

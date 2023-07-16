@@ -1,3 +1,9 @@
+
+import { In } from '../../libs/index.js';
+/**
+ * Sorts a sequence of strings from standard input using
+ * binary insertion sort with half exchanges.
+ */
 export class BinaryInsertion {
     /**
      * Rearranges the array in ascending order, using the natural order.
@@ -49,11 +55,15 @@ export class BinaryInsertion {
     }
 
     static main = function() {
-        const arr = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
-    
-        BinaryInsertion.sort(arr);
-    
-        console.log(arr);
+        // const words = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
+        
+        // const _in = new In('assets/tiny.txt');
+        // const words = _in.readAllWords();
+
+        const _in = new In('assets/words3.txt');
+        const words = _in.readAllWords();
+        BinaryInsertion.sort(words);
+        console.log(words);
     }
 
 }

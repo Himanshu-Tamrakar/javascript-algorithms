@@ -1,3 +1,4 @@
+import { In } from '../../libs/index.js';
 export class ShellSort {
 
     static sort(arr, comparator) {
@@ -38,11 +39,14 @@ export class ShellSort {
     }
 
     static main() {
-        let arr = 'qwertyuioplmknjbhgvfcdxsza';
-        arr = arr.split('');
-        ShellSort.sort(arr);
-        console.log('Is array sorted?');
-        console.log('Answer: ', ShellSort.isSorted(arr));
-        console.log(arr);
+        // const words = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
+        
+        // const _in = new In('assets/tiny.txt');
+        // const words = _in.readAllWords();
+        
+        const _in = new In('assets/words3.txt');
+        const words = _in.readAllWords();
+        ShellSort.sort(words);
+        console.log(words);
     }
 }

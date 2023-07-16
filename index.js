@@ -170,14 +170,14 @@ import {Stopwatch} from './src/adts/index.js';
 
 
     // 2. Sorting--- Start
-    // Selection.main()
-    // InsersionSort.main();
-    // ShellSort.main()
+    Selection.main()
+    InsersionSort.main();
+    ShellSort.main()
     // Certification.main();
     // Exercise24_InsertionSortWithSentinel.main();
     // Exercise25_InsertionSortWithoutExchanges.main();
-    // InsersionX.main();
-    // BinaryInsertion.main();
+    InsersionX.main();
+    BinaryInsertion.main();
 
     // MergeSortClient.main();
     // MergeSort_Top_Down_Client.main();

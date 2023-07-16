@@ -1,3 +1,4 @@
+import { In } from '../../libs/index.js';
 /**
  *  Sorts a sequence of strings from standard input using an optimized
  *  version of insertion sort that uses half exchanges instead of
@@ -55,11 +56,15 @@ export class InsersionX {
     }
 
     static main = function() {
-        const arr = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
-    
-        InsersionX.sort(arr);
-    
-        console.log(arr);
+        // const words = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
+        
+        // const _in = new In('assets/tiny.txt');
+        // const words = _in.readAllWords();
+        
+        const _in = new In('assets/words3.txt');
+        const words = _in.readAllWords();
+        InsersionX.sort(words);
+        console.log(words);
     }
 
     

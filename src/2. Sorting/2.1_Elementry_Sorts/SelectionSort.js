@@ -1,4 +1,4 @@
-import { compare } from "../../common/index.js";
+import { In } from '../../libs/index.js';
 
 export class Selection {
     static sort (array, comparator) {
@@ -45,10 +45,14 @@ export class Selection {
     }
 
     static main() {
-      let a = [1,4,2,3,5,7,8,6];
-
-      Selection.sort(a);
-
-      console.log(a);
+        // const words = ['Himanshu', 'Aman', 'Anshul', 'Shetty', 'Anup', 'Harbu', 'Paranda', 'Aditya', 'Lankshay'];
+        
+        // const _in = new In('assets/tiny.txt');
+        // const words = _in.readAllWords();
+        
+        const _in = new In('assets/words3.txt');
+        const words = _in.readAllWords();
+        Selection.sort(words);
+        console.log(words);
     }
 }

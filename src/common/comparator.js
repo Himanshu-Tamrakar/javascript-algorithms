@@ -37,13 +37,19 @@ function hasCompareTo (obj) {
  *   returns `1` when `a` is greater than `b` or
  *   returns `0` when `a` is equal to `b`.
  */
-function compare(a, b) {
+function compare(a, b, comparatorFunc = null) {
     if (a === b) return 0;
 
+    // If user passes comparator function
+    if (comparatorFunc != null) {
+        return comparatorFunc(a, b);
+    }
+
+    // If a, b are ovject and each object defined its own compareTo method
     if (hasCompareTo(a) && hasCompareTo(b)) {
         return a.compareTo(b);
     }
-
+    // user default comparator
     return defaultComparator(a, b);
 }
 

@@ -40,12 +40,14 @@ import { QuickUnionUF } from './src/1. Fundamentals/1.5 Union FInd/QuickUnion-uf
 import { WeightedQuichUnionUF } from './src/1. Fundamentals/1.5 Union FInd/WeightedQuickUnionUF.js';
 import { UF } from './src/1. Fundamentals/1.5 Union FInd/UF.js';
 
-import { Selection } from './src/2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
-import { InsersionSort } from './src/2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort.js';
-import { ShellSort } from './src/2. Sorting/2.1_Elementry_Sorts/shell-sort/shell-sort.js';
+import { Selection } from './src/2. Sorting/2.1_Elementry_Sorts/SelectionSort.js';
+import { InsersionSort } from './src/2. Sorting/2.1_Elementry_Sorts/InsersionSort.js';
+import { ShellSort } from './src/2. Sorting/2.1_Elementry_Sorts/ShellSort.js';
 import { Certification } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise_2_1_16.js';
 import { Exercise24_InsertionSortWithSentinel } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise2_1_24_InsertionSortWithSentinel.js';
 import { Exercise25_InsertionSortWithoutExchanges } from './src/2. Sorting/2.1_Elementry_Sorts/exercises/exercise25_InsertionSortWithoutExchanges.js';
+import { InsersionX } from './src/2. Sorting/2.1_Elementry_Sorts/InsertionX.js';
+import { BinaryInsertion } from './src/2. Sorting/2.1_Elementry_Sorts/BinaryInsertion.js';
 
 import { MergeSortClient } from './src/2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sort_client.js';
 import { MergeSort_Top_Down_Client } from './src/2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
@@ -174,6 +176,9 @@ import {Stopwatch} from './src/adts/index.js';
     // Certification.main();
     // Exercise24_InsertionSortWithSentinel.main();
     // Exercise25_InsertionSortWithoutExchanges.main();
+    // InsersionX.main();
+    // BinaryInsertion.main();
+
     // MergeSortClient.main();
     // MergeSort_Top_Down_Client.main();
     // Example_2_2_9.main();
@@ -217,7 +222,7 @@ import {Stopwatch} from './src/adts/index.js';
     // EdgeWeightedGraph.main();
     // LazyPrimMST.main();
     // PrimMST.main();
-    KrushkalMST.main();
+    // KrushkalMST.main();
 
     // DirectedEdge.main();
     // EdgeWeightedDigraph.main();

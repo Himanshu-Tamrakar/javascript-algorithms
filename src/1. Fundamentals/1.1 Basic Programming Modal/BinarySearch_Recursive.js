@@ -39,7 +39,7 @@ BinarySearch_Recursive._rank = function(arr, key, lo, hi) {
    if (lo > hi) {
        return -1;
    }
-   const mid = lo + Math.round((hi - lo) / 2);
+   const mid = lo + Math.floor((hi - lo) / 2);
 
    if (key === arr[mid]) {
        return mid;

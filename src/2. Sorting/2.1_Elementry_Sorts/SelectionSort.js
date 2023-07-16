@@ -1,3 +1,5 @@
+import { compare } from "../../common/index.js";
+
 export class Selection {
     static sort (array, comparator) {
 

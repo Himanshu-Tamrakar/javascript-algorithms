@@ -4,6 +4,10 @@ export class Stopwatch {
         Object.seal(this);
     }
 
+    /**
+     * Elapsed time in second
+     * @returns Elapsed time in seconds
+     */
     elapsedTime() {
         const now = Date.now();
         return (now - this._start) / 1000;

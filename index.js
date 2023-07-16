@@ -29,10 +29,16 @@ import { MoveToFront } from './src/1. Fundamentals/1.3 Bags, Queues and Stack/ex
 import { closestPair } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_16_closest_pair.js';
 import { farTestPair } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_17_fartest_pair.js';
 import { bitonicSearch } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/exercise/1_4_20_bitonic_search.js';
-import { QuickFindUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-find/quick-find-uf-client.js';
-import { QuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/quick-union/quick-union-uf-client.js';
-import { WeightedQuickUnionUFClient } from './src/1. Fundamentals/1.5 Union FInd/weighet-quick-union/weighted-quick-union-uf-client.js';
 
+import { TwoSum } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/TwoSum.js';
+import { TwoSumFast } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/TwoSumFast.js';
+import { ThreeSumFast } from './src/1. Fundamentals/1.4  ANALYSIS OF ALGORITHMS/ThreeSumFast.js';
+
+
+import { QuickFindUF } from './src/1. Fundamentals/1.5 Union FInd/QuickFind-uf.js';
+import { QuickUnionUF } from './src/1. Fundamentals/1.5 Union FInd/QuickUnion-uf.js';
+import { WeightedQuichUnionUF } from './src/1. Fundamentals/1.5 Union FInd/WeightedQuickUnionUF.js';
+import { UF } from './src/1. Fundamentals/1.5 Union FInd/UF.js';
 
 import { Selection } from './src/2. Sorting/2.1_Elementry_Sorts/selection-sort/selection-sort.js';
 import { InsersionSort } from './src/2. Sorting/2.1_Elementry_Sorts/insersion-sort/insersion-sort.js';
@@ -106,6 +112,7 @@ import { RabinKarp } from './src/5. String/5.3 SubString Search/RabinKarp.js';
 
 import { NFA } from './src/5. String/5.4 Regular Expression/NFA.js';
 import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
+import {Stopwatch} from './src/adts/index.js';
 // 2. Sorting --- End
 
 (function main() {
@@ -140,12 +147,21 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
     // closestpairTestingClient();
     // fartestPairTestingClient();
 
+    // TwoSum.main();/);
+    // ThreeSumFast.main();
+
     // const arr = [2, 6,3,1];
     // console.log(arr);
     // bitonicSearch(arr, 1);
-    // QuickFindUFClient.main();
-    // QuickUnionUFClient.main();
-    // WeightedQuickUnionUFClient.main();
+    // QuickFindUF.main();
+    // QuickUnionUF.main();
+    // const watch1 = new Stopwatch()
+    // WeightedQuichUnionUF.main();
+    // console.log(watch1.elapsedTime());
+
+    // const watch = new Stopwatch();
+    // UF.main();
+    // console.log(watch.elapsedTime());
 
 
     // 1. Fundamentals--- End
@@ -201,7 +217,7 @@ import { GREP } from './src/5. String/5.4 Regular Expression/GREP.js';
     // EdgeWeightedGraph.main();
     // LazyPrimMST.main();
     // PrimMST.main();
-    // KrushkalMST.main();
+    KrushkalMST.main();
 
     // DirectedEdge.main();
     // EdgeWeightedDigraph.main();

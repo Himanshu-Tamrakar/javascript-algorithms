@@ -49,9 +49,11 @@ import { Exercise25_InsertionSortWithoutExchanges } from './src/2. Sorting/2.1_E
 import { InsersionX } from './src/2. Sorting/2.1_Elementry_Sorts/InsertionX.js';
 import { BinaryInsertion } from './src/2. Sorting/2.1_Elementry_Sorts/BinaryInsertion.js';
 
-import { MergeSortClient } from './src/2. Sorting/2.2_Merge_Sort/merge_sort_top_down/merge_sort_client.js';
-import { MergeSort_Top_Down_Client } from './src/2. Sorting/2.2_Merge_Sort/merge_sort_bottom_up/merge_top_down_client.js';
+import { MergeSort } from './src/2. Sorting/2.2_Merge_Sort/MergeSort.js';
+import { MergeSortBottomUP } from './src/2. Sorting/2.2_Merge_Sort/MergeSortBottomUP.js';
 import { Example_2_2_9 } from './src/2. Sorting/exersices/2.2.9.js';
+import { MergeX } from './src/2. Sorting/2.2_Merge_Sort/MergeX.js';
+
 import { QuickSort } from './src/2. Sorting/2.3_Quick_Sort/quick-sort.js';
 import { Quick3Way } from './src/2. Sorting/2.3_Quick_Sort/quick3way.js';
 
@@ -170,17 +172,19 @@ import {Stopwatch} from './src/adts/index.js';
 
 
     // 2. Sorting--- Start
-    Selection.main()
-    InsersionSort.main();
-    ShellSort.main()
+    // Selection.main()
+    // InsersionSort.main();
+    // ShellSort.main()
     // Certification.main();
     // Exercise24_InsertionSortWithSentinel.main();
     // Exercise25_InsertionSortWithoutExchanges.main();
-    InsersionX.main();
-    BinaryInsertion.main();
+    // InsersionX.main();
+    // BinaryInsertion.main();
 
-    // MergeSortClient.main();
-    // MergeSort_Top_Down_Client.main();
+    MergeSort.main()
+    MergeSortBottomUP.main();
+    MergeX.main();
+
     // Example_2_2_9.main();
     // 2. Sorting--- End
     // QuickSort.main();

@@ -121,10 +121,10 @@ import {Stopwatch} from './src/adts/index.js';
 // 2. Sorting --- End
 
 (function main() {
-    const rl = StdIn.readFileAsStream('assets/m1.txt');
-    rl.on('line', line => {
-        StdOut.println(line)
-    });
+    // const rl = StdIn.readFileAsStream('assets/m1.txt');
+    // rl.on('line', line => {
+    //     StdOut.println(line)
+    // });
 
     /*************************************************************
     * Binary Seach
@@ -211,7 +211,7 @@ import {Stopwatch} from './src/adts/index.js';
     * Priority Queue
     **************************************************************/
     // MinPQ.main()
-    // MaxPQ.main();
+    MaxPQ.main();
     // HearSort.main();
     // IndexMinPQ.main();
     // IndexMaxPQ.main();

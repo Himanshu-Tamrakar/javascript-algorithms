@@ -1,5 +1,6 @@
 import { defaultComparator, compare } from "../../common/index.js";
 import { Transaction } from "../../adts/index.js";
+import {StdOut} from "../../libs/index.js";
 
 export class MaxPQ {
 
@@ -140,6 +141,26 @@ export class MaxPQ {
         return max;
     }
 
+    [Symbol.iterator] = function() {
+        let copy;
+
+        // add all elements to copy of heap
+        // takes linear time since already in heap order so no keys move
+        copy = new MaxPQ(this._pq.length - 1);
+        for (let i = 1; i <= this._n; i++)
+            copy.insert(this._pq[i]);
+
+        return {
+            next() {
+                if (!copy.isEmpty()) return {value: copy.delMax(), done: false}
+                else return {value: null, done: true}
+            },
+            return(v) {
+                return {value: v, done: true}
+            }
+        }
+    }
+
     static main() {
         const data = [
         'Turing~6/17/1990~644.08',
@@ -172,10 +193,9 @@ export class MaxPQ {
             if (pq.size() > size) pq.delMax();
         });
 
-        while(!pq.isEmpty()) {
-            console.log(pq.delMax());
+        for (const tran of pq) {
+            StdOut.println(tran);
         }
-
     }
 
 }

@@ -153,6 +153,26 @@ export class MinPQ {
         [this._pq[i], this._pq[j]] = [this._pq[j], this._pq[i]]
     }
 
+    [Symbol.iterator] = function() {
+        let copy;
+
+        // add all elements to copy of heap
+        // takes linear time since already in heap order so no keys move
+        copy = new MinPQ(this._pq.length - 1);
+        for (let i = 1; i <= this._n; i++)
+            copy.insert(this._pq[i]);
+
+        return {
+            next() {
+                if (!copy.isEmpty()) return {value: copy.delMin(), done: false}
+                else return {value: null, done: true}
+            },
+            return(v) {
+                return {value: v, done: true}
+            }
+        }
+    }
+
     static main() {
         const data = [
         'Turing~6/17/1990~644.08',
@@ -185,15 +205,17 @@ export class MinPQ {
             if (pq.size() > size) pq.delMin();
         });
 
-        let stack = new Stack();
-        
-        while(!pq.isEmpty()) {
-            stack.push(pq.delMin());
+        for (const tran of pq) {
+            StdOut.println(tran);
         }
 
-        while(!stack.isEmpty()) {
-            console.log(stack.pop());
-        }
+        // let stack = new Stack();
+        // while(!pq.isEmpty()) {
+        //     stack.push(pq.delMin());
+        // }
+        // while(!stack.isEmpty()) {
+        //     console.log(stack.pop());
+        // }
 
     }
 

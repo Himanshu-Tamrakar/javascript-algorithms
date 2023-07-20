@@ -2,8 +2,10 @@
 // const readline = require('readline')
 import assert from 'assert';
 import readline from 'readline';
+import fs from 'fs';
 
 let reader = null
+let fileReader = null;
 
 /**
  * StdIn
@@ -16,14 +18,34 @@ class StdIn {
    * @see {@link https://nodejs.org/api/readline.html}
    * @returns {EventEmitter} The reader interface.
    */
-  static read () {
+  static read() {
     if (reader === null) {
-      reader = Object.create(readline.createInterface({
-        input: process.stdin
-      }))
-    }
+      reader = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+        prompt: 'OHAI> '
+      })
 
+      reader.on('close', () => {
+        console.log('Stdin Reader Closed!');
+        process.exit(0);
+      })
+    }
     return reader
+  }
+
+  static readFileAsStream(filepath) {
+    const fileStream = fs.createReadStream(filepath);
+    const fileReader = readline.createInterface({
+      input: fileStream,
+      crlfDelay: Infinity,
+    })
+
+    fileReader.on('close', () => {
+      console.log('File Reader Closed!');
+      process.exit(0);
+    });
+    return fileReader;
   }
 
   /**

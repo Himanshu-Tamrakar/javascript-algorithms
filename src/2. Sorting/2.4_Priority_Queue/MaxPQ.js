@@ -1,16 +1,15 @@
 import { defaultComparator, compare } from "../../common/index.js";
 import { Transaction } from "../../adts/index.js";
-import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js";
 
-export class MinPQ {
+export class MaxPQ {
 
-    constructor(min) {
+    constructor(max = 1) {
         this._n = 0; // initial size
         this._pq = []; // default initialization
 
-        if (typeof min === 'number' && Number.isInteger(min) && min > 0) {
-            this._pq = new Array(min+1);
-        } else if(Array.isArray(min)) {
+        if (typeof max === 'number' && Number.isInteger(max) && max > 0) {
+            this._pq = new Array(max+1);
+        } else if(Array.isArray(max)) {
             // Implement pq with array value
         }
 
@@ -19,14 +18,14 @@ export class MinPQ {
  
 
     /**
-     * Compares if key at index `i` is greater than key at index `j`.
+     * Compares if key at index `i` is less than key at index `j`.
      * @private
      * @param {number} i Index of first key
      * @param {number} j Index of second key
-     * @returns {boolean} if key at index `i` is greater than key at index`j`
+     * @returns {boolean} if key at index `i` is less than key at index`j`
      */
-    greater(i, j) {
-        return compare(this._pq[i], this._pq[j]) > 0;
+    less(i, j) {
+        return compare(this._pq[i], this._pq[j]) < 0;
     }
 
     /**
@@ -41,7 +40,7 @@ export class MinPQ {
     }
 
     /**
-     * Bottom-up reheapify (minimum).
+     * Bottom-up reheapify (maximum).
      * Algorithm to fix the heap order when a key becomes
      * __greater__ than its parent.
      * @private
@@ -49,14 +48,14 @@ export class MinPQ {
      * @returns {void}
      */
     swim(k) {
-        while(k > 1 && this.greater(Math.floor(k / 2), k)) {
+        while(k > 1 && this.less(Math.floor(k / 2), k)) {
             this.exch(Math.floor(k / 2), k);
             k = Math.floor(k / 2);
         }
     }
 
     /**
-     * Top-down reheapify (minimum).
+     * Top-down reheapify (maximum).
      * Algorithm to fix the heap order when a key becomes
      * __smaller__ than a child.
      * @private
@@ -66,8 +65,8 @@ export class MinPQ {
     sink(k) {
         while(2*k <= this._n) {
             let j = k*2;
-            if (j < this._n && this.greater(j, j+1)) j++;
-            if (!this.greater(k, j)) break;
+            if (j < this._n && this.less(j, j+1)) j++;
+            if (!this.less(k, j)) break;
             this.exch(k ,j);
             k = j;
         }
@@ -89,6 +88,17 @@ export class MinPQ {
         return this._n;
     }
 
+    resize(capacity) {
+        console.log(capacity);
+        if (capacity <= this._n) throw Error('resize');
+
+        const copyPQ = new Array(capacity);
+        for (let i = 0; i <= this._n; i++) {
+            copyPQ[i] = this._pq[i];
+        }
+        this._pq = copyPQ;
+    }
+
 
     /**
      * Insert item into PQ and reheapify
@@ -96,36 +106,39 @@ export class MinPQ {
      * @returns {void}
      */
     insert(v) {
+        // double size of array if necessary
+        if (this._n == this._pq.length - 1) this.resize(2 * this._pq.length);
+
         this._pq[++this._n] = v;
         this.swim(this._n);
     }
 
     /**
-     * returns delete and return the minimum key
-     * @returns {min} minimum value in PQ
+     * returns delete and return the maximum key
+     * @returns {max} maximum value in PQ
      */
-    delMin() {
-        let min = this._pq[1];
+    delMax() {
+        let max = this._pq[1];
         this.exch(1, this._n);
         this._n--;
         this._pq[this._n+1] = null;
         this.sink(1);
-        return min;
+        if ((this._n > 0) && (this._n == Math.floor((this._pq.length - 1) / 4))) this.resize(Math.floor(this._pq.length / 2));
+        return max;
     }
 
     /**
      * If PQ is empty then throw an error otherwise
-     * return minimum value in PQ
-     * @returns {min} minimum value in PQ;
+     * return maximum value in PQ
+     * @returns {max} maximum value in PQ;
      */
-    min() {
+    max() {
         if (this._n === 0) {
             throw new ReferenceError('Priority queue is empty');
         }
-        let min = this._pq[1];
-        return min;
+        let max = this._pq[1];
+        return max;
     }
-
 
     static main() {
         const data = [
@@ -153,20 +166,14 @@ export class MinPQ {
         });
 
         const size = 7
-        const pq = new MinPQ(size+1);
+        const pq = new MaxPQ(size+1);
         transactions.forEach(t => {
             pq.insert(t);
-            if (pq.size() > size) pq.delMin();
+            if (pq.size() > size) pq.delMax();
         });
 
-        let stack = new Stack();
-        
         while(!pq.isEmpty()) {
-            stack.push(pq.delMin());
-        }
-
-        while(!stack.isEmpty()) {
-            console.log(stack.pop());
+            console.log(pq.delMax());
         }
 
     }

@@ -54,14 +54,15 @@ import { MergeSortBottomUP } from './src/2. Sorting/2.2_Merge_Sort/MergeSortBott
 import { Example_2_2_9 } from './src/2. Sorting/exersices/2.2.9.js';
 import { MergeX } from './src/2. Sorting/2.2_Merge_Sort/MergeX.js';
 
-import { QuickSort } from './src/2. Sorting/2.3_Quick_Sort/quick-sort.js';
-import { Quick3Way } from './src/2. Sorting/2.3_Quick_Sort/quick3way.js';
+import { QuickSort } from './src/2. Sorting/2.3_Quick_Sort/QuickSort.js';
+import { Quick3Way } from './src/2. Sorting/2.3_Quick_Sort/Quick3Way.js';
 
-import { MaxPQ } from './src/2. Sorting/2.4_Priority_Queue/max-priority-queue.js';
-import { MinPQ } from './src/2. Sorting/2.4_Priority_Queue/min-priority-queue.js';
+import { MaxPQ } from './src/2. Sorting/2.4_Priority_Queue/MaxPQ.js';
+import { MinPQ } from './src/2. Sorting/2.4_Priority_Queue/MinPQ.js';
 import { HearSort } from './src/2. Sorting/2.4_Priority_Queue/heap-sort.js';
 import { IndexMinPQ } from './src/2. Sorting/2.4_Priority_Queue/IndexMinPQ.js';
 import { IndexMaxPQ } from './src/2. Sorting/2.4_Priority_Queue/IndexMaxPQ.js';
+import { TopM } from './src/2. Sorting/2.4_Priority_Queue/TopM.js';
 
 import { SequencialST } from './src/3.Searching/3.1_Symbol Table/sequencial-st.js';
 import { BinarySeachSt } from './src/3.Searching/3.1_Symbol Table/binary-search-st.js';
@@ -120,58 +121,69 @@ import {Stopwatch} from './src/adts/index.js';
 // 2. Sorting --- End
 
 (function main() {
-    // gcd_test();
-    // lcm_test();
+    const rl = StdIn.readFileAsStream('assets/m1.txt');
+    rl.on('line', line => {
+        StdOut.println(line)
+    });
+
+    /*************************************************************
+    * Binary Seach
+    *************************************************************/
     // BinarySearch.main();
     // BinarySearch_Recursive.main();
     // SuffleTest(10, 6);
-    // 1. Fundamentals--- Start
+    // gcd_test();
+    // lcm_test();
+    
+    /*************************************************************
+    * Bag, Queue, Stack, Dijkstra Expression Evaluation, LinkedList
+    **************************************************************/
     // EvaluateClient();
     // FixedCapacityStack.main();
     // ResizingArrayStack.main();
     // ResizingArrayQueue.main();
+    // Bag.main()
     // Stack.main(); 
     // Queue.main();
-    
+    // linkedListTestingClient();
     // testStackWithLinkedList();
-    // Bag.main()
     // queueTestClient()
     // paranthesesTestClient();
-
-    // execute_1_3_9_test_client();
-    // linkedListTestingClient();
-    // execute_1_3_30_Test_Client();
     // stequeTestClient();
     // dequeTestClient();
-
+    // execute_1_3_9_test_client();
+    // execute_1_3_30_Test_Client();
+    
+    /***********************************************************
+    * Two Sum, Three Sum Josephus Problem, Closest Pair, 
+    * Fartest Pair, BitonicSeach
+    ***********************************************************/
+    // TwoSum.main();
+    // ThreeSumFast.main();
     // josephusProblem(7, 2);
     // copyAStackTestClient();
-
     // moveToFrontTestClient();
     // closestpairTestingClient();
     // fartestPairTestingClient();
-
-    // TwoSum.main();/);
-    // ThreeSumFast.main();
-
     // const arr = [2, 6,3,1];
     // console.log(arr);
     // bitonicSearch(arr, 1);
+
+    /***********************************************************
+    * Union Find
+    ***********************************************************/
     // QuickFindUF.main();
     // QuickUnionUF.main();
     // const watch1 = new Stopwatch()
     // WeightedQuichUnionUF.main();
     // console.log(watch1.elapsedTime());
-
     // const watch = new Stopwatch();
     // UF.main();
     // console.log(watch.elapsedTime());
 
-
-    // 1. Fundamentals--- End
-
-
-    // 2. Sorting--- Start
+    /************************************************************
+    * Elementry Sort
+    *************************************************************/
     // Selection.main()
     // InsersionSort.main();
     // ShellSort.main()
@@ -181,21 +193,29 @@ import {Stopwatch} from './src/adts/index.js';
     // InsersionX.main();
     // BinaryInsertion.main();
 
-    MergeSort.main()
-    MergeSortBottomUP.main();
-    MergeX.main();
-
+    /*************************************************************
+    * MergeSort
+    **************************************************************/
+    // MergeSort.main()
+    // MergeSortBottomUP.main();
+    // MergeX.main();
     // Example_2_2_9.main();
-    // 2. Sorting--- End
+
+    /*************************************************************
+    * Quick Sort
+    *************************************************************/
     // QuickSort.main();
     // Quick3Way.main();
 
-    // 3. Priority Queue--Start 
+    /*************************************************************
+    * Priority Queue
+    **************************************************************/
     // MinPQ.main()
     // MaxPQ.main();
     // HearSort.main();
     // IndexMinPQ.main();
     // IndexMaxPQ.main();
+    // TopM.main();
 
     // 2. Searching
     // SequencialST.main();

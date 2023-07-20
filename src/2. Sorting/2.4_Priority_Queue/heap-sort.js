@@ -1,4 +1,4 @@
-import { defaultComparator, compare } from "../../common/index.js";
+import { defaultComparator } from "../../common/index.js";
 import { StdRandom } from "../../libs/index.js";
 export class HearSort {
     static sort(a, comparator) {
@@ -26,13 +26,6 @@ export class HearSort {
             k = j;
         }
     }
-
-    // static swim(a, k, n, comparator) {
-    //     while(k > 1 && thie.less(a, Math.floor(k/2), k, comparator)) {
-    //         this.exch(a, Math.floor(k/2), k);
-    //         k = Math.floor(k/2);
-    //     }
-    // }
 
     static less(a, i, j, comparator = defaultComparator) {
         return comparator(a[i-1], a[j-1]) < 0;

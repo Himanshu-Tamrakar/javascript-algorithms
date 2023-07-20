@@ -1,4 +1,4 @@
-import { StdRandom } from "../../libs/index.js";
+import { StdRandom, In, StdOut } from "../../libs/index.js";
 export class Quick3Way {
 
     static sort(arr, comparator) {
@@ -11,6 +11,7 @@ export class Quick3Way {
         this._sort(arr, gt+1, hi, comparator);
     }
 
+    // quicksort the subarray a[lo .. hi] using 3-way partitioning
     static partition(arr, lo, hi, comparator) {
         let i = lo;
         let lt = lo;
@@ -30,6 +31,9 @@ export class Quick3Way {
         return [lt, gt];
     }
 
+    /***************************************************************************
+    *  Helper sorting functions.
+    ***************************************************************************/
     static defaultComparator(a, b) {
         if (a === b) return 0;
         return a < b ? -1 : 1;
@@ -52,15 +56,20 @@ export class Quick3Way {
     }
 
     static main() {
-        const max = StdRandom.uniform(10, 100000);
-        
-        const arr = [3,2,2,1,1,2,3,3,4,1,2,3];
-        const comp = (a, b) => b-a;
-        for (let i = 0; i < max; i++) {
-            arr.push(Math.trunc(Math.random() * 10));
-        }
+        const _in = new In('assets/words3.txt');
+        const data = _in.readAllWords();
+        const comp = (a, b) => a < b ? -1 : a > b ? 1 : 0;
+
+        // const max = StdRandom.uniform(10, 20);
+        // const data = [3,2,2,1,1,2,3,3,4,1,2,3];
+        // for (let i = 0; i < max; i++) {
+        //     data.push(Math.trunc(Math.random() * 10));
+        // }
+        // const comp = (a, b) => a-b;
             
-        Quick3Way.sort(arr, comp);
-        console.log(Quick3Way.isSorted(arr, comp));
+        Quick3Way.sort(data, comp);
+        StdOut.println(data);
+        StdOut.println(Quick3Way.isSorted(data, comp));
+
     }
 }

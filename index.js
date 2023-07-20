@@ -64,7 +64,7 @@ import { IndexMinPQ } from './src/2. Sorting/2.4_Priority_Queue/IndexMinPQ.js';
 import { IndexMaxPQ } from './src/2. Sorting/2.4_Priority_Queue/IndexMaxPQ.js';
 import { TopM } from './src/2. Sorting/2.4_Priority_Queue/TopM.js';
 
-import { SequencialST } from './src/3.Searching/3.1_Symbol Table/sequencial-st.js';
+import { SequencialST } from './src/3.Searching/3.1_Symbol Table/SequencialST.js';
 import { BinarySeachSt } from './src/3.Searching/3.1_Symbol Table/binary-search-st.js';
 
 import { BST } from './src/3.Searching/3.2 Binary Seach Trees/BST.js';
@@ -211,7 +211,7 @@ import {Stopwatch} from './src/adts/index.js';
     * Priority Queue
     **************************************************************/
     // MinPQ.main()
-    MaxPQ.main();
+    // MaxPQ.main();
     // HearSort.main();
     // IndexMinPQ.main();
     // IndexMaxPQ.main();
@@ -219,7 +219,7 @@ import {Stopwatch} from './src/adts/index.js';
 
     // 2. Searching
     // SequencialST.main();
-    // BinarySeachSt.main(); 
+    BinarySeachSt.main(); 
     // BST.main();
     // LinearProbingHashST.main();
     // SeparateChaningHashST.main()

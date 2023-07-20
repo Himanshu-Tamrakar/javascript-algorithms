@@ -1,4 +1,4 @@
-import { SequencialST } from "../3.1_Symbol Table/sequencial-st.js";
+import { SequencialST } from "../3.1_Symbol Table/SequencialST.js";
 import { hashCode } from "../../common/hash.js";
 import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { In, StdOut } from "../../libs/index.js";

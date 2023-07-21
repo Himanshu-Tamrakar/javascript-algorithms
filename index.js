@@ -217,10 +217,10 @@ import {Stopwatch} from './src/adts/index.js';
     // IndexMaxPQ.main();
     // TopM.main();
 
-    // 2. Searching
     // SequencialST.main();
-    BinarySeachSt.main(); 
-    // BST.main();
+    // BinarySeachSt.main(); 
+
+    BST.main();
     // LinearProbingHashST.main();
     // SeparateChaningHashST.main()
 

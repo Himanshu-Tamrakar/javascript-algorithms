@@ -358,25 +358,25 @@ export class BST {
 
 
     static main() {
-    const keys = 'ABCDEFGHIJKLNOPQRSTUVWXYZ'.split('');
-    const st = new BST();
-    for (let i = 0; i < keys.length; i++) {
-        st.put(keys[i], i);
-        
-    }
-    for (const key of st) {
-        console.log(key, ' : ', st.get(key));
-    }
-    StdOut.println('D: Delete, SB: ST Size Before Delete, SA: ST size after delete, TG: Try to get deleted item');
-    StdOut.println('D : SB  : SA : TG');
-    StdOut.println('---------------------')
-    keys.forEach(k => {
-        const bsz  = st.size();
-        st.delete(k);
-        const asz  = st.size();
-        const aval = st.get(k)
-        console.log(`${k} : ${bsz} : ${asz} : ${aval}`);
-    })
+        const keys = 'ABCDEFGHIJKLNOPQRSTUVWXYZ'.split('');
+        const st = new BST();
+        for (let i = 0; i < keys.length; i++) {
+            st.put(keys[i], i);
+            
+        }
+        for (const key of st) {
+            console.log(key, ' : ', st.get(key));
+        }
+        StdOut.println('D: Delete, SB: ST Size Before Delete, SA: ST size after delete, TG: Try to get deleted item');
+        StdOut.println('D : SB  : SA : TG');
+        StdOut.println('---------------------')
+        keys.forEach(k => {
+            const bsz  = st.size();
+            st.delete(k);
+            const asz  = st.size();
+            const aval = st.get(k)
+            console.log(`${k} : ${bsz} : ${asz} : ${aval}`);
+        })
 
         // console.log('Enter size of word');
         // StdIn.read()

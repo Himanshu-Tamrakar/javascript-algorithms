@@ -31,10 +31,10 @@ export class LinearProbingHashST {
      return this.n;
     }
 
-     // Hash function from text book
-     hashTextBook(key) {
-        return hashCode(key) & 0x7fffffff;
-     }
+    // Hash function from text book
+    hashTextBook(key) {
+       return hashCode(key) & 0x7fffffff;
+    }
 
     // hash function for keys - returns value between 0 and m-1 (assumes m is a power of 2)
     // (from Java 7 implementation, protects against poor quality hashCode() implementations)
@@ -83,8 +83,7 @@ export class LinearProbingHashST {
      * Returns the value associated with the specified key in this symbol table.
      *
      * @param  key the key
-     * @return the value associated with {@code key} in the symbol table;
-     *         {@code null} if no such value
+     * @return the value associated with {@code key} in the symbol table; {@code null} if no such value
      * @throws ReferenceError if {@code key} is {@code null}
      */
     get(key) {
@@ -136,7 +135,7 @@ export class LinearProbingHashST {
         if (this.n >= this.m/2) this.resize(2*this.m);
 
         let h;
-        for (h = this.hash(key); this._keys[h] != null; h = ((h+1)%this.m)) {
+        for (h = this.hash(key); this._keys[h] != null; h = ((h + 1) % this.m)) {
             if (equals(this._keys[h], key)) {
                 this.vals[h] = val;
                 return;

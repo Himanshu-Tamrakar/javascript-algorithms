@@ -5,10 +5,9 @@ import { In, StdOut } from "../../libs/index.js";
 
 export class SeparateChaningHashST {
     static INIT_CAPACITY = 4;
-
-    n = 0;
-    m = 0;
-
+    n = 0; // number of key-value pairs
+    m = 0; // hash table size
+    st; // array of linked-list symbol tables
     constructor(m = SeparateChaningHashST.INIT_CAPACITY) {
         this.m = m;
         this.st = new Array(m);
@@ -41,7 +40,7 @@ export class SeparateChaningHashST {
 
     // Hash function from text book
     hashTextBook(key) {
-        return hashCode(key) & 0x7fffffff;
+        return hashCode(key) & 0x7fffffff; // removes the sign bitand produce 31 bit integer
     }
 
     // hash function for keys - returns value between 0 and m-1 (assumes m is a power of 2)
@@ -60,7 +59,7 @@ export class SeparateChaningHashST {
             const queue = this.st[i].keys();
             while(!queue.isEmpty()) {
                 const key = queue.dequeue();
-                temp.put(key, this.st[i].get(key));
+                temp.put(key, this.st[i].get(key)); // inserting again
             }
         }
         this.m  = temp.m;
@@ -76,8 +75,7 @@ export class SeparateChaningHashST {
      * Returns true if this symbol table contains the specified key.
      *
      * @param  key the key
-     * @return {@code true} if this symbol table contains {@code key};
-     *         {@code false} otherwise
+     * @return {@code true} if this symbol table contains {@code key}; {@code false} otherwise
      * @throws ReferenceError if {@code key} is {@code null}
      */
     contains(key) {
@@ -91,8 +89,7 @@ export class SeparateChaningHashST {
      * Returns the value associated with the specified key in this symbol table.
      *
      * @param  key the key
-     * @return the value associated with {@code key} in the symbol table;
-     *         {@code null} if no such value
+     * @return the value associated with {@code key} in the symbol table;{@code null} if no such value
      * @throws ReferenceError if {@code key} is {@code null}
      */
     get(key) {

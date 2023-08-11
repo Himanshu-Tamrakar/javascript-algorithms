@@ -1,9 +1,11 @@
 import {compare} from "../../common/index.js";
+import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
+import { StdOut, StdIn } from "../../libs/index.js";
 
 class Node {
     constructor(key, val, left, right, size, color) {
         this.key = key;
-        this.val = value;
+        this.val = val;
         this.left = left;
         this.right = right;
         this.size = size;
@@ -42,7 +44,7 @@ export class RedBlackBST {
     }
     // Number of nodes in subtree rooted at x; 0 is x is null
     _size(x) {
-        if (this.root == null) {
+        if (x == null) {
             return 0;
         }
         return x.size;
@@ -77,8 +79,8 @@ export class RedBlackBST {
     _get(x, key) {
         while (x != null) {
             const cmp = compare(key, x.key);
-            if (x < 0) x = x.left;
-            else if (x > 0) x = x.right;
+            if (cmp < 0) x = x.left;
+            else if (cmp > 0) x = x.right;
             else return x.val;
         }
 
@@ -131,7 +133,7 @@ export class RedBlackBST {
         else              x.val = val;
 
         if (this.isRed(x.right) && !this.isRed(x.left)) x = this.rotateLeft(x);
-        if (this.isRed(x.left) && this.isRed(this.left.left)) x = this.rotateRight(x);
+        if (this.isRed(x.left) && this.isRed(x.left.left)) x = this.rotateRight(x);
         if (this.isRed(x.left) && this.isRed(x.right)) this.flipColors(x);
 
         x.size = 1 + this._size(x.left) + this._size(x.right);
@@ -173,11 +175,11 @@ export class RedBlackBST {
     }
 
     // flip the colors of a node and its two children
-     flipColors(h) {
-         h.color = RED;
-         h.left.color = BLACK;
-         h.right.color = BLACK;
-     }
+    flipColors(h) {
+        h.color = RED;
+        h.left.color = BLACK;
+        h.right.color = BLACK;
+    }
     
      /***************************************************************************
      *  Ordered symbol table methods.
@@ -188,17 +190,17 @@ export class RedBlackBST {
      * @throws ReferenceError is symbol table is empty
      */
     min() {
-         if (this.isEmpty()) {
-             throw new ReferenceError('symbol table is underflow');
-         }
-         return this._min(this.root).key;
+        if (this.isEmpty()) {
+            throw new ReferenceError('symbol table is underflow');
+        }
+        return this._min(this.root).key;
     }
 
     // the smallest key in subtree rooted at x; null if no such key
     _min(x) {
-         if (x == null) throw new ReferenceError('calling _min() with null');
-         if (x.left == null) return x;
-         else                return this._min(x.left);
+        if (x == null) throw new ReferenceError('calling _min() with null');
+        if (x.left == null) return x;
+        else return this._min(x.left);
     }
 
     /**
@@ -220,21 +222,66 @@ export class RedBlackBST {
     }
 
     /**
+      * Return the key in the symbol table of a given {@code rank}.
+      * This key has the property that there are {@code rank} keys in
+      * the symbol table that are smaller. In other words, this key is the
+      * ({@code rank}+1)st smallest key in the symbol table.
+      *
+      * @param  rank the order statistic
+      * @return the key in the symbol table of given {@code rank}
+      * @throws ReferenceError unless {@code rank} is between 0 and <em>n</em>–1
+      */
+    select(rank) {
+     if (rank < 0 || rank >= size()) {
+        throw new ReferenceError("argument to select() is invalid: " + rank);
+     }
+     return this._select(this.root, rank);
+    }
+     // Return key in BST rooted at x of given rank.
+     // Precondition: rank is in legal range.
+    _select(x, rank) {
+        if (x == null) return null;
+        const  leftSize = this._size(x.left);
+        if (leftSize > rank) return this._select(x.left, rank);
+        else if (leftSize < rank) return this._select(x.right, rank - leftSize - 1);
+        else return x.key;
+    }
+
+    /**
+      * Return the number of keys in the symbol table strictly less than {@code key}.
+      * @param key the key
+      * @return the number of keys in the symbol table strictly less than {@code key}
+      * @throws TypeError if {@code key} is {@code null}
+      */
+    rank(key) {
+        if (key == null) throw new TypeError("argument to rank() is null");
+        return this._rank(this.root, key);
+    } 
+    // number of keys less than key in the subtree rooted at x
+    _rank(x, key) {
+        if (x == null) return 0;
+        const cmp = compare(key, x.key);
+        if (cmp < 0) return this._rank(x.left, key);
+        else if (cmp > 0) return 1 + this.size(x.left) + this._rank(x.right, key);
+        else return this.size(x.left);
+    }
+
+    /**
      * Returns the largest key in the symbol table less than or equal to {@code key}.
      * @param key the key
      * @return the largest key in the symbol table less than or equal to {@code key}
      * @throws ReferenceError if {@code key} is {@code null}
      */
     floor(key) {
-     if (key == null) throw new ReferenceError('argument to floor() can not be null');
-     if (this.isEmpty()) throw new ReferenceError('symbol table is underflow');
-     const x = this._floor(this.root, key);
-    
-     if (x == null) throw new ReferenceError('argument to floor() is too small');
-     return x.key;
-    
+        if (key == null) throw new ReferenceError('argument to floor() can not be null');
+        if (this.isEmpty()) throw new ReferenceError('symbol table is underflow');
+        const x = this._floor(this.root, key);
+       
+        if (x == null) throw new ReferenceError('argument to floor() is too small');
+        return x.key;
+       
     }
-    // the largest key in the subtree rooted at x less than or equal to the given key
+       // the largest key in the subtree rooted at x less than or equal to the given key
     _floor(x, key) {
          if (x == null) return null;
          const cmp = compare(key, x.key);
@@ -243,7 +290,6 @@ export class RedBlackBST {
          const t = this._floor(x.right, key);
          if (t != null) return t;
          else return x;
-    
     }
 
     /**
@@ -253,12 +299,12 @@ export class RedBlackBST {
      * @throws ReferenceError if {@code key} is {@code null}
      */
     ceiling(key) {
-     if (key == null) throw new ReferenceError('argument to ceiling() can not be null');
-     if (this.isEmpty()) throw new ReferenceError('symbol table is underflow');
-     const x = this._ceiling(this.root, key);
-    
-     if (x == null) throw new ReferenceError('argument to ceiling() is too small');
-     return x.key;
+        if (key == null) throw new ReferenceError('argument to ceiling() can not be null');
+        if (this.isEmpty()) throw new ReferenceError('symbol table is underflow');
+        const x = this._ceiling(this.root, key);
+        
+        if (x == null) throw new ReferenceError('argument to ceiling() is too small');
+        return x.key;
     }
     // the smallest key in the subtree rooted at x greater than or equal to the given key
     _ceiling(x, key) {
@@ -271,50 +317,75 @@ export class RedBlackBST {
          else return x;
     }
 
+    /***************************************************************************
+    *  Range count and range search.
+    ***************************************************************************/
+
     /**
-      * Return the key in the symbol table of a given {@code rank}.
-      * This key has the property that there are {@code rank} keys in
-      * the symbol table that are smaller. In other words, this key is the
-      * ({@code rank}+1)st smallest key in the symbol table.
-      *
-      * @param  rank the order statistic
-      * @return the key in the symbol table of given {@code rank}
-      * @throws ReferenceError unless {@code rank} is between 0 and
-      *        <em>n</em>–1
-      */
-    select(rank) {
-     if (rank < 0 || rank >= size()) {
-         throw new ReferenceError("argument to select() is invalid: " + rank);
-     }
-     return this._select(this.root, rank);
-    }
-     // Return key in BST rooted at x of given rank.
-     // Precondition: rank is in legal range.
-    _select(x, rank) {
-         if (x == null) return null;
-         const  leftSize = this._size(x.left);
-         if (leftSize > rank) return this._select(x.left, rank);
-         else if (leftSize < rank) return this._select(x.right, rank - leftSize - 1);
-         else return x.key;
+     * Returns all keys in the symbol table in ascending order as an {@code Iterable}.
+     * To iterate over all of the keys in the symbol table named {@code st},
+     * use the foreach notation: {@code for (Key key : st.keys())}.
+     * @return all keys in the symbol table in ascending order
+     */
+    keys() {
+        if (this.isEmpty()) return new Queue();
+        return this._keys(this.min(), this.max());
     }
 
     /**
-      * Return the number of keys in the symbol table strictly less than {@code key}.
-      * @param key the key
-      * @return the number of keys in the symbol table strictly less than {@code key}
-      * @throws TypeError if {@code key} is {@code null}
-      */
-    rank(key) {
-     if (key == null) throw new TypeError("argument to rank() is null");
-     return this._rank(this.root, key);
-    } 
-    // number of keys less than key in the subtree rooted at x
-    _rank(x, key) {
-         if (x == null) return 0;
-         const cmp = compare(key, x.key);
-         if (cmp < 0) return this._rank(x.left, key);
-         else if (cmp > 0) return 1 + this.size(x.left) + this._rank(x.right, key);
-         else return this.size(x.left);
+     * Returns all keys in the symbol table in the given range in ascending order,
+     * as an {@code Iterable}.
+     *
+     * @param  lo minimum endpoint
+     * @param  hi maximum endpoint
+     * @return all keys in the symbol table between {@code lo} (inclusive) and {@code hi} (inclusive) in ascending order
+     * @throws ReferenceError if either {@code lo} or {@code hi} is {@code null}
+     */
+    _keys(lo, hi) {
+        if (lo == null) throw new ReferenceError("first argument to keys() is null");
+        if (hi == null) throw new ReferenceError("second argument to keys() is null");
+
+        const queue = new Queue();
+        // if (isEmpty() || lo.compareTo(hi) > 0) return queue;
+        this._keys1(this.root, queue, lo, hi);
+        return queue;
+    }
+
+    // add the keys between lo and hi in the subtree rooted at x
+    // to the queue
+    _keys1(x, queue, lo, hi) {
+        if (x == null) return;
+        const cmplo = compare(lo, x.key);
+        const cmphi = compare(hi,x.key);
+        if (cmplo < 0) this._keys1(x.left, queue, lo, hi);
+        if (cmplo <= 0 && cmphi >= 0) queue.enqueue(x.key);
+        if (cmphi > 0) this._keys1(x.right, queue, lo, hi);
+    }
+
+    [Symbol.iterator]() {
+        const queue = this.keys();
+        return {
+            next() {
+                if (!queue.isEmpty()) {
+                    return {value: queue.dequeue(), done: false};
+                }
+                return {value:null, done: true}
+            },
+            return(v) {
+                return {value: v, done: true}
+            }
+        }
+    }
+
+    static main() {
+        const keys = 'ABCDEFGHIJKLNOPQRSTUVWXYZ'.split('');
+        const st = new RedBlackBST();
+        for (let i = 0; i < keys.length; i++) {
+            st.put(keys[i], i);        
+        }
+        for (const key of st) {
+            console.log(key, ' : ', st.get(key));
+        }
     }
 
 }

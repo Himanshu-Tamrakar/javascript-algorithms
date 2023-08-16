@@ -82,6 +82,7 @@ import { DepthFirstPaths } from './src/4. Graphs/4.1 Undirected Graphs/depth-fir
 import { BreadthFirstPaths } from './src/4. Graphs/4.1 Undirected Graphs/breadth-first-paths.js';
 import { CC } from './src/4. Graphs/4.1 Undirected Graphs/CC.js';
 import { Cycle } from './src/4. Graphs/4.1 Undirected Graphs/cycle.js';
+import { Bipartite } from './src/4. Graphs/4.1 Undirected Graphs/Bipartite.js';
 import { SymbolGraph } from './src/4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
 import { Digraph } from './src/4. Graphs/4.2Directed Graphs/Digraph.js';
 import { DirectedDFS } from './src/4. Graphs/4.2Directed Graphs/DirectedDFS.js';
@@ -831,7 +832,8 @@ function flatten(root) {
     // BreadthFirstPaths.main();
     // CC.main();
     // Cycle.main();
-    // SymbolGraph.main();  
+    // Bipartite.main()
+    SymbolGraph.main();  
    
     // Digraph.main();
     // DirectedDFS.main();

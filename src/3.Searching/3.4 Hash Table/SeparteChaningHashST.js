@@ -128,7 +128,7 @@ export class SeparateChaningHashST {
             return;
         }
         // double table size if average length of list >= 10
-        if (this.n >= 10*this.m) this.resize(2*m);
+        if (this.n >= 10*this.m) this.resize(2*this.m);
 
         const h = this.hash(key);
         if (!this.st[h].contains(key)) this.n++;

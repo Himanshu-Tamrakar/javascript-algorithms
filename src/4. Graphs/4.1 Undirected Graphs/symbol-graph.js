@@ -1,17 +1,33 @@
-import { SeparateChaningHashST } from "../../3.Searching/3.4 Hash Table/SeparteChaningHashST.js";
-import { Graph } from "./graph.js";
-import { In, StdOut } from "../../libs/index.js";
+import {SeparateChaningHashST} from "../../3.Searching/3.4 Hash Table/SeparteChaningHashST.js";
+import {Graph} from "./graph.js";
+import {In, StdOut} from "../../libs/index.js";
 
+/**
+ * Data files: https://algs4.cs.princeton.edu/41graph/routes.txt
+ *             https://algs4.cs.princeton.edu/41graph/movies.txt
+ *             https://algs4.cs.princeton.edu/41graph/moviestiny.txt
+ *             https://algs4.cs.princeton.edu/41graph/moviesG.txt
+ *             https://algs4.cs.princeton.edu/41graph/moviestopGrossing.txt
+ *
+ */
 export class SymbolGraph {
-    st; // String -> int
-    keys; // int -> string
+    st;     // String -> int
+    keys;   // int -> string
     _graph;
 
-    constructor(filename,  delimeter) {
+    /**
+     * Initializes a graph from a file using the specified delimiter.
+     * Each line in the file contains
+     * the name of a vertex, followed by a list of the names
+     * of the vertices adjacent to that vertex, separated by the delimiter.
+     * @param filename the name of the file
+     * @param delimiter the delimiter between fields
+     */
+    constructor (filename, delimeter) {
         this.st = new SeparateChaningHashST();
         const _in = new In(filename);
         const rows = _in.readRawString().split('\n');
-        
+
         // Smbol table initialization
         rows.forEach(row => {
             const cols = row.split(delimeter);
@@ -37,7 +53,7 @@ export class SymbolGraph {
                 G.addEdge(this.st.get(v), this.st.get(w));
             }
         });
-        
+
         this._graph = G;
     }
 
@@ -115,50 +131,46 @@ export class SymbolGraph {
     validateVertex(v) {
         const V = this._graph.V();
         if (v < 0 || v >= V)
-            throw new ReferenceError("vertex " + v + " is not between 0 and " + (V-1));
+            throw new ReferenceError("vertex " + v + " is not between 0 and " + (V - 1));
     }
 
     static main() {
         const filepath = 'assets/routes.txt';
-        const delimeter = ' '; 
+        const delimeter = ' ';
+        // const filepath = 'assets/movies.txt';
+        // const delimeter = '/';
         const sg = new SymbolGraph(filepath, delimeter);
         const graph = sg.graph();
 
         const V = graph.V();
-        
-        for (let i = 0; i < V; i++) {
-            const key = sg.nameOf(i);
-            const v = sg.indexOf(key);
 
+        for (let v = 0; v < V; v++) {
+            const key = sg.nameOf(v);
+            // const v = sg.indexOf(key);
             StdOut.println(key + ":");
-
             for (const w of graph.adj(v)) {
                 StdOut.println("    %s", sg.nameOf(w));
             }
-
             StdOut.println();
-            
         }
-
     }
 }
 
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

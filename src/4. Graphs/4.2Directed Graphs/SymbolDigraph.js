@@ -2,16 +2,27 @@ import {SeparateChaningHashST} from "../../3.Searching/3.4 Hash Table/SeparteCha
 import { Digraph } from "./Digraph.js";
 import { In, StdOut } from "../../libs/index.js";
 
+/**
+ * https://algs4.cs.princeton.edu/42digraph/routes.txt
+ */
 export class SymbolDigraph {
-    st; // Keys to index
-    keys; // Index to key
-    _digraph;
+    st;         // string -> index
+    keys;       // index  -> string
+    _digraph;   // the underlying digraph
 
+    /**
+     * Initializes a digraph from a file using the specified delimiter.
+     * Each line in the file contains
+     * the name of a vertex, followed by a list of the names
+     * of the vertices adjacent to that vertex, separated by the delimiter.
+     * @param filename the name of the file
+     * @param delimiter the delimiter between fields
+     */
     constructor(filename, delimeter) {
         this.st = new SeparateChaningHashST();
+
         const _in = new In(filename);
         const rows = _in.readRawString().split('\n');
-
         rows.forEach(row => {
             const cols = row.split(delimeter);
             cols.forEach(key => {
@@ -20,12 +31,15 @@ export class SymbolDigraph {
             })
         });
 
+        // inverted index to get string keys in an array
         this.keys = new Array(this.st.size());
         for (const key of this.st.keys()) {
             this.keys[this.st.get(key)] = key;   
         }
 
-        const  G = new Digraph(this.st.size());
+        // second pass builds the digraph by connecting first vertex on each
+        // line to all others
+        const G = new Digraph(this.st.size());
         rows.forEach(row => {
             const cols = row.split(delimeter);
             const v = this.st.get(cols.shift());

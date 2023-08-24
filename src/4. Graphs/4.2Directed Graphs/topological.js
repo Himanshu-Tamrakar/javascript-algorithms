@@ -9,9 +9,18 @@ import { DepthFirstOrder } from "./depth-first-order.js";
 import { DirectedCycle } from "./directed-cycle.js";
 import { EdgeWeightedDirectedCycle } from '../4.4 Shortest Paths/EdgeWeightedDirectedCycle.js'
 
+/**
+ * https://algs4.cs.princeton.edu/42digraph/jobs.txt
+ */
 export class Topological {
-    _order;
-    _rank;
+    _order; // topological order
+    _rank;  // rank[v] = rank of vertex v in order
+
+    /**
+     * Determines whether the digraph {@code G} has a topological order and, if so,
+     * finds such a topological order.
+     * @param G the digraph
+     */
     constructor(G) {
         if (G instanceof Digraph) {
             const finder = new DirectedCycle(G);

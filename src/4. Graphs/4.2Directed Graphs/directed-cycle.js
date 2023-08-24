@@ -2,58 +2,60 @@ import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js
 import { Digraph } from "./Digraph.js";
 import { In, StdOut } from "../../libs/index.js";
 export class DirectedCycle {
-    isCycle;
-    onStack;
-    marked;
-    edgeTo;
-    _cycle;
+    onStack;    // this.onStack[v] = is vertex on the stack?
+    marked;     // this.marked[v] = has vertex v been marked?
+    edgeTo;     // this.edgeTo[v] = previous vertex on path to v
+    _cycle;     // directed cycle (or null if no such cycle)
+
+    /**
+     * Determines whether the digraph {@code G} has a directed cycle and, if so,
+     * finds such a cycle.
+     * @param G the digraph
+     */
     constructor(G) {
         this.onStack = new Array(G.V()).fill(false);
         this.marked = new Array(G.V()).fill(false);
         this.edgeTo = new Array(G.V());
-        this.isCycle = false;
-        this._cycle = new Stack();
-        
         for (let v = 0; v < G.V(); v++) {
-            if (!this.marked[v] && !this.isCycle) {
-                this.edgeTo[v] = v;
+            if (!this.marked[v] && this._cycle == null) {
                 this.dfs(G, v);
             }
         }
-
-
     }
 
-
     dfs(G, v) {
-        this.marked[v] = true;
         this.onStack[v] = true;
+        this.marked[v] = true;
 
         for (const w of G.adj(v)) {
             // short circuit if directed cycle found
-            if (this.isCycle) return;
+            if (this._cycle != null) return;
+
+            // found new vertex, so recur
             else if (!this.marked[w]) {
                 this.edgeTo[w] = v;
                 this.dfs(G, w);
-            } else if(this.onStack[w]) {
-                this.isCycle = true;
-                this._cycle.push(w);
-                let x = v;
-                while(x != w) { // Trick, read depth first paths for computing path. Compare and understand
+            } 
+            
+            // trace back directed cycle
+            else if(this.onStack[w]) {
+                this._cycle = new Stack();
+                for (let x = v; x != w; x = this.edgeTo[x]) {
                     this._cycle.push(x);
-                    x = this.edgeTo[x];
                 }
-                this._cycle.push(x);
-                return;
-
+                this._cycle.push(w);
+                this._cycle.push(v);
             }
         }
-
         this.onStack[v] = false;
     }
 
+    /**
+     * Does the digraph have a directed cycle?
+     * @return {@code true} if the digraph has a directed cycle, {@code false} otherwise
+     */
     hasCycle() {
-        return this.isCycle;
+        return this._cycle != null;
     }
 
     /**

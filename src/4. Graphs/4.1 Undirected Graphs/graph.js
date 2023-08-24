@@ -30,7 +30,7 @@ export class Graph {
         } else if (V instanceof In) {
            this.constructorTwo(V);
         } else {
-            throw new Error('invalid input format in Graph constructor')
+            throw new Error('Invalid input format in Graph constructor')
         }
     }
 

@@ -84,11 +84,15 @@ import { CC } from './src/4. Graphs/4.1 Undirected Graphs/CC.js';
 import { Cycle } from './src/4. Graphs/4.1 Undirected Graphs/cycle.js';
 import { Bipartite } from './src/4. Graphs/4.1 Undirected Graphs/Bipartite.js';
 import { SymbolGraph } from './src/4. Graphs/4.1 Undirected Graphs/symbol-graph.js';
+import { DegreesOfSeparation } from './src/4. Graphs/4.1 Undirected Graphs/DegreesOfSeparation.js';
+
 import { Digraph } from './src/4. Graphs/4.2Directed Graphs/Digraph.js';
 import { DirectedDFS } from './src/4. Graphs/4.2Directed Graphs/DirectedDFS.js';
 import { DepthFirstDirectedPaths } from './src/4. Graphs/4.2Directed Graphs/depth-first-directed-paths.js';
 import { BreadthFirstDirectedPaths } from './src/4. Graphs/4.2Directed Graphs/breadth-first-directed-paths.js';
 import { DirectedCycle } from './src/4. Graphs/4.2Directed Graphs/directed-cycle.js';
+import {DepthFirstOrder} from './src/4. Graphs/4.2Directed Graphs/depth-first-order.js';
+
 import { SymbolDigraph } from './src/4. Graphs/4.2Directed Graphs/SymbolDigraph.js';
 import { Topological } from './src/4. Graphs/4.2Directed Graphs/topological.js';
 import { KosarajuSharirSCC } from './src/4. Graphs/4.2Directed Graphs/KosarajuSharirSCC.js';
@@ -833,13 +837,15 @@ function flatten(root) {
     // CC.main();
     // Cycle.main();
     // Bipartite.main()
-    SymbolGraph.main();  
+    // SymbolGraph.main();  
+    // DegreesOfSeparation.main();
    
     // Digraph.main();
     // DirectedDFS.main();
     // DepthFirstDirectedPaths.main();
     // BreadthFirstDirectedPaths.main();
-    // DirectedCycle.main()
+    // DirectedCycle.main();
+    // DepthFirstOrder.main();
     // SymbolDigraph.main();
     // Topological.main();
     // KosarajuSharirSCC.main();

@@ -27,6 +27,7 @@ export class SymbolGraph {
         this.st = new SeparateChaningHashST();
         const _in = new In(filename);
         const rows = _in.readRawString().split('\n');
+        // const rows = _in.readLines();
 
         // Smbol table initialization
         rows.forEach(row => {

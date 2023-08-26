@@ -47,19 +47,20 @@ export class TransitiveClosure {
         const tc = new TransitiveClosure(G);
 
         // print header
-        StdOut.println("     ");
+        StdOut.printf("      ");
         for (let v = 0; v < G.V(); v++)
-            StdOut.printf("%d ", v);
-
+            StdOut.printf("%d  ", v);
         StdOut.println();
         StdOut.println("--------------------------------------------");
 
         // print transitive closure
         for (let v = 0; v < G.V(); v++) {
-            StdOut.printf("%d:   ", v);
+            if (v <= 9) StdOut.printf(" %d: ", v);
+            else StdOut.printf("%d: ", v);
+
             for (let w = 0; w < G.V(); w++) {
                 if (tc.reachable(v, w)) StdOut.printf("  T");
-                else                    StdOut.printf("   ");
+                else                    StdOut.printf("  -");
             }
             StdOut.println();
         }

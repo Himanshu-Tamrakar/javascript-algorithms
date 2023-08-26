@@ -853,9 +853,9 @@ function flatten(root) {
 
     // Edge.main();
     // EdgeWeightedGraph.main();
-    // LazyPrimMST.main();
-    // PrimMST.main();
-    // KrushkalMST.main();
+    LazyPrimMST.main();
+    PrimMST.main();
+    KrushkalMST.main();
 
     // DirectedEdge.main();
     // EdgeWeightedDigraph.main();

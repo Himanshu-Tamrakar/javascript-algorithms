@@ -2,6 +2,11 @@ import { Edge } from "./Edge.js";
 import { Bag } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
 import { In, StdOut } from "../../libs/index.js";
 
+/**
+ * Data files: https://algs4.cs.princeton.edu/43mst/tinyEWG.txt
+ *             https://algs4.cs.princeton.edu/43mst/mediumEWG.txt
+ *             https://algs4.cs.princeton.edu/43mst/largeEWG.txt
+ */
 export class EdgeWeightedGraph {
     _adj;
     _V = 0;
@@ -22,7 +27,9 @@ export class EdgeWeightedGraph {
             for (let i = 0; i < input; i++) {
                 this._adj[i] = new Bag();
             }
-        } else if (typeof input === 'object') {
+        } 
+        // Taking input  from In
+        else if (input instanceof In) {
             this._constructor(input);
         }
     }
@@ -33,15 +40,15 @@ export class EdgeWeightedGraph {
     * followed by <em>E</em> pairs of vertices and edge weights,
     * with each entry separated by whitespace.
     *
-    * @param  input the input stream
+    * @param  _in the input stream
     * @throws ReferenceError if {@code in} is {@code null}
     * @throws ReferenceError if the endpoints of any edge are not in prescribed range
     * @throws ReferenceError if the number of vertices or edges is negative
     */
-    _constructor(input) {
-        if (!input) throw new ReferenceError("argument is null");
+    _constructor(_in) {
+        if (!_in) throw new ReferenceError("argument is null");
 
-        const rows = input.readRawString().split('\n');
+        const rows = _in.readLines();
         this._V = parseInt(rows.shift());
         if (this._V < 0) throw new ReferenceError('Number of vertices must be non-negative');
 
@@ -55,7 +62,7 @@ export class EdgeWeightedGraph {
 
         rows.forEach(row => {
             const [v, w, weight] = row.split(' ');
-            const e = new Edge(parseInt(v), parseInt(w),  parseFloat(weight)); //.toFixed(2);
+            const e = new Edge(parseInt(v), parseInt(w),  parseFloat(weight)); 
             this.addEdge(e);
         });
 
@@ -172,9 +179,5 @@ export class EdgeWeightedGraph {
         const _in = new In("assets/tinyEWG.txt");
         const G = new EdgeWeightedGraph(_in);
         StdOut.println(G._toString());
-
-        for (const edge of G.edges()) {
-            StdOut.println(edge._toString());
-        }
     }
 }

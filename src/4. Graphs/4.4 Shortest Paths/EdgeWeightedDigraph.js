@@ -2,32 +2,59 @@ import { Bag } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Bag.js";
 import {DirectedEdge} from "./DirectedEdge.js";
 import { In, StdOut } from "../../libs/index.js";
 
+/**
+ *  Data files:   https://algs4.cs.princeton.edu/44sp/tinyEWD.txt
+ *                https://algs4.cs.princeton.edu/44sp/mediumEWD.txt
+ *                https://algs4.cs.princeton.edu/44sp/largeEWD.txt
+ */
 export class EdgeWeightedDigraph {
-    _V;
-    _E;
-    _adj;
-    _indegree;
-    constructor(input) {
-        if (typeof input === 'number') {
-            if (input < 0) throw new ReferenceError('Number of vertices must be non-negative');
-            this._V = input;
-            this._indegree = new Array(this._V).fill(0);
+    _V;         // number of vertices in this digraph
+    _E;         // number of edges in this digraph
+    _adj;       // adj[v] = adjacency list for vertex v
+    _indegree;  // indegree[v] = indegree of vertex v
+
+    /**
+     * Initializes an empty edge-weighted digraph with {@code V} vertices and 0 edges.
+     *
+     * @param  V the number of vertices
+     * @throws ReferenceError if {@code V < 0}
+     */
+    constructor(V) {
+        if (typeof V === 'number') {
+            if (V < 0) throw new ReferenceError('Number of vertices must be non-negative');
+            this._V = V;
             this._E = 0;
+            this._indegree = new Array(this._V).fill(0);
             this._adj  = new Array(this._V);
             for (let i = 0; i < this._V; i++) {
                 this._adj[i] = new Bag();
             }
-        } else if (typeof input === 'object') {
-            this._constructor(input);
+        } 
+        else if (V instanceof In) {
+            this._constructor(V);
         }
     }
+
+    /**
+     * Initializes an edge-weighted digraph from the specified input stream.
+     * The format is the number of vertices <em>V</em>,
+     * followed by the number of edges <em>E</em>,
+     * followed by <em>E</em> pairs of vertices and edge weights,
+     * with each entry separated by whitespace.
+     *
+     * @param  input the input stream
+     * @throws ReferenceError if {@code in} is {@code null}
+     * @throws ReferenceError if the endpoints of any edge are not in prescribed range
+     * @throws ReferenceError if the number of vertices or edges is negative
+     */
     _constructor(input) {
         if (!input) throw new ReferenceError("argument is null");
 
-        const rows = input.readRawString().split('\n');
+        const rows = input.readLines();
         this._V = parseInt(rows.shift());
-        this._indegree = new Array(this._V).fill(0);
         if (this._V < 0) throw new ReferenceError('Number of vertices must be non-negative');
+        this._E = 0;
+        this._indegree = new Array(this._V).fill(0);
         this._adj = new Array(this._V);
         for (let i = 0; i < this._V; i++) {
             this._adj[i] = new Bag();
@@ -149,8 +176,6 @@ export class EdgeWeightedDigraph {
         }
         return s;
     }
-
-
 
     // throw an ReferenceError unless {@code 0 <= v < V}
     validateVertex(v) {

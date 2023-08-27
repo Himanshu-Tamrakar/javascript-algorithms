@@ -2,6 +2,10 @@ import { Stack } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Stack.js
 import { EdgeWeightedDigraph } from './EdgeWeightedDigraph.js';
 import { In, StdOut } from "../../libs/index.js";
 import { Topological } from "../4.2Directed Graphs/topological.js";
+
+/**
+ * Data files:   https://algs4.cs.princeton.edu/44sp/tinyEWDAG.txt
+ */
 export class AcyclicSP {
     _distTo; // distTo[v] = distance  of shortest s->v path
     _edgeTo; // edgeTo[v] = last edge on shortest s->v path
@@ -11,8 +15,8 @@ export class AcyclicSP {
      * the directed acyclic graph {@code G}.
      * @param G the acyclic digraph
      * @param s the source vertex
-     * @throws TypeError if the digraph is not acyclic
-     * @throws TypeError unless {@code 0 <= s < V}
+     * @throws ReferenceError if the digraph is not acyclic
+     * @throws ReferenceError unless {@code 0 <= s < V}
      */
     constructor(G, s) {
         this._distTo = Array(G.V()).fill(Number.POSITIVE_INFINITY);
@@ -24,7 +28,7 @@ export class AcyclicSP {
         // visit vertices in topological order for EDGE WEIGHTED DIDRAPH
         const topological = new Topological(G);
         if (!topological.hasOrder())
-            throw new TypeError("Digraph is not acyclic.");
+            throw new ReferenceError("Digraph is not acyclic.");
         for (let v of topological.order()) {
             for (const e of G.adj(v))
                 this.relax(e);

@@ -5,12 +5,25 @@ import { In, StdOut } from "../../libs/index.js";
 
 /**
  * Single source shortest pathe. Works only for non negetive edges.
+ * 
+ * Data files:   https://algs4.cs.princeton.edu/44sp/tinyEWD.txt
+ *               https://algs4.cs.princeton.edu/44sp/mediumEWD.txt
+ *               https://algs4.cs.princeton.edu/44sp/largeEWD.txt
  */
 export class DijkstraSP {
-    _edgeTo;
-    _distTo;
-    _pq;
+    _edgeTo;    // _distTo[v] = distance  of shortest s->v path
+    _distTo;    // _edgeTo[v] = last edge on shortest s->v path
+    _pq;        // priority queue of vertices
 
+    /**
+     * Computes a shortest-paths tree from the source vertex {@code s} to every other
+     * vertex in the edge-weighted digraph {@code G}.
+     *
+     * @param  G the edge-weighted digraph
+     * @param  s the source vertex
+     * @throws ReferenceError if an edge weight is negative
+     * @throws ReferenceError unless {@code 0 <= s < V}
+     */
     constructor(G, s) {
         // Dijlstra works only with positive edges
         for (const e of G.edges()) {

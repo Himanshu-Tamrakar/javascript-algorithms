@@ -1,6 +1,7 @@
 import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import { StdOut, In } from "../../libs/index.js";
 
+
 class Node {
     ch;
     val;
@@ -13,9 +14,17 @@ class Node {
         this.left = this.right = this.mid = null;
     }
 }
+
+/**
+ * Data files:   https://algs4.cs.princeton.edu/52trie/shellsST.txt
+ */
 export class TST {
-    n;
-    root;
+    n;      // size
+    root;   // root of TST
+
+    /**
+     * Initializes an empty string symbol table.
+     */
     constructor() {
         this.n = 0;
         this.root = null;

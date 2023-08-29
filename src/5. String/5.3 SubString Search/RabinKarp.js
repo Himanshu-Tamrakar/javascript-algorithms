@@ -36,7 +36,7 @@ export class RabinKarp {
         return true;
     }
 
-       /**
+    /**
      * Returns the index of the first occurrence of the pattern string
      * in the text string.
      *
@@ -69,7 +69,7 @@ export class RabinKarp {
         return n;
     }
 
-       /**
+    /**
      * Takes a pattern string and an input string as command-line arguments;
      * searches for the pattern string in the text string; and prints
      * the first occurrence of the pattern string in the text string.

@@ -28,7 +28,8 @@ export class NFA {
 
             if (regexp[i] === '(' || regexp[i] === '|') {
                 ops.push(i);
-            } else if (regexp[i] === ')') {
+            } 
+            else if (regexp[i] === ')') {
                 const or = ops.pop();
                 if (regexp[or] === '|') {
                     lp = ops.pop();
@@ -37,7 +38,8 @@ export class NFA {
                 } else if (regexp[or] === '(') {
                     lp = or;
                 }
-            } else {}
+            } 
+            else {}
 
             // look ahead if current chat is i but i+1 is * then
             if (i < this.m-1 && regexp[i+1] === '*') {
@@ -104,7 +106,6 @@ export class NFA {
 
 
     static main() {
-        
         // const txt = 'AAAABD';
         // const regex = '(A*B|AC)D'
 
@@ -113,12 +114,8 @@ export class NFA {
 
         // const txt = 'abcbcd';
         // const regex = "(a|(bc)*d)*" 
-        
-
-
         const txt = 'abcbcbcdaaaabcbcdaaaddd';
         const regex = "(a|(bc)*d)*" 
-
         const nfa = new NFA(regex);
         StdOut.println(nfa.recognizes(txt))
 

@@ -1,15 +1,23 @@
 import { Queue } from "../../1. Fundamentals/1.3 Bags, Queues and Stack/Queue.js";
 import {In, StdOut} from "../../libs/index.js";
 
-const R = 256;
+const R = 256; // extended ASCII
+// R-way trie node
 class Node {
     val;
     next = new Array(R).fill(null);
 }
-export class TriST {
-    root;
-    n;
 
+/**
+ * Data files:   https://algs4.cs.princeton.edu/52trie/shellsST.txt
+ */
+export class TriST {
+    root;   // root of trie
+    n;      // number of keys in trie
+
+    /**
+     * Initializes an empty string symbol table.
+     */
     constructor() {
         this.n = 0;
         this.root = null;
@@ -177,6 +185,11 @@ export class TriST {
         return this._longestPrefixOf(node.next[c], query, d+1, len);
     }
 
+    /**
+     * Removes the key from the set if the key is present.
+     * @param key the key
+     * @throws TypeError if {@code key} is {@code null}
+     */
     delete(key) {
         if (key == null) throw new TypeError('argument to delete() is null');
         this.root = this._delete(this.root, key, 0);

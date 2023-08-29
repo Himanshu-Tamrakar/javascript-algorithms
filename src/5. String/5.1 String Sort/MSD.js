@@ -1,5 +1,9 @@
 import {In} from "../../libs/index.js";
 
+/**
+ *  Data files:   https://algs4.cs.princeton.edu/51radix/words3.txt
+ *                https://algs4.cs.princeton.edu/51radix/shells.txt
+ */
 export class MSD {
     static R = 256;
     static CUTOFF = 15;

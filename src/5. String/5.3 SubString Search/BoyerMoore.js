@@ -1,19 +1,34 @@
 import { StdOut } from "../../libs/index.js";
 export class BoyerMoore {
-    pat;
-    right;
+    pat;    // the pattern
+    right;  // the bad-character skip array
+
+    /**
+     * Preprocesses the pattern string.
+     *
+     * @param pat the pattern string
+     */
     constructor(pat) {
         this.pat = pat;
         const M = pat.length;
         const R = 256;
         this.right = new Array(R).fill(-1); // all filled with -1 indicates char not present in pattern
 
+        // position of rightmost occurrence of c in the pattern
         for (let i = 0; i < M; i++) {
             const c = pat.charCodeAt(i);
             this.right[c] = i; // right most position in pattern
         }
     }
 
+    /**
+     * Returns the index of the first occurrence of the pattern string
+     * in the text string.
+     *
+     * @param  txt the text string
+     * @return the index of the first occurrence of the pattern string
+     *         in the text string; n if no such match
+     */
     search(txt) {
         const N = txt.length;
         const M = this.pat.length;
@@ -32,7 +47,8 @@ export class BoyerMoore {
         }
         return -1;
     }
-     /**
+
+    /**
      * Takes a pattern string and an input string as command-line arguments;
      * searches for the pattern string in the text string; and prints
      * the first occurrence of the pattern string in the text string.

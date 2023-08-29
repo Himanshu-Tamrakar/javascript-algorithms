@@ -1,37 +1,50 @@
-import {In} from "../../libs/index.js";
+import {In, StdOut} from "../../libs/index.js";
 
+/**
+ * Data files:   https://algs4.cs.princeton.edu/51radix/words3.txt
+ */
 export class LSD {
-    static sort(arr, W) {
 
-        const R = 256;
-        
-        for (let w = W-1; w >= 0; w--) {
+    /**
+     * Rearranges the array of w-character strings in ascending order.
+     *
+     * @param a the array to be sorted
+     * @param w the number of characters per string
+     */
+    static sort(a, w) {
+        const n = a.length;
+        const R = 256;   // extend ASCII alphabet size
+        const aux = new Array(n);
+
+        for (let d = w-1; d >= 0; d--) {
+            // sort by key-indexed counting on dth character
+
+            // compute frequency counts
             const count = new Array(R+1).fill(0);
+            for (let i = 0; i < n; i++)
+                count[a[i].charCodeAt(d) + 1]++;
 
-            for (let j = 0; j < arr.length; j++) {
-                count[arr[j].charCodeAt(w)+1]++;
-            }
-            for (let j = 0; j < R; j++) {
-                count[j+1] += count[j];
-            }
-            const aux = new Array(arr.length);
-            for (let j = 0; j < arr.length; j++) {
-                aux[count[arr[j].charCodeAt(w)]++] = arr[j];
-            }
+            // compute cumulates
+            for (let r = 0; r < R; r++)
+                count[r+1] += count[r];
 
-            for (let j = 0; j < arr.length; j++) {
-                arr[j] = aux[j];
-            }
+            // move data
+            for (let i = 0; i < n; i++)
+                aux[count[a[i].charCodeAt(d)]++] = a[i];
 
+            // copy back
+            for (let i = 0; i < n; i++)
+                a[i] = aux[i];
         }
+
 
     }
 
     static main() {
         const _in = new In('assets/words3.txt');
         const words = _in.readAllWords();
-        console.log(words.length);
-        LSD.sort(words, 3);
-        console.log(words.length);
+        LSD.sort(words, words[0].length);
+        StdOut.println('Sorted Array: ');
+        StdOut.println(words);
     }
 }
